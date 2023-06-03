@@ -1,0 +1,83 @@
+namespace = skinchanger
+
+character_event = {		
+	id = skinchanger.1
+	#desc = EVTDESCskinchanger.1
+	hide_window = yes
+	only_playable = yes
+
+	trigger = {
+		AND = {
+			trait = skinchanger
+			NOT = { 
+				has_character_flag = skinchanger_initialised
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_variable = { which = flesh_count value = 0 }
+		set_variable = { which = friend_num_old value = 0 }
+		set_variable = { which = rival_num_old value = 0 }
+		set_variable = { which = lover_num_old value = 0 }
+		set_variable = { which = murder_num_old value = 0 }
+		set_character_flag = skinchanger_initialised
+	}
+	
+	option = {
+		name = skinchangertech1optA
+	}
+}
+
+character_event = {		
+	id = skinchanger.2
+	desc = EVTDESCskinchanger.2
+
+	only_playable = yes
+
+	trigger = {
+		NOT = { 
+			is_variable_equal = { which = num_of_friends which = friend_num_old }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skinchangertech1optA
+		if = {
+			Limit = {
+				check_variable = { which = friend_num_old which = num_of_friends }
+			}
+			ROOT = {
+				export_to_variable = { which = friend_num_old value = num_of_friends }
+			}
+		}
+		else_if = {
+			Limit = {
+				check_variable = { which = num_of_friends which = friend_num_old }
+			}
+			ROOT = {
+				export_to_variable = { which = num_of_friends value = num_of_friends }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = flesh_count
+						value < 0
+					}
+				}
+				set_variable = { which = flesh_count value = 1 }	#catch_all, unnecessary fallback, could be removed
+			}
+			else_if = {
+				change_variable = { which = flesh_count value = 1 }
+			}
+		}
+	}
+}

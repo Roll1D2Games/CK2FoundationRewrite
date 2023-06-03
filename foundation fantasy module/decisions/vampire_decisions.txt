@@ -1,0 +1,676 @@
+decisions = {
+	show_vampiric_powers = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			NOT = { has_character_flag = open_vampire_menu }
+		}
+		allow = {
+			
+		}
+		effect = {
+			set_character_flag = open_vampire_menu
+		}
+	}
+	
+	close_vampiric_powers = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+		}
+		allow = {
+			
+		}
+		effect = {
+			clr_character_flag = open_vampire_menu
+		}
+	}
+
+	little_red_book = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+		}
+		allow = {
+			
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = vamptutorial.1 }
+			}
+		}
+	}
+
+	vampire_power_blood_artifice = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+			has_character_flag = vampire_power_blood_artifice
+		}
+		allow = {
+			ROOT = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = vampire_not_creating_weapon
+					NOR = { 
+						has_character_flag = blood_upgrading_mace
+						has_character_flag = blood_upgrading_axe
+						has_character_flag = blood_upgrading_sword
+					}
+				}
+				custom_tooltip = {
+					text = has_5_blood_power 
+					check_variable = {
+						which = mana_current
+						value >= 5
+					}
+				}
+				NOT = {
+					any_artifact = {
+						has_artifact_flag = vampiric_crafted
+					}
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = vampirepowers.15 }
+			}
+		}
+	}
+
+	take_on_vampiric_form = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+			OR = {
+				has_character_flag = form_of_alukah
+				has_character_flag = form_of_asanbosam
+				has_character_flag = form_of_vrykolakas
+			}
+		}
+		allow = {
+			NOT = { has_character_modifier = vampire_power_active }
+		}
+		effect = {
+			character_event = { id = vampirepowers.11 }
+		}
+	}
+
+	debug_max_blood = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+		}
+		allow = {
+			NOT = { has_character_modifier = vampire_power_active }
+			NOT = { 
+				check_variable = {
+					which = mana_current
+					value = 10
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = vampiric_experience_text
+				set_variable = { which = mana_current value = 10 }
+				change_variable = { which = total_blood_drank value = 10 }
+				hidden_tooltip = {
+					vampire_meter_recalc = yes
+				}
+				add_character_modifier = {
+					name = vampiric_power
+					days = -1
+				}
+			}
+		}
+	}
+
+	debug_experience = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = {
+				text = vampiric_experience_text
+				change_variable = { which = total_blood_drank value = 25 }
+			}
+		}
+	}
+
+	debug_add_powers = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+		}
+		allow = {
+			
+		}
+		effect = {
+			random_list = {
+				10 = {
+					set_character_flag = vampire_power_devour
+					modifier = {
+						factor = 0
+						has_character_flag = vampire_power_devour
+					}
+				}
+				10 = {
+					set_character_flag = vampire_power_blood_artifice
+					modifier = {
+						factor = 0
+						has_character_flag = vampire_power_blood_artifice
+					}
+				}
+				10 = {
+					set_character_flag = vampire_power_sire
+					modifier = {
+						factor = 0
+						has_character_flag = vampire_power_sire
+					}
+				}
+				10 = {
+					set_character_flag = vampire_power_hypnotise
+					modifier = {
+						factor = 0
+						has_character_flag = vampire_power_hypnotise
+					}
+				}
+				10 = {
+					set_character_flag = form_of_asanbosam
+					modifier = {
+						factor = 0
+						has_character_flag = form_of_asanbosam
+					}
+				}
+				10 = {
+					set_character_flag = form_of_alukah
+					modifier = {
+						factor = 0
+						has_character_flag = form_of_alukah
+					}
+				}
+				10 = {
+					set_character_flag = form_of_vrykolakas
+					modifier = {
+						factor = 0
+						has_character_flag = form_of_vrykolakas
+					}
+				}
+			}
+		}
+	}
+
+	debug_add_random_artifact = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+		}
+		allow = {
+			
+		}
+		effect = {
+			random_list = {
+				10 = {
+					add_artifact = vampiric_blood_sword
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_blood_sword
+					}
+				}
+				10 = {
+					add_artifact = vampiric_blood_mace
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_blood_mace
+					}
+				}
+				10 = {
+					add_artifact = vampiric_blood_axe
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_blood_axe
+					}
+				}
+				10 = {
+					add_artifact = sword_of_eastern_vampire
+					modifier = {
+						factor = 0 
+						has_artifact = sword_of_eastern_vampire
+					}
+				}
+				10 = {
+					add_artifact = vampiric_shroud
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_shroud
+					}
+				}
+				10 = {
+					add_artifact = vampiric_blood_tablet
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_blood_tablet
+					}
+				}
+				10 = {
+					add_artifact = vampiric_book_of_blood
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_book_of_blood
+					}
+				}
+				10 = {
+					add_artifact = vampiric_papal_blood
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_papal_blood
+					}
+				}
+				10 = {
+					add_artifact = vampiric_unlimited_heart
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_unlimited_heart
+					}
+				}
+				10 = {
+					add_artifact = vampiric_skull
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_skull
+					}
+				}
+				10 = {
+					add_artifact = vampiric_sanguine_ruby
+					modifier = {
+						factor = 0 
+						has_artifact = vampiric_sanguine_ruby
+					}
+				}
+			}
+		}
+	}
+
+	show_my_bloodline = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			trait = vampire
+			has_character_flag = open_vampire_menu
+		}
+		allow = {
+			NOT = { has_character_modifier = vampire_power_active }
+		}
+		effect = {
+			if = {
+				limit = {
+					has_character_flag = bloodline_founder
+				}
+				character_event = { id = vampirepowers.14 }
+			}
+			else = {
+				persistent_event_target:bloodline_founder = {
+					character_event = { id = vampirepowers.13 }
+				}
+			}
+		}
+	}
+}
+
+targeted_decisions = { 
+	feed_on_target = {
+		diplomacy_icon = GFX_vampire_diplo_icon
+		from_potential = { 
+			trait = vampire
+			ai = no 
+		}
+		potential = { 
+			NOR = {
+				trait = vampire
+				trait = thrall
+			}
+			NOT = { has_character_modifier = thrall }
+		}
+		allow = {
+			FROM = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = has_not_fed_recently
+					NOT = { 
+						has_character_modifier = recently_fed 
+					}
+				}
+				custom_tooltip = {
+					text = not_already_hunting
+					NOT = { 
+						has_character_flag = hunting_prey
+					}
+				}
+			}
+			ROOT = {
+				at_location = FROM
+				is_within_diplo_range = FROM
+				in_seclusion = no
+				NOT = { has_non_aggression_pact_with = FROM }
+				NOT = { has_character_modifier = drained }
+				NOT = { has_character_modifier = thrall }
+			}
+		}
+		effect = {
+			ROOT = { 
+				save_event_target_as = vampire_prey_target
+			}
+			FROM = {
+				character_event = { id = vampirepowers.1 }
+				set_character_flag = hunting_prey
+			}
+		}
+	}
+
+	feed_on_target_lethal = {
+		diplomacy_icon = GFX_vampire_diplo_icon
+		from_potential = { 
+			trait = vampire
+			ai = no 
+			NOT = { has_character_modifier = richest_blood }
+			has_character_flag = vampire_power_devour
+		}
+		potential = { 
+			NOR = {
+				trait = vampire
+				trait = thrall
+			}
+			NOT = { has_character_modifier = thrall }
+		}
+		allow = {
+			FROM = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = has_not_fed_recently
+					NOT = { 
+						has_character_modifier = recently_fed 
+					}
+				}
+				custom_tooltip = {
+					text = not_already_hunting
+					NOT = { 
+						has_character_flag = hunting_prey
+					}
+				}
+			}
+			ROOT = {
+				at_location = FROM
+				is_within_diplo_range = FROM
+				in_seclusion = no
+				NOT = { has_non_aggression_pact_with = FROM }
+				NOT = { has_character_modifier = drained }
+				NOT = { has_character_modifier = thrall }
+			}
+		}
+		effect = {
+			ROOT = { 
+				save_event_target_as = vampire_prey_target
+			}
+			FROM = {
+				character_event = { id = vampirepowers.9 }
+				set_character_flag = hunting_prey
+			}
+		}
+	}
+	
+	hypontise_target = {
+		diplomacy_icon = GFX_vampire_diplo_icon
+		from_potential = { 
+			trait = vampire
+			ai = no 
+			has_character_flag = vampire_power_hypnotise
+		}
+		potential = { 
+			NOR = {
+				trait = vampire
+				trait = thrall
+			}
+		}
+		allow = {
+			FROM = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = has_not_hypnotised_recently
+					NOT = { 
+						has_character_modifier = recently_hypnotised 
+					}
+				}
+				custom_tooltip = {
+					text = has_5_blood_power 
+					check_variable = {
+						which = mana_current
+						value >= 5
+					}
+				}
+				custom_tooltip = {
+					text = not_already_hypontising
+					NOT = { 
+						has_character_flag = hypontising_prey
+					}
+				}
+			}
+			ROOT = {
+				is_within_diplo_range = FROM
+				in_seclusion = no
+				NOT = { has_non_aggression_pact_with = FROM }
+				NOT = { FROM = { holds_favor_on = ROOT }}
+				NOT = { has_character_modifier = hypnotised }
+			}
+		}
+		effect = {
+			ROOT = { 
+				save_event_target_as = vampire_prey_target
+			}
+			FROM = {
+				character_event = { id = vampirepowers.3 }
+				set_character_flag = hypontising_prey
+			}
+		}
+	}
+	
+	thrall_target = {
+		diplomacy_icon = GFX_vampire_diplo_icon
+		from_potential = { 
+			trait = vampire
+			ai = no 
+		}
+		potential = { 
+			NOR = {
+				trait = vampire
+				trait = thrall
+			}
+			is_landed = false
+			liege = { character = from }
+		}
+		allow = {
+			FROM = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = has_not_thralled_recently
+					NOT = { 
+						has_character_modifier = has_thralled_recently 
+					}
+				}
+				custom_tooltip = {
+					text = has_7_blood_power 
+					check_variable = {
+						which = mana_current
+						value >= 7
+					}
+				}
+				custom_tooltip = {
+					text = not_thralling_prey
+					NOT = { 
+						has_character_flag = thralling_prey
+					}
+				}
+			}
+			ROOT = {
+				is_within_diplo_range = FROM
+				in_seclusion = no
+				NOT = { has_non_aggression_pact_with = FROM }
+				NOT = { FROM = { holds_favor_on = ROOT }}
+				NOT = { has_character_modifier = thrall }
+			}
+		}
+		effect = {
+			ROOT = { 
+				save_event_target_as = vampire_prey_target
+			}
+			FROM = {
+				character_event = { id = vampirepowers.4 }
+				set_character_flag = thralling_prey
+			}
+		}
+	}
+
+	release_thrall = {
+		diplomacy_icon = GFX_vampire_diplo_icon
+		from_potential = { 
+			trait = vampire
+			ai = no 
+		}
+		potential = { 
+			has_opinion_modifier = {
+				who = FROM
+				name = opinion_loyal_servant
+			}
+		}
+		allow = {
+			FROM = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = has_not_thralled_recently
+					NOT = { 
+						has_character_modifier = has_thralled_recently 
+					}
+				}
+				custom_tooltip = {
+					text = has_7_blood_power 
+					check_variable = {
+						which = mana_current
+						value >= 7
+					}
+				}
+				custom_tooltip = {
+					text = not_thralling_prey
+					NOT = { 
+						has_character_flag = thralling_prey
+					}
+				}
+			}
+			ROOT = {
+				is_within_diplo_range = FROM
+				in_seclusion = no
+				NOT = { has_non_aggression_pact_with = FROM }
+				NOT = { FROM = { holds_favor_on = ROOT }}
+				has_character_modifier = thrall
+				has_opinion_modifier = {
+					who = FROM
+					name = opinion_loyal_servant
+				}
+			}
+		}
+		effect = {
+			ROOT = { 
+				save_event_target_as = vampire_release_thrall
+			}
+			FROM = {
+				character_event = { id = vampirepowers.5 }
+				set_character_flag = thralling_prey
+			}
+		}
+	}
+
+	sire_new_vampire = {
+		diplomacy_icon = GFX_vampire_diplo_icon
+		from_potential = { 
+			trait = vampire
+			ai = no 
+			has_character_flag = vampire_power_sire
+		}
+		potential = { 
+			NOR = {
+				trait = vampire
+				trait = thrall
+			}
+			dynasty = none
+			liege = { character = from }
+		}
+		allow = {
+			FROM = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = has_10_blood_power 
+					check_variable = {
+						which = mana_current
+						value >= 10
+					}
+				}
+				custom_tooltip = {
+					text = not_currently_siring
+					NOT = { 
+						has_character_flag = not_currently_siring
+					}
+				}
+				custom_tooltip = {
+					text = not_created_sire
+					NOT = { 
+						has_character_modifier = not_created_sire 
+					}
+				}
+			}
+			ROOT = {
+				is_within_diplo_range = FROM
+				in_seclusion = no
+				NOT = { has_non_aggression_pact_with = FROM }
+				NOT = { FROM = { holds_favor_on = ROOT }}
+				NOT = { has_character_modifier = thrall }
+			}
+		}
+		effect = {
+			ROOT = { 
+				save_event_target_as = new_vampire_sired
+			}
+			FROM = {
+				character_event = { id = vampirepowers.12 }
+				set_character_flag = siring_new_vampire
+			}
+		}
+	}
+}

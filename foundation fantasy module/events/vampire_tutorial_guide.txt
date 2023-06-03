@@ -1,0 +1,138 @@
+namespace = vamptutorial
+
+character_event = {		#main menu
+	id = vamptutorial.1
+	desc = EVTDESCvamptutorial.1
+	picture = GFX_book_vampire
+	
+	is_triggered_only = yes
+	option = {
+		name = vamptutorial1OPTa	#haemomana
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.3 }
+		}
+	}
+	option = {
+		name = vamptutorial2OPTa	#blood efficacy
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.4 }
+		}
+	}
+	option = {
+		name = vamptutorial3OPTa	#More Options
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.2 }
+		}
+	}
+	option = {
+		name = vamptutorial4OPTa	#exit
+	}
+}
+
+character_event = {		#page 2
+	id = vamptutorial.2
+	desc = EVTDESCvamptutorial.1
+	picture = GFX_book_vampire
+	is_triggered_only = yes
+	option = {
+		name = vamptutorial5OPTa	#children
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.5 }
+		}
+	}
+	option = {
+		name = vamptutorial6OPTa	#suspicion
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.6 }
+		}
+	}
+	option = {
+		name = vamptutorial7OPTa	#passing the curse on
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.7 }
+		}
+	}
+	option = {
+		name = vamptutorial4OPTa	#exit
+	}
+}
+
+character_event = {		#haemomana
+	id = vamptutorial.3
+	desc = EVTDESCvamptutorial.3
+	picture = GFX_book_vampire
+	is_triggered_only = yes
+	option = {
+		name = vamptutorial8OPTa	#back
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.1 }
+		}
+	}
+	option = {
+		name = vamptutorial4OPTa	#exit
+	}
+}
+
+character_event = {		#blood efficacy
+	id = vamptutorial.4
+	desc = EVTDESCvamptutorial.4
+	picture = GFX_book_vampire
+	is_triggered_only = yes
+	option = {
+		name = vamptutorial8OPTa	#back
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.1 }
+		}
+	}
+	option = {
+		name = vamptutorial4OPTa	#exit
+	}
+}
+
+character_event = {		#children
+	id = vamptutorial.5
+	desc = EVTDESCvamptutorial.5
+	picture = GFX_book_vampire
+	is_triggered_only = yes
+	option = {
+		name = vamptutorial8OPTa	#back
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.1 }
+		}
+	}
+	option = {
+		name = vamptutorial4OPTa	#exit
+	}
+}
+
+character_event = {		#suspicion
+	id = vamptutorial.6
+	desc = EVTDESCvamptutorial.6
+	picture = GFX_book_vampire
+	is_triggered_only = yes
+	option = {
+		name = vamptutorial8OPTa	#back
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.1 }
+		}
+	}
+	option = {
+		name = vamptutorial4OPTa	#exit
+	}
+}
+
+character_event = {		#passing the curse on
+	id = vamptutorial.7
+	desc = EVTDESCvamptutorial.7
+	picture = GFX_book_vampire
+	is_triggered_only = yes
+	option = {
+		name = vamptutorial8OPTa	#back
+		hidden_tooltip = {
+			character_event = { id = vamptutorial.1 }
+		}
+	}
+	option = {
+		name = vamptutorial4OPTa	#exit
+	}
+}

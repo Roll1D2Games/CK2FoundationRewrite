@@ -1,0 +1,189 @@
+namespace = vamptech
+
+# 1 = Vampire Ruler Designer Fix
+# 2 - 6 = Fertility Nerfs
+# 7 - 16 = Blood Efficacy (Strength of Vampire's Blood)
+# 8 - = Blood Mana
+
+#### Intialises Vampires without the right traits ####
+
+narrative_event = {		#spontaneous vampirism: console commands, ruler designer, so they don't BREAK SHIT etc
+	id = vamptech.1
+	title = EVTTITLEvamptech.1
+	desc = EVTDESCvamptech.1
+	picture = GFX_evt_bleeding_from_neck_hf
+
+	only_playable = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		trait = vampire
+		NOT = {
+			OR = {
+				trait = vampire_gen_4
+				trait = vampire_gen_3
+				trait = vampire_gen_2
+				trait = vampire_gen_1
+			}
+		}
+	}
+	
+	option = {
+		name = vamptech1optA
+		hidden_tooltip = {
+			is_new_vampire = yes
+			remove_trait = feeble
+			vampire_meter_recalc = yes
+			add_character_modifier = { name = recently_fed months = 2 }
+			add_trait = vampire_gen_1	
+			if = {
+				limit = {
+					NOT = { has_character_flag = vampire_spawn }
+				}
+				set_character_flag = bloodline_founder
+				set_character_flag = bloodline_of_@ROOT
+				save_persistent_event_target = { name = bloodline_founder scope = ROOT }
+			}
+		}
+	}
+}
+
+##### Vampire Fertility Nerfs #####
+
+character_event = {		#fertility nerf to stop a million vampire families
+	id = vamptech.2
+	desc = EVTDESCvamptech.2
+
+	only_playable = yes
+	hide_window = yes
+
+	trigger = {
+		trait = vampire
+		num_of_children == 1
+		NOT = { has_character_modifier = vampire_fertility_minus_1 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vamptech2optA
+		add_character_modifier = { name = vampire_fertility_minus_1 }
+		remove_character_modifier = { name = vampire_fertility_minus_2 }
+		remove_character_modifier = { name = vampire_fertility_minus_3 }
+		remove_character_modifier = { name = vampire_fertility_minus_4 }
+		remove_character_modifier = { name = vampire_fertility_minus_5 }
+	}
+}
+
+character_event = {
+	id = vamptech.3
+	desc = EVTDESCvamptech.3
+
+	only_playable = yes
+	hide_window = yes
+
+	trigger = {
+		trait = vampire
+		num_of_children == 2
+		NOT = { has_character_modifier = vampire_fertility_minus_2 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vamptech3optA
+		remove_character_modifier = { name = vampire_fertility_minus_1 }
+		add_character_modifier = { name = vampire_fertility_minus_2 }
+		remove_character_modifier = { name = vampire_fertility_minus_3 }
+		remove_character_modifier = { name = vampire_fertility_minus_4 }
+		remove_character_modifier = { name = vampire_fertility_minus_5 }
+	}
+}
+
+character_event = {	
+	id = vamptech.4
+	desc = EVTDESCvamptech.4
+	
+	only_playable = yes
+	hide_window = yes
+
+	trigger = {
+		trait = vampire
+		num_of_children == 3
+		NOT = { has_character_modifier = vampire_fertility_minus_3 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vamptech4optA
+		remove_character_modifier = { name = vampire_fertility_minus_1 }
+		remove_character_modifier = { name = vampire_fertility_minus_2 }
+		add_character_modifier = { name = vampire_fertility_minus_3 }
+		remove_character_modifier = { name = vampire_fertility_minus_4 }
+		remove_character_modifier = { name = vampire_fertility_minus_5 }
+	}
+}
+
+character_event = {	
+	id = vamptech.5
+	desc = EVTDESCvamptech.5
+
+	only_playable = yes
+	hide_window = yes
+
+	trigger = {
+		trait = vampire
+		num_of_children == 4
+		NOT = { has_character_modifier = vampire_fertility_minus_4 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vamptech5optA
+		remove_character_modifier = { name = vampire_fertility_minus_1 }
+		remove_character_modifier = { name = vampire_fertility_minus_2 }
+		remove_character_modifier = { name = vampire_fertility_minus_3 }
+		add_character_modifier = { name = vampire_fertility_minus_4 }
+		remove_character_modifier = { name = vampire_fertility_minus_5 }
+	}
+}
+
+character_event = {	
+	id = vamptech.6
+	desc = EVTDESCvamptech.6
+
+	only_playable = yes
+	hide_window = yes
+
+	trigger = {
+		trait = vampire
+		num_of_children == 5
+		NOT = { has_character_modifier = vampire_fertility_minus_5 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vamptech6optA
+		remove_character_modifier = { name = vampire_fertility_minus_1 }
+		remove_character_modifier = { name = vampire_fertility_minus_2 }
+		remove_character_modifier = { name = vampire_fertility_minus_3 }
+		remove_character_modifier = { name = vampire_fertility_minus_4 }
+		add_character_modifier = { name = vampire_fertility_minus_5 }
+	}
+}

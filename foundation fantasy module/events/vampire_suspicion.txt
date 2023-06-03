@@ -1,0 +1,656 @@
+namespace = vampsuspicion
+
+### Event 1: You've been caught and now are being investigated
+### Event 2: Investigation Results
+### Event 3: Suspicion increases
+### Event 4: No Suspicion increase
+### Event 5: First Warning for 3 Suspicion
+### Event 6: Second Warning for 6 Suspicion
+### Event 7: Third and Final Warning for 9 Suspicion
+### Event 8: Inquisition Stakes You for 10 Suspicion
+### Event 999: Ping Event for Portraits
+
+character_event = {		#oh no you were caught!
+	id = vampsuspicion.1
+	desc = EVTDESCvampsuspicion.1
+	picture = GFX_evt_suspicious_noble
+
+	only_playable = yes
+	#hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { which = vampire_investigator_score value = 0 }
+		set_variable = { which = vampire_hunter_score value = 0 }
+		save_event_target_as = vampire_under_investigation
+		if = {
+			limit = {
+				event_target:vampire_prey_target = {
+					liege = {
+						job_spymaster = {
+							is_alive = yes
+						}
+					}
+				}
+			}
+			event_target:vampire_prey_target = {
+				liege = {
+					job_spymaster = {
+						save_event_target_as = vampire_current_investigator
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:vampire_prey_target = {
+					liege = {
+						job_chancellor = {
+							is_alive = yes
+						}
+					}
+				}
+			}
+			event_target:vampire_prey_target = {
+				liege = {
+					job_chancellor = {
+						save_event_target_as = vampire_current_investigator
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:vampire_prey_target = {
+					liege = {
+						job_spiritual = {
+							is_alive = yes
+						}
+					}
+				}
+			}
+			event_target:vampire_prey_target = {
+				liege = {
+					job_spiritual = {
+						save_event_target_as = vampire_current_investigator
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:vampire_prey_target = {
+					liege = {
+						job_marshal = {
+							is_alive = yes
+						}
+					}
+				}
+			}
+			event_target:vampire_prey_target = {
+				liege = {
+					job_marshal = {
+						save_event_target_as = vampire_current_investigator
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:vampire_prey_target = {
+					liege = {
+						job_treasurer = {				#best of luck there fella
+							is_alive = yes
+						}
+					}
+				}
+			}
+			event_target:vampire_prey_target = {
+				liege = {
+					job_treasurer = {
+						save_event_target_as = vampire_current_investigator
+					}
+				}
+			}
+		}
+		else = {
+			event_target:vampire_prey_target = {
+				liege = {
+					random_courtier = {
+						limit = {
+							ai = yes
+						}
+						save_event_target_as = vampire_current_investigator
+					}
+				}
+			}
+		}
+		### Investigator Score Below ###
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					intrigue > 10
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					intrigue > 15
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					learning > 10
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					diplomacy > 10
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = genius
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = genius_1 #prodigy
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 2 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = schemer
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 2 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = elusive_shadow
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = diligent
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = just
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					opinion = {
+						who = event_target:vampire_prey_target
+						value >= 30
+					}
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					opinion = {
+						who = event_target:vampire_prey_target
+						value >= 95
+					}
+				}
+			}
+			change_variable = { which = vampire_investigator_score value = 1 }
+		}
+		#### Negative investigator bonuses ####
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = craven
+				}
+			}
+			subtract_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					trait = slothful
+				}
+			}
+			subtract_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					opinion = {
+						who = event_target:vampire_prey_target
+						value <= -30
+					}
+				}
+			}
+			subtract_variable = { which = vampire_investigator_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_current_investigator = {
+					opinion = {
+						who = event_target:vampire_prey_target
+						value <= -95
+					}
+				}
+			}
+			subtract_variable = { which = vampire_investigator_score value = 1 }
+		}
+		### Vampire Score Below ###
+				if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					intrigue > 10
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					intrigue > 15
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					learning > 10
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					diplomacy > 10
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = genius
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = genius_1 #prodigy
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 2 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = schemer
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 2 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = elusive_shadow
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = diligent
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = impaler
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = vampire_gen_3
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = vampire_gen_4
+				}
+			}
+			change_variable = { which = vampire_hunter_score value = 1 }
+		}
+		#### Negative investigator bonuses ####
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = craven
+				}
+			}
+			subtract_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = slothful
+				}
+			}
+			subtract_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = honest
+				}
+			}
+			subtract_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					trait = vampire_gen_1
+				}
+			}
+			subtract_variable = { which = vampire_hunter_score value = 1 }
+		}
+		if = {
+			limit = {
+				check_variable = { which = vampire_hunter_score which >= vampire_investigator_score }
+			}
+			event_target:vampire_under_investigation = {
+				set_character_flag = vampire_escaped_crime
+			}
+		}
+	}
+	
+	option = {
+		name = vampsuspicion1OPTa
+		event_target:vampire_current_investigator = {
+			character_event = { id = vampsuspicion.999 }
+		}
+		character_event = { id = vampsuspicion.2 }
+	}
+}
+
+character_event = {		#ping event from investigator
+	id = vampsuspicion.2
+	desc = EVTDESCvampsuspicion.2
+	picture = GFX_evt_poke_king_in_chest
+
+	only_playable = yes
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		name = vampsuspicion3OPTa
+		clear_event_target = vampire_prey_target
+		if = {
+			limit = {
+				event_target:vampire_under_investigation = {
+					has_character_flag = vampire_escaped_crime
+				}
+			}
+			event_target:vampire_under_investigation = {
+				character_event = { id = vampsuspicion.4 }		#escapes the crime
+			}
+		}
+		else = {
+			event_target:vampire_under_investigation = {
+				character_event = { id = vampsuspicion.3 }	#does not escape the crime
+			}
+		}
+	}
+}
+
+character_event = {		#suspicion increases
+	id = vampsuspicion.3
+	desc = EVTDESCvampsuspicion.3
+	picture = GFX_evt_poke_king_in_chest
+
+	only_playable = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				persistent_event_target:vampire_lethal_drain_victim = {
+					has_character_flag = drained_lethal
+				}
+			}
+			persistent_event_target:vampire_lethal_drain_victim = {
+				death = { death_reason = death_murder killer = ROOT } 
+			}
+		}
+	}
+	
+	option = {
+		name = vampsuspicion3OPTa
+		clear_event_target = vampire_prey_target
+		clear_event_target = vampire_under_investigation
+		clear_event_target = vampire_current_investigator
+		clr_character_flag = vampire_escaped_crime
+		if = {
+			limit = {
+				has_game_rule = {
+					name = suspicion_visible
+					value = enabled
+				}
+			}
+			add_character_modifier = { name = suspicion_level duration = -1 }
+		}
+		custom_tooltip = {
+			text = suspicion_increases_text
+			change_variable = { which = overall_suspicion value = 1 }
+		}
+	}
+}
+
+character_event = {		#close call
+	id = vampsuspicion.4
+	desc = EVTDESCvampsuspicion.4
+	picture = GFX_evt_scandal
+
+	only_playable = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				persistent_event_target:vampire_lethal_drain_victim = {
+					has_character_flag = drained_lethal
+				}
+			}
+			persistent_event_target:vampire_lethal_drain_victim = {
+				death = { death_reason = death_murder_unknown_butchered killer = ROOT } 
+			}
+		}
+	}
+	
+	option = {
+		name = vampsuspicion4OPTa
+		clear_event_target = vampire_prey_target
+		clear_event_target = vampire_under_investigation
+		clear_event_target = vampire_current_investigator
+		clr_character_flag = vampire_escaped_crime
+		clear_persistent_event_target = vampire_lethal_drain_victim
+	}
+}
+
+#### Suspicion Modifier Gain ####
+
+character_event = {	
+	id = vampsuspicion.5
+	desc = EVTDESCvampsuspicion.5
+	picture = GFX_evt_catching_heretic
+
+	ai = no
+
+	mean_time_to_happen = { 
+		days = 1 
+	}
+
+	trigger = {
+		check_variable = {
+			which = overall_suspicion
+			value  == 3
+		}
+		NOT = {
+			has_character_modifier = rumoured_vampire
+		}
+	}
+	
+	option = {
+		name = vampsuspicion5OPTa
+		add_character_modifier = {
+			name = rumoured_vampire
+			duration = -1
+		}
+	}
+}
+
+character_event = {	
+	id = vampsuspicion.6
+	desc = EVTDESCvampsuspicion.6
+	picture = GFX_evt_catching_heretic
+
+	ai = no
+
+	mean_time_to_happen = { 
+		days = 1 
+	}
+
+	trigger = {
+		check_variable = {
+			which = overall_suspicion
+			value  == 6
+		}
+		NOT = {
+			has_character_modifier = suspected_vampire
+		}
+	}
+	
+	option = {
+		name = vampsuspicion6OPTa
+		add_character_modifier = {
+			name = suspected_vampire
+			duration = -1
+		}
+	}
+}
+
+character_event = {
+	id = vampsuspicion.7
+	desc = EVTDESCvampsuspicion.7
+	picture = GFX_evt_catching_heretic
+
+	ai = no
+
+	mean_time_to_happen = { 
+		days = 1 
+	}
+
+	trigger = {
+		check_variable = {
+			which = overall_suspicion
+			value  == 9
+		}
+		NOT = {
+			has_character_modifier = strongly_suspected_vampire
+		}
+	}
+	
+	option = {
+		name = vampsuspicion7OPTa
+		add_character_modifier = {
+			name = strongly_suspected_vampire
+			duration = -1
+		}
+	}
+}
+
+character_event = {
+	id = vampsuspicion.8
+	desc = EVTDESCvampsuspicion.8
+	picture = GFX_evt_staked_hf
+
+	ai = no
+
+	mean_time_to_happen = { 
+		days = 1 
+	}
+
+	trigger = {
+		check_variable = {
+			which = overall_suspicion
+			value >= 10
+		}
+	}
+	
+	option = {
+		name = vampsuspicion8OPTa
+		death = { death_reason = death_execution_staked }
+	}
+}
+
+### Ping Event to get Picture ###
+
+character_event = {
+	id = vampsuspicion.999
+	desc = EVTDESCvampsuspicion.999
+	picture = GFX_evt_staked_hf
+
+	ai = no
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampsuspicion999OPTa
+	}
+}
+

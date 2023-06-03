@@ -1,0 +1,87 @@
+namespace = magicEvnt
+
+character_event = {	
+	id = magicEvnt.1
+	desc = EVTDESCmagicEvnt.1
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		AI = no
+		AND = {
+			OR = {
+				trait = mage_scholar
+				trait = apprentice_wizard
+				trait = experienced_mage
+				trait = expert_sorcerer
+			}
+			NOT = { has_character_flag = mage_init }
+		}
+	}
+	
+	option = {
+		name = magicEvnt1OPTa 
+		is_new_mage = yes
+		character_event = { id = magicEvnt.2 days = 31 }
+	}
+}
+
+### Consistent mana gain event ###
+
+character_event = {	
+	id = magicEvnt.2
+	desc = EVTDESCmagicEvnt.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = mage_init
+		AI = no
+		NOT = { trait = vampire }
+	}
+	
+	option = {
+		name = magicEvnt2OPTa 
+		ROOT = {
+			export_to_variable = { which = mana_gain value = learning }
+		}
+		divide_variable = { which = mana_gain value = 8 }
+		change_variable = { which = mana_current which = mana_gain }
+		if = {
+			limit = {
+				check_variable = {
+					which = mana_current 
+					value > 60
+				}
+			}
+			set_variable = { which = mana_current value = 60 }
+		}
+		character_event = { id = magicEvnt.2 days = 45 }
+	}
+}
+
+### Random change for mages to gain learning, off load to society/focus eventually ###
+
+character_event = {	
+	id = magicEvnt.3
+	desc = EVTDESCmagicEvnt.3
+
+	trigger = {
+		has_character_flag = mage_init
+		NOT = { learning > 30 }
+		NOT = { trait = vampire }
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = magicEvnt3OPTa 
+		change_learning = 1	#base stat change!
+	}
+}
+

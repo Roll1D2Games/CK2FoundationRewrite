@@ -1,0 +1,122 @@
+namespace = vampAI
+
+character_event = {	
+	id = vampAI.1
+	desc = EVTDESCvampAI.1
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	trigger = {
+		AND = {
+			trait = vampire
+			AI = yes
+		}
+	}
+	
+	option = {			## Nothing to Hunger ##
+		name = vamphungerAI1OPTa 
+		trigger = {
+			NOT = {
+				has_character_modifier = vampire_hunger
+				has_character_modifier = vampire_starving
+				trait = vampire_dying
+				trait = vampire_verge_of_death
+			}
+		}
+		random_list = {
+			70 = {
+				add_character_modifier = { name = vampire_hunger duration = -1 }
+			}
+			30 = {
+				character_event = { id = vampAI.2 }
+			}
+		}
+	}
+	
+	option = {			## Hunger to Starving ##
+		name = vamphungerAI1OPTb
+		trigger = {
+			has_character_modifier = vampire_hunger
+		}
+		random_list = {
+			30 = {
+				remove_character_modifier = vampire_hunger
+				add_character_modifier = { name = vampire_starving duration = -1 }
+			}
+			70 = {
+				character_event = { id = vampAI.2 }
+			}
+		}
+	}
+	
+	option = {			## Starving to Dying ##
+		name = vamphungerAI1OPTc	
+		trigger = {
+			has_character_modifier = vampire_starving
+		}
+		random_list = {
+			30 = {
+				remove_character_modifier = vampire_starving
+				add_trait = vampire_dying
+			}
+			70 = {
+				character_event = { id = vampAI.2 }
+			}
+		}
+	}
+	
+	option = {			## Dying to Verge of Death ##
+		name = vamphungerAI1OPTd
+		trigger = {
+			trait = vampire_dying
+		}
+		random_list = {
+			30 = {
+				remove_trait = vampire_dying
+				add_trait = vampire_verge_of_death
+			}
+			70 = {
+				character_event = { id = vampAI.2 }
+			}
+		}
+	}
+	
+	option = {			## Verge of Death to Extremely Dead ##
+		name = vamphungerAI1OPTE
+		trigger = {
+				trait = vampire_verge_of_death
+		}
+		random_list = {
+			30 = {
+				death = { death_reason = death_poor_health }
+			}
+			70 = {
+				remove_trait = vampire_verge_of_death
+				character_event = { id = vampAI.2 }
+			}
+		}
+	}
+}
+
+character_event = {	
+	id = vampAI.2		## Feed on randomer ##
+	desc = EVTDESCvampAI.2
+	
+	only_playable = yes
+
+	is_triggered_only = yes
+	
+	option = {			
+		name = vamphungerAI1OPTE
+		add_character_modifier = { name = recently_fed months = 4 }
+		random_host_courtier = {
+			add_character_modifier = { name = drained months = 2 }
+		}
+		remove_character_modifier = vampire_hunger		## fix some weird fuckery that occurs ##
+		remove_character_modifier = vampire_starving
+		remove_trait = vampire_dying
+		remove_trait = vampire_verge_of_death
+	}
+}

@@ -1,0 +1,49 @@
+###############################################################
+#														      #
+#                 Vampire Children/Hybrid events              #
+#															  #
+###############################################################														
+#
+#	vampirevictim.1 = female vampire pregnancy 
+
+namespace = vampirechildren
+
+#### Female Vampire is pregnant ####
+
+character_event = {
+	id = vampirechildren.1
+	desc = EVTDESCvampirechildren.1
+	picture = GFX_evt_bad_news
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirechildren1optA
+		set_character_flag = vampiric_pregnancy
+	}
+}
+
+#### Child birth check, calculate supernatural pregnancy outcome ####
+
+character_event = {
+	id = vampirechildren.2
+	desc = EVTDESCvampirechildren.2
+	picture = GFX_evt_bad_news
+
+	is_triggered_only = yes
+
+	immediate = {
+		father_even_if_dead = {
+			if = {
+				limit = {
+					trait = vampire
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = vampirechildren2optA
+		set_character_flag = vampiric_pregnancy
+	}
+}

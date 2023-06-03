@@ -1,0 +1,253 @@
+namespace = vamphunger
+
+#### Random hunger events ####
+
+
+character_event = {	
+	id = vamphunger.1
+	desc = EVTDESCvamphunger.1
+	picture = GFX_evt_bad_news
+	
+	is_triggered_only = yes
+	
+	option = {		#from neutral to hungry
+		name = vamphunger1OPTa
+		trigger = {
+			NOT = {
+				OR ={
+					has_character_modifier = vampire_hunger
+					has_character_modifier = vampire_starving
+				}
+			}
+		}
+		add_character_modifier = { name = vampire_hunger duration = -1 } 	#Slight debuff due to hunger#
+		custom_tooltip = {
+			text = hunger_grows
+		}
+		blood_recalc = yes	
+	}
+	
+	option = {		#from hungry to starving
+		name = vamphunger1OPTb
+		trigger = {
+			has_character_modifier = vampire_hunger
+			NOT = { has_character_modifier = vampire_starving }		#Slight debuff due to hunger#
+		}
+		custom_tooltip = {
+			text = hunger_grows_strong
+			subtract_variable = { which = mana_current value = 1 }		#Consume haemomana to stay alive#
+			blood_recalc = yes
+			vampire_meter_recalc = yes
+		}
+		add_character_modifier = { name = vampire_starving duration = -1 }
+		remove_character_modifier = vampire_hunger
+	}
+	
+	option = {		#starving
+		name = vamphunger1OPTc
+		trigger = {
+			has_character_modifier = vampire_starving
+			NOT = { has_character_modifier = vampire_hunger }
+		}
+		custom_tooltip = {
+			text = hunger_grows_greatly
+			subtract_variable = { which = mana_current value = 3 }	#Consume large quantity to stay alive, repeat this until 0 remains#
+			vampire_meter_recalc = yes
+			blood_recalc = yes
+		}
+	}
+}
+
+### If at 0 haemonana for too long ###
+
+character_event = {	
+	id = vamphunger.3
+	desc = EVTDESCvamphunger.3
+	picture = GFX_evt_died_old_age
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vamphunger3OPTa	#feed or die
+		if = {
+			limit = {
+				trait = robust
+			}
+			set_character_flag = vampire_was_robust
+			remove_trait = robust
+			blood_recalc = yes	
+		}
+		else_if = {
+			limit = {
+				trait = strong
+			}
+			set_character_flag = vampire_was_strong
+			remove_trait = strong
+			blood_recalc = yes	
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					trait = feeble
+				}
+			}
+			add_trait = feeble
+			blood_recalc = yes	
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					trait = vampire_dying
+				}
+			}
+			add_trait = vampire_dying	#-3 to all stats
+			blood_recalc = yes	
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					trait = vampire_verge_of_death
+				}
+			}
+			add_trait = vampire_verge_of_death	#-5 to all stats
+		}
+		else_if = {
+			death = { death_reason = death_poor_health } 
+		}
+	}
+}
+
+### If above 0 haemomana and feeble, remove feeble ###
+
+character_event = {	
+	id = vamphunger.4
+	desc = EVTDESCvamphunger.4
+	picture = GFX_evt_died_old_age #CHANGE TO STRONG
+	
+	trigger = {
+		AI = no
+		trait = vampire
+		OR = {
+			trait = feeble
+			has_character_flag = vampire_was_robust
+			has_character_flag = vampire_was_strong
+		}
+		check_variable = {
+			which = mana_current
+			value > 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = vamphunger4OPTa	#stayed full for a while, remove feeble, add back brawny & strong
+		if = {
+			limit = {
+				trait = feeble
+			}
+			remove_trait = feeble
+		}
+		if = {
+			limit = {
+				has_character_flag = vampire_was_robust
+			}
+			add_trait = robust
+			clr_flag = vampire_was_robust
+		}
+		if = {
+			limit = {
+				has_character_flag = vampire_was_strong
+			}
+			add_trait = strong
+			clr_flag = vampire_was_strong
+		}
+		blood_recalc = yes	
+	}
+}
+
+character_event = {	
+	id = vamphunger.5
+	desc = EVTDESCvamphunger.5
+	picture = GFX_evt_died_old_age 
+	
+	is_triggered_only = yes
+
+	hide_window = yes
+
+	immediate = {
+		any_courtier = {
+			limit = {
+				AND = {
+					trait = thrall
+					has_opinion_modifier = {
+						who = ROOT
+						name = opinion_loyal_servant
+					}
+				}
+			}
+			save_event_target_as = sipped_thrall
+			add_character_modifier = { name = drained months = 2 stacking = yes }
+		}
+		remove_character_modifier = vampire_dying
+		remove_character_modifier = vampire_starving
+		remove_character_modifier = vampire_hunger
+		character_event = { id = vamphunger.6 } #ping event
+	}
+}
+
+character_event = {					#notification that you sipped on thrall
+	id = vamphunger.6
+	desc = EVTDESCvamphunger.6
+	picture = GFX_evt_died_old_age 
+	is_triggered_only = yes
+	notification = yes
+	option = {
+		name = OK
+	}
+}
+
+character_event = {				#Main event to fire
+	id = vamphunger.999
+	desc = EVTDESCvamphunger.999
+	picture = GFX_evt_bad_news
+	
+	hide_window = yes
+	
+	trigger = {
+		trait = vampire
+		AI = no
+		NOT = { has_character_modifier = recently_fed }
+		NOT = { has_character_flag = no_feed_notification }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				check_variable = {
+					which = total_thralls		#if you have less than one thrall
+					value >= 1
+				}
+			}
+			character_event = { id = vamphunger.5 }			#just sip on your thrall
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = mana_current
+					value >= 1					#if you have less than one mana, start to die
+				}
+			}
+			character_event = { id = vamphunger.1 }
+		}
+		else = {
+			character_event = { id = vamphunger.3 }		
+		}
+	}
+}

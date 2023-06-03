@@ -1,0 +1,1104 @@
+###############################################################
+#														      #
+#	Vampire Powers, either from targeted events or decisions  #
+#															  #
+#########################################################################
+#															 
+#	character_event = { id = vampsuspicion.1 }	suspicion event
+#	vampire_meter_recalc = yes					recalculate mana icon
+#																		
+#########################################################################
+#
+#	vampirepowers.1 = Feeding on target, fired from targeted decision
+#	vampirepowers.2 = Feeding success, leads on from success in above
+#	vampirepowers.3 = Hypnotism event, fired from targeted decision
+#	vampirepowers.4 = Enthrall event, fired from targeted decision
+#	vampirepowers.6 = Release Thrall
+#	vampirepowers.7 = Response to Hypnotism
+#	vampirepowers.8 = Response to Thralling
+#	vampirepowers.9 = Feeding Lethally
+#	vampirepowers.10 = Failed Hunt
+
+
+namespace = vampirepowers
+
+#### FEEDING EVENTS ####
+
+#### Feeding on target, fired from targeted decision ####
+
+character_event = {
+	id = vampirepowers.1
+	desc = EVTDESCvampirehunt.1
+	picture = GFX_evt_house_arrest_escape
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirehunt1optA
+		random_list = {
+			50 = {
+				custom_tooltip = {
+					text = duel_vampire
+				}
+				hidden_tooltip = {
+					character_event = { id = vampirepowers.10 }
+				}
+				modifier = {
+					factor = 1.3
+					event_target:vampire_prey_target = {
+						trait = paranoid
+					}
+				}
+				modifier = {
+					factor = 1.2
+					event_target:vampire_prey_target = {
+						trait = quick
+					}
+				}
+				modifier = {
+					factor = 1.3
+					event_target:vampire_prey_target = {
+						trait = genius
+					}
+				}
+				modifier = {
+					factor = 1.1
+					event_target:vampire_prey_target = {
+						trait = shrewd
+					}
+				}
+				modifier = {
+					factor = 1.1
+					event_target:vampire_prey_target = {
+						intrigue > 10
+					}
+				}
+				modifier = {
+					factor = 1.2
+					event_target:vampire_prey_target = {
+						intrigue > 15
+					}
+				}
+				modifier = {
+					factor = 1.1
+					event_target:vampire_prey_target = {
+						martial > 10
+					}
+				}
+				modifier = {
+					factor = 1.2
+					event_target:vampire_prey_target = {
+						martial > 15
+					}
+				}
+				### Negative Modifiers for Target ###
+				modifier = {
+					factor = 0.9
+					event_target:vampire_prey_target = {
+						trait = weak
+					}
+				}
+				modifier = {
+					factor = 0.9
+					event_target:vampire_prey_target = {
+						trait = drunkard
+					}
+				}
+				modifier = {
+					factor = 0.8
+					event_target:vampire_prey_target = {
+						trait = is_fat
+					}
+				}
+				modifier = {
+					factor = 0.7
+					event_target:vampire_prey_target = {
+						trait = pregnant
+					}
+				}
+				modifier = {
+					factor = 0.8
+					event_target:vampire_prey_target = {
+						trait = wounded
+					}
+				}
+				modifier = {
+					factor = 0.9
+					event_target:vampire_prey_target = {
+						trait = maimed
+					}
+				}
+				modifier = {
+					factor = 0.1
+					event_target:vampire_prey_target = {
+						trait = infirm
+					}
+				}
+				modifier = {
+					factor = 0.1
+					event_target:vampire_prey_target = {
+						trait = incapable
+					}
+				}
+				modifier = {
+					factor = 0.9
+					event_target:vampire_prey_target = {
+						trait = clubfooted
+					}
+				}
+				modifier = {
+					factor = 0.9
+					event_target:vampire_prey_target = {
+						trait = dwarf
+					}
+				}
+				modifier = {
+					factor = 0.9
+					event_target:vampire_prey_target = {
+						trait = slow
+					}
+				}
+				modifier = {
+					factor = 0.7
+					event_target:vampire_prey_target = {
+						trait = imbecile
+					}
+				}
+				modifier = {
+					factor = 0.9
+					event_target:vampire_prey_target = {
+						trait = trusting
+					}
+				}
+			}
+			50 = {
+				custom_tooltip = {
+					text = sneak_vampire
+				}
+				hidden_tooltip = {
+					character_event = { id = vampirepowers.2 }
+				}
+			}
+		}
+	}
+	option = {
+		name = vampirehunt1optB
+		clr_character_flag = hunting_prey
+	}
+}
+
+#### Feeding success, fired from above ####
+
+character_event = {
+	id = vampirepowers.2	
+	desc = EVTDESCvampirehunt.11111
+	picture = GFX_evt_bleeding_from_neck_hf
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirehunt11111optA
+		custom_tooltip = {
+			text = vampiric_experience_text
+			change_variable = { which = mana_current value = 2 }
+			change_variable = { which = total_blood_drank value = 1 }
+			hidden_tooltip = {
+				vampire_meter_recalc = yes
+			}
+			add_character_modifier = {
+				name = vampiric_power
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = mana_current
+					value > 10
+				}
+			}
+			set_variable = { which = mana_current value = 10 }	#catch_all, unnecessary fallback, could be removed
+			hidden_tooltip = {
+				vampire_meter_recalc = yes
+			}
+		}
+		event_target:vampire_prey_target = {
+			character_event = { id = vampirevictim.1 }
+			save_persistent_event_target = { name = vampire_who_bit_me scope = ROOT }
+		}
+		hidden_tooltip = {
+			remove_character_modifier = vampire_hunger
+			remove_character_modifier = vampire_starving
+			remove_trait = vampire_dying
+			remove_trait = vampire_verge_of_death
+			add_character_modifier = { name = recently_fed months = 2 }
+			vampire_meter_recalc = yes
+			clr_character_flag = hunting_prey
+			remove_character_modifier = vampire_hunger
+			remove_character_modifier = vampire_starving
+		}
+		random_list = {
+			50 = {
+				custom_tooltip = {
+					text = people_ask_questions
+					hidden_tooltip = {
+						character_event = { id = vampsuspicion.1 }	#suspicion calc
+					}
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						is_ruler = yes
+					}
+					factor = 3
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						any_spouse = {
+							is_ruler = yes
+						}
+					}
+					factor = 2
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						any_close_relative = {
+							is_ruler = yes
+						}
+					}
+					factor = 2
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						is_councillor = yes
+					}
+					factor = 1.5
+				}
+			}
+			50 = {
+				custom_tooltip = {
+					text = succeeding_unnoticed
+				}
+			}
+		}
+	}
+}
+
+##### Hypnotism event, fired from targeted decision #####
+
+character_event = {		#Hypnotism
+	id = vampirepowers.3
+	desc = EVTDESCvampirehunt.2
+	picture = GFX_evt_whispers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirehunt2optA
+		event_target:vampire_prey_target = {
+			add_character_modifier = { name = hypnotised months = 6 }
+		}
+		subtract_variable = { which = mana_current value = 5 }
+		add_favor = event_target:vampire_prey_target
+		add_character_modifier = { name = recently_hypnotised months = 8 }
+		clr_character_flag = vampire_prey_target
+		clr_character_flag = hypontising_prey
+		hidden_tooltip = {
+			vampire_meter_recalc = yes
+		}
+		random_list = {
+			10 = {
+				custom_tooltip = {
+					text = people_ask_questions
+					hidden_tooltip = {
+						character_event = { id = vampsuspicion.1 }	#suspicion calc
+					}
+				}
+				modifier = {
+					factor = 2
+					event_target:vampire_prey_target = {
+						is_lowborn = no
+					}
+				}
+				modifier = {
+					factor = 5
+					event_target:vampire_prey_target = {
+						is_ruler = yes
+					}
+				}
+			}
+			90 = {
+				custom_tooltip = {
+					text = succeeding_unnoticed
+					hidden_tooltip = {
+						character_event = { id = vampirepowers.7 }	#success event
+					}
+				}
+			}
+		}
+		 
+	}
+	option = {
+		name = vampirehunt2optB
+	}
+}
+
+#### Enthrall event, fired from targeted decision ####
+
+character_event = {		#enthrall
+	id = vampirepowers.4
+	desc = EVTDESCvampirehunt.3
+	picture = GFX_evt_hooded_figure_hf
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirehunt3optA
+		clr_character_flag = thralling_prey
+		random_list = {
+			50 = {
+				random_list = {
+					10 = {		#succeeded in gaining thrall, but increased suspicion
+					custom_tooltip = {
+						text = people_ask_questions_thrall
+							hidden_tooltip = {
+								character_event = { id = vampsuspicion.1 }	#suspicion calc
+								character_event = { id = vampirepowers.8 }
+							}
+							event_target:vampire_prey_target = {
+								add_trait = thrall
+								set_character_flag = is_thrall
+							}
+							subtract_variable = { which = mana_current value = 7 }
+							hidden_tooltip = {
+								vampire_meter_recalc = yes
+							}
+							add_character_modifier = { name = has_thralled_recently months = 12 }
+							reverse_opinion = {
+								who = event_target:vampire_prey_target
+								modifier = opinion_loyal_servant
+							}
+							opinion = {
+								who = event_target:vampire_prey_target
+								modifier = loyal_thrall
+							}
+							change_variable = { which = total_thralls value = 1 }
+							modifier = {
+								factor = 2
+								event_target:vampire_prey_target = {
+									is_lowborn = no
+								}
+							}
+							modifier = {
+								factor = 8
+								event_target:vampire_prey_target = {
+									is_ruler = true
+								}
+							}
+						}
+					}
+					90 = {		#succeeded in gaining thrall, no suspicion
+						custom_tooltip = {
+							text = avoiding_suspicion_thrall_success
+							event_target:vampire_prey_target = {
+								add_trait = thrall
+								set_character_flag = is_thrall
+							}
+							subtract_variable = { which = mana_current value = 7 }
+							hidden_tooltip = {
+								vampire_meter_recalc = yes
+								character_event = { id = vampirepowers.8 }
+							}
+							add_character_modifier = { name = has_thralled_recently months = 12 }
+							change_variable = { which = total_thralls value = 1 }
+							reverse_opinion = {
+								who = event_target:vampire_prey_target
+								modifier = opinion_loyal_servant
+							}
+							opinion = {
+								who = event_target:vampire_prey_target
+								modifier = loyal_thrall
+							}
+							modifier = {
+								factor = 2
+								event_target:vampire_prey_target = {
+									is_lowborn = yes
+								}
+							}
+							modifier = {
+								factor = 8
+								event_target:vampire_prey_target = {
+									is_ruler = false
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 2
+					intrigue = 15
+				}
+				modifier = {
+					factor = 2
+					intrigue = 20
+				}
+				modifier = {
+					factor = 1.2
+					trait = genius
+				}
+				modifier = {
+					factor = 1.1
+					trait = quick
+				}
+				modifier = {
+					factor = 1.2
+					trait = strong
+				}
+			}
+			50 = {		#failed to gain thrall, increased suspicion
+				custom_tooltip = {
+					text = failure_thrall_gain_suspicion
+					hidden_tooltip = {
+						character_event = { id = vampsuspicion.1 }	#suspicion calc
+					}
+					subtract_variable = { which = mana_current value = 7 }
+					modifier = {
+						factor = 1.5
+						event_target:vampire_prey_target = {
+							intrigue = 15
+						}
+					}
+					modifier = {
+						factor = 1.5
+						event_target:vampire_prey_target = {
+							intrigue = 20
+						}
+					}
+					modifier = {
+						factor = 1.5
+						event_target:vampire_prey_target = {
+							trait = strong
+						}
+					}
+					modifier = {
+						factor = 1.2
+						event_target:vampire_prey_target = {
+							trait = paranoid
+						}
+					}
+					modifier = {
+						factor = 1.2
+						event_target:vampire_prey_target = {
+							combat_rating = 100
+						}
+					}
+					modifier = {
+						factor = 1.1
+						event_target:vampire_prey_target = {
+							trait = quick
+						}
+					}
+					modifier = {
+						factor = 1.2
+						event_target:vampire_prey_target = {
+							trait = genius
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = vampirehunt3optB		#back out, still chance of gaining suspicion 
+		clr_character_flag = thralling_prey
+		random_list = {
+			25 = {
+				custom_tooltip = {
+					text = escaping_suspicion
+					hidden_tooltip = {
+						character_event = { id = vampsuspicion.1 }	#suspicion calc
+					}
+				}
+			}
+			75 = {
+				custom_tooltip = {
+					text = escape_no_suspicion
+				}
+				modifier = {			#sneaky escape
+					factor = 1.5
+					intrigue = 10
+				}
+				modifier = {
+					factor = 1.5
+					intrigue = 15
+				}
+			}
+		}
+	}
+}
+
+#### Release Thrall ####
+
+character_event = {
+	id = vampirepowers.6
+	desc = EVTDESCvampirepowers.6
+	picture = GFX_evt_prisoner_hf
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTDESCvampirepowersoptA
+		clr_character_flag = thralling_prey
+		event_target:vampire_release_thrall = {
+			remove_opinion = {
+				who = FROM
+				modifier = opinion_loyal_servant
+			}
+		}
+		subtract_variable = { which = mana_current value = 7 }
+		hidden_tooltip = {
+			vampire_meter_recalc = yes
+		}
+	}
+}
+
+### Response to hyponitising ###
+
+character_event = {
+	id = vampirepowers.7
+	desc = EVTDESCvampirepowers.7
+	picture = GFX_evt_prisoner_hf
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:vampire_prey_target = {
+			#placeholder just for the portrait to appear
+		}
+	}
+	
+	option = {
+		name = vampirehunt7optA
+		event_target:vampire_prey_target = {
+			#placeholder just for the portrait to appear
+		}
+	}
+}
+
+### Response to thralling ###
+
+character_event = {
+	id = vampirepowers.8
+	desc = EVTDESCvampirepowers.8
+	picture = GFX_evt_prisoner_hf
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:vampire_prey_target = {
+			#placeholder just for the portrait to appear
+		}
+	}
+	
+	option = {
+		name = vampirehunt8optA
+		event_target:vampire_prey_target = {
+			#placeholder just for the portrait to appear
+		}
+	}
+}
+
+### Feeding Lethally ###
+
+character_event = {
+	id = vampirepowers.9	
+	desc = EVTDESCvampirehunt.9
+	picture = GFX_evt_bleeding_from_neck_hf
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirehunt9optA
+		custom_tooltip = {
+			text = vampiric_experience_text_greatly
+			change_variable = { which = mana_current value = 3 }
+			change_variable = { which = total_blood_drank value = 2 }
+			add_character_modifier = {
+				name = vampiric_power
+				days = -1
+			}
+		}
+		event_target:vampire_prey_target = {
+			set_character_flag = drained_lethal
+		}
+		save_persistent_event_target = { name = vampire_lethal_drain_victim scope = event_target:vampire_prey_target }
+		hidden_tooltip = {
+			remove_character_modifier = vampire_hunger
+			remove_character_modifier = vampire_starving
+			remove_trait = vampire_dying
+			remove_trait = vampire_verge_of_death
+			clr_character_flag = hunting_prey
+			add_character_modifier = { name = recently_fed months = 2 }
+			add_character_modifier = { name = richest_blood months = 1 }
+			vampire_meter_recalc = yes
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = mana_current
+					value > 10
+				}
+			}
+			set_variable = { which = mana_current value = 10 }	#catch_all, unnecessary fallback, could be removed
+			hidden_tooltip = {
+				vampire_meter_recalc = yes
+			}
+		}
+		random_list = {
+			85 = {
+				custom_tooltip = {
+					text = people_ask_questions
+					character_event = { id = vampsuspicion.1 }	#suspicion calc
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						is_ruler = yes
+					}
+					factor = 3
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						any_spouse = {
+							is_ruler = yes
+						}
+					}
+					factor = 2
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						any_close_relative = {
+							is_ruler = yes
+						}
+					}
+					factor = 2
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						is_councillor = yes
+					}
+					factor = 1.5
+				}
+			}
+			15 = {
+				custom_tooltip = {
+					text = succeeding_unnoticed
+				}
+				event_target:vampire_prey_target = {
+					death = { death_reason = death_murder_unknown_butchered killer = ROOT } 
+				}
+				modifier = {
+					event_target:vampire_prey_target = {
+						is_ruler = no
+					}
+					factor = 3
+				}
+			}
+		}
+	}
+}
+
+### Failed hunt ###
+
+character_event = {
+	id = vampirepowers.10
+	desc = EVTDESCvampirepowers.10
+	picture = GFX_evt_prisoner_hf
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirehunt10optA
+	    clr_character_flag = hunting_prey
+		add_character_modifier = { name = vampire_laying_low months = 1 }
+	}
+}
+
+### Decision Menu Powers
+
+character_event = {
+	id = vampirepowers.11
+	desc = EVTDESCvampirepowers.11
+	picture = GFX_evt_dark_prayer
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirehunt11optA		#seduction power = Alukah
+		trigger = {
+			has_character_flag = form_of_alukah
+		}
+		add_character_modifier = { name = alukah_form months = 6 }
+		subtract_variable = { which = mana_current value = 3 }
+		hidden_tooltip = {
+			vampire_meter_recalc = yes
+		}
+	}
+
+	option = {
+		name = vampirehunt11optB		#martial - iron teeth = Asanbosam
+		trigger = {
+			has_character_flag = form_of_asanbosam
+		}
+		add_character_modifier = { name = asanbosam_form months = 6 }
+		subtract_variable = { which = mana_current value = 3 }
+		hidden_tooltip = {
+			vampire_meter_recalc = yes
+		}
+	}
+
+	option = {
+		name = vampirehunt11optC		#cure health conditions that can heal naturally, etc but become hideous temporarily = Vrykolakas
+		trigger = {
+			has_character_flag = form_of_vrykolakas
+		}
+		add_character_modifier = { name = vrykolakas_form months = 6 }
+		subtract_variable = { which = mana_current value = 3 }
+		custom_tooltip = {
+			text = vampire_diseases_are_cured
+			remove_trait = wounded
+			remove_trait = maimed
+			remove_trait = ill
+			remove_trait = pneumonic
+			remove_trait = syphilitic
+			remove_trait = leper
+			remove_trait = has_tuberculosis
+			remove_trait = has_typhoid_fever
+			remove_trait = has_typhus
+			remove_trait = has_bubonic_plague
+			remove_trait = has_measles
+			remove_trait = has_small_pox
+			remove_trait = has_aztec_disease
+			remove_trait = infection
+			remove_trait = flu
+			remove_trait = dysentery
+			remove_trait = gout
+			remove_trait = food_poisoning
+			remove_trait = rabies
+			remove_trait = cancer
+			remove_trait = dancing_plague
+			remove_trait = scurvy
+		}
+		hidden_tooltip = {
+			vampire_meter_recalc = yes
+		}
+	}
+
+	option = {
+		name = vampirehunt11optD		#cancel
+	}
+}
+
+### Turn Lowborn Courtier into Vampire ###
+
+character_event = {
+	id = vampirepowers.12
+	desc = EVTDESCvampirepowers.12
+	picture = GFX_evt_house_arrest_escape
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirepowers12optA		#Confirm turning
+		event_target:new_vampire_sired = {
+			character_event = { id = vampirevictim.4 }
+			save_persistent_event_target = { name = vampire_who_bit_me scope = ROOT }
+		}
+		subtract_variable = { which = mana_current value = 10 }
+		custom_tooltip = {
+			text = vampiric_experience_text
+			change_variable = { which = total_blood_drank value = 5 }
+		}
+		hidden_tooltip = {
+			vampire_meter_recalc = yes
+		}
+		add_character_modifier = {
+			name = vampiric_power
+			days = -1
+		}
+	}
+
+	option = {
+		name = vampirepowers12optB		#Cancel
+	}
+}
+
+### Ping event to get Bloodline Founder into FROM
+
+character_event = {
+	id = vampirepowers.13
+	desc = EVTDESCvampirepowers.13
+	picture = GFX_evt_whispers
+
+	is_triggered_only = yes
+
+	option = {
+		name = vampirepowers13optA
+		FROM = {
+			character_event = { id = vampirepowers.14 }
+		}
+	}
+}
+
+character_event = {
+	id = vampirepowers.14
+	desc = EVTDESCvampirepowers.14
+	picture = GFX_evt_whispers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirepowers13optA
+		trigger = {
+			NOT = { has_character_flag = bloodline_founder }
+		}
+		any_character = {
+			limit = {
+				AND = {
+					has_character_flag = bloodline_of_@FROM
+					has_character_flag = bloodline_founder
+				}	
+			}
+			character_event = { id = vampirepowers.999 }
+		}
+	}
+
+	option = {
+		name = vampirepowers13optE
+		tooltip_info_custom = vampire_founder_tooltip
+		trigger = {
+		 	has_character_flag = bloodline_founder
+		}
+		any_character = {
+			limit = {
+				AND = {
+					has_character_flag = bloodline_of_@FROM
+					has_character_flag = bloodline_founder
+				}	
+			}
+			character_event = { id = vampirepowers.999 }
+		}
+	}
+
+	option = {
+		name = vampirepowers13optB
+		any_character = {
+			limit = {
+				has_character_flag = bloodline_of_@FROM
+				OR = {
+					prestige > 500
+					is_landed = yes
+					controls_religion = yes
+					society_rank == 4
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+			character_event = { id = vampirepowers.999 }
+		}
+	}
+
+	option = {
+		name = vampirepowers13optC
+		any_character = {
+			limit = {
+				has_character_flag = bloodline_of_@FROM
+			}
+			character_event = { id = vampirepowers.999 }
+		}
+	}
+}
+
+### Tier 3 power: corrupt tier 2/3 weapon into blood tier 4
+
+character_event = {
+	id = vampirepowers.15
+	desc = EVTDESCvampirepowers.15
+	picture = GFX_evt_open_book_hf
+
+	is_triggered_only = yes
+
+	option = {
+		name = vampirepowers15optA
+		trigger = {
+			any_artifact = {
+				AND = {
+					has_artifact_flag = sword
+					OR = {
+						quality == 2
+						quality == 3
+					}
+				}
+			}
+		}
+		set_character_flag = blood_upgrading_sword
+		character_event = { id = vampirepowers.16 }
+	}
+
+	option = {
+		name = vampirepowers15optB
+		trigger = {
+			any_artifact = {
+				AND = {
+					has_artifact_flag = mace
+					OR = {
+						quality == 2
+						quality == 3
+					}
+				}
+			}
+		}
+		set_character_flag = blood_upgrading_mace
+		character_event = { id = vampirepowers.16 }
+	}
+
+	option = {
+		name = vampirepowers15optC
+		trigger = {
+			any_artifact = {
+				AND = {
+					has_artifact_flag = axe
+					OR = {
+						quality == 2
+						quality == 3
+					}
+				}
+			}
+		}
+		set_character_flag = blood_upgrading_axe
+		character_event = { id = vampirepowers.16 }
+	}
+
+	option = {
+		name = vampirepowers15optD		#cancel
+	}
+}
+
+character_event = {
+	id = vampirepowers.16
+	desc = EVTDESCvampirepowers.16
+	picture = GFX_evt_weaponsmith
+
+	is_triggered_only = yes
+
+	option = {
+		name = vampirepowers16optA
+		if = {
+			limit = {
+				has_character_flag = blood_upgrading_axe
+			}
+			random_artifact = {
+				limit = {
+					AND = {
+						has_artifact_flag = axe
+						OR = {
+							quality == 2
+							quality == 3
+						}
+					}
+				}
+				destroy_artifact = yes 
+			}
+		}
+		else_if = {
+			limit = {
+				has_character_flag = blood_upgrading_sword
+			}
+			random_artifact = {
+				limit = {
+					AND = {
+						has_artifact_flag = sword
+						OR = {
+							quality == 2
+							quality == 3
+						}
+					}
+				}
+				destroy_artifact = yes 
+			}
+		}
+		else = {
+			limit = {
+				has_character_flag = blood_upgrading_mace
+			}
+			random_artifact = {
+				limit = {
+					AND = {
+						has_artifact_flag = mace
+						OR = {
+							quality == 2
+							quality == 3
+						}
+					}
+				}
+				destroy_artifact = yes 
+			}
+		}
+		character_event = { id = vampirepowers.17 days = 60 random = 30 }
+		subtract_variable = { which = mana_current value = 5 }
+		hidden_tooltip = {
+			vampire_meter_recalc = yes
+		}
+	}
+
+	option = {
+		name = vampirepowers16optB			#cancel
+		clr_character_flag = blood_upgrading_mace
+		clr_character_flag = blood_upgrading_sword
+		clr_character_flag = blood_upgrading_axe
+	}
+}
+
+character_event = {
+	id = vampirepowers.17
+	desc = EVTDESCvampirepowers.17
+	picture = GFX_evt_bloody_knife_hf
+
+	is_triggered_only = yes
+
+	option = {
+		name = vampirepowers17optA		#cancel
+		if = {
+			limit = {
+				has_character_flag = blood_upgrading_sword
+			}
+			add_artifact = vampiric_blood_sword
+		}
+		else_if = {
+			limit = {
+				has_character_flag = blood_upgrading_mace
+			}
+			add_artifact = vampiric_blood_mace
+		}
+		else = {
+			add_artifact = vampiric_blood_axe
+		}
+		clr_character_flag = blood_upgrading_mace
+		clr_character_flag = blood_upgrading_sword
+		clr_character_flag = blood_upgrading_axe
+	}
+}
+
+### Ping Event ###
+
+character_event = {
+	id = vampirepowers.999
+	desc = EVTDESCvampirevictim.999
+	picture = GFX_evt_bad_news
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	option = {
+		name = vampirevictim999optA
+	}
+}
+

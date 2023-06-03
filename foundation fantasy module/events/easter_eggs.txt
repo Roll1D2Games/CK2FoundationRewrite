@@ -1,0 +1,198 @@
+namespace = eastereggs
+
+narrative_event = {
+	id = eastereggs.1
+	desc = EVTDESCeastereggs.1
+	picture = GFX_milk_snatcher
+	title = eastereggstitle.1
+
+	mean_time_to_happen = {
+		years = 100
+	}
+
+	trigger = {
+		has_game_rule = { name = easter_eggs value = enabled }
+		NOT = {
+			has_character_flag = milk_snatcher
+		}
+	}
+	
+	option = {
+		name = eastereggOpt1A
+		trigger = {
+			NOT = { culture_group = celtic }
+		}
+		add_trait = craven
+		set_character_flag = milk_snatcher
+	}
+	option = {
+		name = eastereggOpt1B
+		trigger = {
+			culture_group = celtic
+		}
+		add_trait = craven
+		set_character_flag = milk_snatcher
+	}
+}
+
+### Lament Configuration ###
+
+narrative_event = {
+	id = eastereggs.2			### Sinner visited by man who offers the cube ###
+	desc = EVTDESCeastereggs.2
+	picture = GFX_evt_hooded_figure_hf
+	title = eastereggstitle.2
+
+	mean_time_to_happen = {
+		years = 15
+	}
+
+	trigger = {
+		has_game_rule = { name = easter_eggs value = enabled }
+		NOT = {
+			has_character_flag = visited_by_diddlers
+		}
+		OR = {
+			trait = bloodthirsty_gods_3
+			trait = baptized_by_satan
+			trait = hedonist
+			OR = {
+				trait = bad_priest_norse
+				trait = bad_priest_zoroastrian
+				trait = bad_priest_norse
+				trait = bad_priest_tengri
+				trait = bad_priest_muslim
+				trait = bad_priest_christian
+			}
+			AND = {
+				trait = lustful
+				ROOT = {
+					count = 3
+					trait = greedy
+					trait = gluttonous
+					trait = impaler
+					trait = seducer
+					trait = seductress
+					trait = mystic
+					trait = envious
+					trait = cynical
+					trait = cannibal_trait
+					trait = lovers_pox
+					trait = kinslayer
+					trait = familial_kinslayer
+					trait = dynastic_kinslayer
+				}
+			}
+		}
+	}
+	
+	option = {		#Accept the cube#
+		name = eastereggOpt2A
+		add_artifact = lament_configuration
+		set_character_flag = visited_by_diddlers
+		custom_tooltip = {
+			text = tooltip_lament_config_warning
+		}
+	}
+
+	option = {		#Scared by cubeboy#
+		name = eastereggOpt2B
+		add_trait = craven
+		set_character_flag = visited_by_diddlers
+		custom_tooltip = {
+			text = tooltip_lament_config_safe
+		}
+	}
+}
+
+### OPEN THE CUBE!? ###
+
+narrative_event = {
+	id = eastereggs.3			
+	desc = EVTDESCeastereggs.3
+	picture = GFX_lament_config_evnt
+	title = eastereggstitle.3
+
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 2
+			trait = genius
+		}
+		modifier = {
+			factor = 1.5
+			trait = quick
+		}
+		modifier = {
+			factor = 1.5
+			trait = shrewd
+		}
+		modifier = {
+			factor = 1.5
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.5
+			trait = mystic
+		}
+		modifier = {
+			factor = 1.5
+			trait = diligent
+		}
+	}
+
+	trigger = {
+		has_game_rule = { name = easter_eggs value = enabled }
+		ROOT = {
+			any_artifact = {
+				artifact_type = lament_configuration
+			}
+		}
+	}
+	
+	option = {		#Open the cube#
+		name = eastereggOpt3A
+		narrative_event = { id = eastereggs.4 } 
+		custom_tooltip = {
+			text = tooltip_lament_final_warning
+		}
+	}
+
+	option = {		#Cast it into the fire#
+		name = eastereggOpt3B
+		random_list = {
+			3 = {
+				add_trait = craven
+			}
+			5 = {
+				add_trait = stressed
+			}
+			5 = {
+				add_trait = paranoid
+			}
+		}
+		unsafe_destroy_artifact = lament_configuration
+	}
+}
+
+### DIDDLERS ARRIVE! ###
+
+narrative_event = {
+	id = eastereggs.4			
+	desc = EVTDESCeastereggs.4
+	picture = GFX_diddlers
+	title = eastereggstitle.4
+
+	is_triggered_only = yes
+
+	immediate = {
+		unsafe_destroy_artifact = lament_configuration
+	}
+	
+	option = {	
+		name = eastereggOpt4A
+		ROOT = {
+			death = { death_reason = death_vanished } 
+		}
+	}
+}

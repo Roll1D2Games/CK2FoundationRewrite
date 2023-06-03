@@ -1,0 +1,145 @@
+targeted_decisions = {
+
+	manipulate_target = {
+		from_potential = { 
+			trait = skinchanger
+			ai = no 
+		}
+		potential = { 
+			
+		}
+		allow = {
+			FROM = {
+				is_inaccessible_or_incapable_trigger = no
+				has_regent = no
+				custom_tooltip = {
+					text = has_not_manipulated_recently
+					NOT = { 
+						has_character_modifier = recently_manipulated
+					}
+				}
+				custom_tooltip = {
+					text = has_inspiration
+					NOT = { 
+						check_variable = { 
+							which = flesh_inspiration value > 5
+						}
+					}
+				}
+				custom_tooltip = {
+					text = not_already_manipulate
+					NOT = { 
+						has_character_flag = manipulate_prey
+					}
+				}
+			}
+			ROOT = {
+				is_within_diplo_range = FROM
+				in_seclusion = no
+				NOT = { has_non_aggression_pact_with = FROM }
+				NOT = { has_character_modifier = drained }
+			}
+		}
+		effect = {
+			ROOT = { 
+				save_event_target_as = skinchanger_prey_target
+			}
+			FROM = {
+				#character_event = { id =  }
+				set_character_flag = manipulate_prey
+			}
+		}
+	}
+}
+
+decisions = {
+	enable_skinchanger_decisions = {
+		potential = {
+			ai = no
+			trait = skinchanger
+			NOT = { has_character_flag = skinchanger_decisions_open }
+		}
+		allow = {
+			trait = skinchanger
+		}
+		effect = {
+			hidden_tooltip = {
+				set_character_flag = skinchanger_decisions_open
+			}
+		}
+	}
+	disable_skinchanger_decisions = {
+		potential = {
+			ai = no
+			trait = skinchanger
+			has_character_flag = skinchanger_decisions_open
+		}
+		allow = {
+			trait = skinchanger
+		}
+		effect = {
+			hidden_tooltip = {
+				set_character_flag = skinchanger_decisions_closed
+			}
+		}
+	}
+	skinchanger_norse_decision = {
+		potential = {
+			ai = no
+			trait = skinchanger
+			has_character_flag = skinchanger_decisions_open
+		}
+		allow = {
+			trait = skinchanger
+			NOT = { has_character_modifier = skinchanger_norse_mod }
+			NOT = { has_character_modifier = skinchanger_cooldown_mod }
+		}
+		effect = {
+			hidden_tooltip = {
+				clear_skinchanger_mods = yes	#remove all mods
+				set_graphical_culture = norse
+				add_character_modifier = { name = skinchanger_norse_mod duration = -1 } 
+				add_character_modifier = { name = skinchanger_cooldown_mod duration = 365 } 
+			}
+		}
+	}
+	skinchanger_latin_decision = {
+		potential = {
+			ai = no
+			trait = skinchanger
+			has_character_flag = skinchanger_decisions_open
+		}
+		allow = {
+			trait = skinchanger
+			NOT = { has_character_modifier = skinchanger_latin_mod }
+			NOT = { has_character_modifier = skinchanger_cooldown_mod }
+		}
+		effect = {
+			hidden_tooltip = {
+				clear_skinchanger_mods = yes	#remove all mods
+				set_graphical_culture = roman
+				add_character_modifier = { name = skinchanger_latin_mod duration = -1 } 
+				add_character_modifier = { name = skinchanger_cooldown_mod duration = 365 } 
+			}
+		}
+	}
+	skinchanger_base_decision = {
+		potential = {
+			ai = no
+			trait = skinchanger
+			has_character_flag = skinchanger_decisions_open
+		}
+		allow = {
+			trait = skinchanger
+			NOT = { has_character_modifier = skinchanger_base_mod }
+		}
+		effect = {
+			hidden_tooltip = {
+				clear_skinchanger_mods = yes	#remove all mods
+				set_graphical_culture = skinchanger
+				add_character_modifier = { name = skinchanger_base_mod duration = -1 } 
+				add_character_modifier = { name = skinchanger_cooldown_mod duration = 365 } 
+			}
+		}
+	}
+}

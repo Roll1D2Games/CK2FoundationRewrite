@@ -1,0 +1,190 @@
+###############################################################
+#														      #
+#	  Vampire level up system to gain powers and new tiers    #
+#															  #
+#########################################################################
+#															 
+#	character_event = { id = vampsuspicion.1 }	suspicion event
+#	vampire_meter_recalc = yes					recalculate mana icon
+#	vampire_tier - variable that stores the tier 
+#																		
+#########################################################################
+#
+#	vampirelevelup.1 = MTTH event for vampires to level up, minimum should be half the total exp value for a level, increasing exponentially up to 100% exp which guarantees level up
+
+namespace = vampirelevelup
+
+narrative_event = {
+	id = vampirelevelup.1
+	title = EVTTITLEvampirelevelup.1
+	desc = EVTDESCvampirelevelup.1
+	picture = GFX_evt_sacrifice
+	border = GFX_event_narrative_frame_war
+
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			OR = {
+				AND = {
+					check_variable = {
+						which = vampire_tier
+						value == 1
+					}
+					check_variable = {
+						which = total_blood_drank		#experience variable name, reset on level up
+						value > 30
+					}
+				}
+				AND = {
+					check_variable = {
+						which = vampire_tier
+						value == 2
+					}
+					check_variable = {
+						which = total_blood_drank		#experience variable name, reset on level up
+						value > 60
+					}
+				}
+				AND = {
+					check_variable = {
+						which = vampire_tier
+						value == 3
+					}
+					check_variable = {
+						which = total_blood_drank		#experience variable name, reset on level up
+						value > 90
+					}
+				}
+				AND = {
+					check_variable = {
+						which = vampire_tier
+						value == 4
+					}
+					check_variable = {
+						which = total_blood_drank		#experience variable name, reset on level up
+						value > 120
+					}
+					has_character_modifier = blood_crafted       #placeholder, no random chance to level up to level 5, event only
+				}
+			}
+		}
+	}
+
+	trigger = {
+		trait = vampire
+		OR = {
+			AND = {
+				check_variable = {
+					which = vampire_tier
+					value == 1
+				}
+				check_variable = {
+					which = total_blood_drank		#experience variable name, reset on level up
+					value > 20
+				}
+			}
+			AND = {
+				check_variable = {
+					which = vampire_tier
+					value == 2
+				}
+				check_variable = {
+					which = total_blood_drank		#experience variable name, reset on level up
+					value > 40
+				}
+			}
+			AND = {
+				check_variable = {
+					which = vampire_tier
+					value == 3
+				}
+				check_variable = {
+					which = total_blood_drank		#experience variable name, reset on level up
+					value > 60
+				}
+			}
+			AND = {
+				check_variable = {
+					which = vampire_tier
+					value == 4
+				}
+				check_variable = {
+					which = total_blood_drank		#experience variable name, reset on level up
+					value > 80
+				}
+				has_character_modifier = blood_crafted #placeholder, no random chance to level up to level 5, event only
+			}
+		}
+	}
+	
+	option = {
+		name = vampirelevelup1optA
+		if = {							#level up to generation 2
+			limit = {
+				trait = vampire_gen_1
+			}
+			add_trait = vampire_gen_2
+			custom_tooltip = {
+				text = vampiric_tier_increases
+				set_variable = { which = vampire_tier value = 2 }
+				set_variable = { which = total_blood_drank value = 0 }
+			}
+			random_list = {
+				1 = {
+					custom_tooltip = {
+						text = vampire_gain_devour
+						set_character_flag = vampire_power_devour
+					}
+				}
+			}
+		}
+		else_if = {								#level up to generation 3
+			limit = {
+				trait = vampire_gen_2
+			}
+			add_trait = vampire_gen_3
+			custom_tooltip = {
+				text = vampiric_tier_increases
+				set_variable = { which = vampire_tier value = 3 }
+				set_variable = { which = total_blood_drank value = 0 }
+			}
+			random_list = {
+				1 = {
+					custom_tooltip = {
+						text = vampire_gain_hypnotise
+						set_character_flag = vampire_power_hypnotise
+					}
+				}
+				1 = {
+					custom_tooltip = {
+						text = vampire_gain_blood_artifice
+						set_character_flag = vampire_power_blood_artifice
+					}
+				}
+			}
+			custom_tooltip = {
+				text = vampiric_can_learn_higher_powers
+			}
+		}
+		else_if = {									#level up to generation 4
+			limit = {
+				trait = vampire_gen_3
+			}
+			add_trait = vampire_gen_4
+			custom_tooltip = {
+				text = vampiric_tier_increases
+				set_variable = { which = vampire_tier value = 4 }
+				set_variable = { which = total_blood_drank value = 0 }
+			}
+			random_list = {
+				1 = {
+					custom_tooltip = {
+						text = vampire_gain_sire
+						set_character_flag = vampire_power_sire
+					}
+				}
+			}
+		}
+	}
+}

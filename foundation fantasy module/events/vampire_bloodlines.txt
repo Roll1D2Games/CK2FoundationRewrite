@@ -1,0 +1,20 @@
+namespace = vampBloodline
+
+character_event = {	
+	id = vampBloodline.1
+	desc = EVTDESCvampBloodline.1
+
+	is_triggered_only = yes	
+
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = vampire_spawn
+			}
+			
+		}
+		else = {
+			set_character_flag = vampire_bloodline_founder
+		}
+	}
+}

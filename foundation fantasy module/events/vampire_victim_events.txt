@@ -1,0 +1,162 @@
+###############################################################
+#														      #
+# Vampire victim events, responses for AI/Player if attacked  #
+#															  #
+#########################################################################															
+#
+#	vampirevictim.1 = AI & Player: I've been bitten!
+#	vampirevictim.2 = AI & Player: Bloodline Founder is Notified about new Vamp
+#	vampirevictim.3 = AI & Player: New Vampire added to bloodline
+#	vampirevictim.4 = AI: Lowborn forceably turned into Vamp
+#	vampirevictim.5 = AI: Lowborn forceably turned into Vamp
+
+namespace = vampirevictim
+
+#### Response to being bitten by Vamp ####
+
+character_event = {
+	id = vampirevictim.1
+	desc = EVTDESCvampirevictim.1
+	picture = GFX_evt_bad_news
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirevictim1optA
+		random_list = {					#oopsie i'm a vampire
+			1 = {
+				custom_tooltip = {
+					text = turning_into_vampire
+				}
+				add_trait = vampire			#maintenance event deals with variables
+				set_character_flag = sired_by_@FROM
+				if = {
+					limit = {
+						FROM = {
+							has_character_flag = bloodline_founder
+						}
+					}
+					set_character_flag = bloodline_of_@FROM
+					set_character_flag = vampire_spawn
+					save_persistent_event_target = { name = bloodline_founder scope = FROM }
+				}
+				else = {
+					FROM = {
+						persistent_event_target:bloodline_founder = { 
+							character_event = { id = vampirevictim.2 }
+						}
+					}
+				}
+			}
+			99 = {						#just a bit woozy
+				custom_tooltip = {
+					text = just_woozy
+				}
+				add_character_modifier = { name = drained months = 2 }
+				clear_persistent_event_target = vampire_who_bit_me
+			}
+		}
+	}
+}
+
+### Bloodline Founder gets pinged that they have a new spawn ###
+
+character_event = {
+	id = vampirevictim.2
+	desc = EVTDESCvampirevictim.2
+	picture = GFX_evt_bad_news
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirevictim2optA
+		FROM = {
+			character_event = { id = vampirevictim.3 }
+		}
+	}
+}
+
+### Bitten vamp gets told who the founder of the bloodline is and saves it 
+
+character_event = {
+	id = vampirevictim.3
+	desc = EVTDESCvampirevictim.3
+	picture = GFX_evt_bad_news
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirevictim3optA
+		set_character_flag = bloodline_of_@FROM
+		set_character_flag = vampire_spawn
+		save_persistent_event_target = { name = bloodline_founder scope = FROM }
+	}
+}
+
+#### Low born turned into vamp ####
+
+character_event = {
+	id = vampirevictim.4
+	desc = EVTDESCvampirevictim.4
+	picture = GFX_evt_house_arrest_escape
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirevictim4optA
+		custom_tooltip = {
+			text = turning_into_vampire
+		}
+		add_trait = vampire			#maintenance event deals with variables
+		set_character_flag = sired_by_@FROM
+		FROM = {
+			character_event = { id = vampirevictim.5 }
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_character_flag = bloodline_founder
+				}
+			}
+			set_character_flag = bloodline_of_@FROM
+			set_character_flag = vampire_spawn
+			save_persistent_event_target = { name = bloodline_founder scope = FROM }
+		}
+		else = {
+			FROM = {
+				persistent_event_target:bloodline_founder = { 
+					character_event = { id = vampirevictim.2 }
+				}
+			}
+		}
+	}
+}
+
+#### Inform biter that they have turned ####
+
+character_event = {
+	id = vampirevictim.5
+	desc = EVTDESCvampirevictim.5
+	picture = GFX_evt_hooded_figure_hf
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirevictim5optA
+	}
+}
+
+### Ping Event ###
+
+character_event = {
+	id = vampirevictim.999
+	desc = EVTDESCvampirevictim.999
+	picture = GFX_evt_bad_news
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = vampirevictim999optA
+	}
+}

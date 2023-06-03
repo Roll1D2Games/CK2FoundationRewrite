@@ -1,0 +1,40 @@
+namespace = vampthrall
+
+character_event = {		#on thrall death, notify vampire, tick down thrall numbers
+	id = vampthrall.1
+	desc = EVTDESCvampthrall.1
+	picture = GFX_evt_suspicious_noble
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+    	has_character_flag = is_thrall
+	}
+	
+	immediate = {
+		any_character = {
+			limit = {
+				trait = vampire
+			}
+			character_event = { id = vampthrall.2 }
+		}
+	}
+}
+
+character_event = {				#tick down thrall numbers
+	id = vampthrall.2
+	desc = EVTDESCvampthrall.2
+	picture = GFX_evt_suspicious_noble
+
+	is_triggered_only = yes
+	
+	immediate = {
+		subtract_variable = { which = total_thralls value = 1 }
+	}
+
+	option = {
+		name = EVTOPTavampthrall.2
+		prestige = -5
+	}
+}
