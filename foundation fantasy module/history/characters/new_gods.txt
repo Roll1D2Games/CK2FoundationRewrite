@@ -1,0 +1,61 @@
+696969 = {
+	name=Zeus
+	dynasty=696969	#Olympus#
+	religion=hellenic_pagan	
+	culture=greek	#placeholder
+	trait="mastermind_theologian"
+	trait="scholar"
+	trait="lustful"
+	trait="master_seducer"	#hell yeah brother
+	trait="immortal"
+	1.1.1={
+		birth=yes
+		add_trait = immortal	#to initialise immortalitys
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+
+### 696970 - 697968 reserved ###
+
+697969 = {
+	name=Odin
+	dynasty=696970 #Asgard#
+	religion=norse_pagan	
+	culture=norse	#placeholder
+	trait="mastermind_theologian"
+	trait="scholar"
+	trait="mystic"
+	trait="one_eyed"	#Traded it for knowledge like an incel
+	trait="shrewd"
+	trait="immortal"
+	1.1.1={
+		birth=yes
+		add_trait = immortal	#to initialise immortality
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+
+### 697969 - 698968 reserved ###
+
+698969 = {
+	name=Ukko
+	dynasty=696971 #Isäinen - Finnic Pantheon#
+	religion=finnish_pagan	
+	culture=finnish	#placeholder
+	trait="mastermind_theologian"
+	trait="wroth"	#God of thunder#
+	trait="strong"
+	trait="architect"	#Crafter of all#
+	trait="immortal"
+	1.1.1={
+		birth=yes
+		add_trait = immortal	#to initialise immortality
+	}
+	950.1.1 = {
+		death = yes
+	}
+}

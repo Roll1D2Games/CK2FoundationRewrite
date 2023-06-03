@@ -1,0 +1,73 @@
+69696969 = {
+	name=Vampire
+	dynasty=696969
+	religion=catholic	
+	culture=english
+	trait="elusive_shadow"
+	trait="fair"
+	trait="immortal"
+	trait="vampire"
+	850.1.1={
+		birth=yes
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+69696970 = {
+	name=Werewolf
+	dynasty=696969
+	religion=catholic	
+	culture=english
+	trait="brilliant_strategist"
+	trait="strong"
+	trait="immortal"
+	trait="werewolf"
+	850.1.1={
+		birth=yes
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+69696971 = {
+	name=Skinchanger
+	dynasty=696969
+	religion=catholic	
+	culture=breton
+	trait="elusive_shadow"
+	trait="shrewd"
+	trait="immortal"
+	trait="skinchanger"
+	850.1.1={
+		birth=yes
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+69696972 = { # Vampire Off-Map
+	dynasty = 696969
+	name = "Cruorus"
+	father = 70512
+	religion = pagan
+	culture = roman
+	trait="elusive_shadow"
+	trait="shrewd"
+	trait="immortal"
+	trait="impaler"
+	trait="erudite"
+	trait="scholar"
+	trait="vampire"
+	trait="vampire_gen_5"
+	trait="vampire_blood_10"
+	525.12.28 = {
+		birth = yes
+	}
+	542.12.28 = {
+		trait = immortal
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
