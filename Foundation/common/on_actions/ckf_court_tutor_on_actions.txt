@@ -1,0 +1,11 @@
+on_childhood_pulse = {
+	events = {
+		ckf_tutor.001
+	}
+}
+
+on_adolescence_pulse = {
+	events = {
+		ckf_tutor.001
+	}
+}

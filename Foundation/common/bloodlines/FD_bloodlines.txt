@@ -1,0 +1,13 @@
+fd_harbringer = {
+	health = 2
+	bloodline_effect_fd_health_offset = yes
+	inheritance = all_descendants
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_murder_jester
+	flags = { bloodline_heroes }
+	active = {
+		ROOT = {
+			character_disease_trigger = yes
+		}
+	}
+}

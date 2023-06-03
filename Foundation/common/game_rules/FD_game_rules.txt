@@ -1,0 +1,160 @@
+FD_RULER_RANDOMISER = {
+	name = "FD_RULER_RANDOMISER"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = disabled
+		text = "FD_RULER_RANDOMISER_DISABLED"
+		desc = "FD_RULER_RANDOMISER_DISABLED_DESC"
+	}
+	option = {
+		name = enabled
+		text = "FD_RULER_RANDOMISER_ENABLED"
+		desc = "FD_RULER_RANDOMISER_ENABLED_DESC"
+	}
+}
+
+FD_RELIGION_RANDOMISER = {
+	name = "FD_RELIGION_RANDOMISER"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = disabled
+		text = "FD_RELIGION_RANDOMISER_DISABLED"
+		desc = "FD_RELIGION_RANDOMISER_DISABLED_DESC"
+	}
+	option = {
+		name = enabled
+		text = "FD_RELIGION_RANDOMISER_ENABLED"
+		desc = "FD_RELIGION_RANDOMISER_ENABLED_DESC"
+	}
+}
+
+
+FD_RULER_REALM_REMOVAL_INDIA = {
+	name = "FD_RULER_REALM_REMOVAL_INDIA"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = disabled
+		text = "FD_RULER_REALM_REMOVAL_INDIA_DISABLED"
+		desc = "FD_RULER_REALM_REMOVAL_INDIA_DISABLED_DESC"
+	}
+	option = {
+		name = enabled
+		text = "FD_RULER_REALM_REMOVAL_INDIA_ENABLED"
+		desc = "FD_RULER_REALM_REMOVAL_INDIA_ENABLED_DESC"
+	}
+}
+
+FD_PURGE_DEAD = {
+	name = "FD_RULE_PURGE_DEAD"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = disabled
+		text = "FD_RULE_PURGE_DEAD_DISABLED"
+		desc = "FD_RULE_PURGE_DEAD_DISABLED_DESC"
+	}
+	option = {
+		name = enabled
+		text = "FD_RULE_PURGE_DEAD_ENABLED"
+		desc = "FD_RULE_PURGE_DEAD_ENABLED_DESC"
+	}
+}
+
+FD_RENAME_CHARACTER = {
+	name = "RULE_RENAME_CHAR"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = full
+		text = "RULE_RENAME_CHAR_FULL"
+		desc = "RULE_RENAME_CHAR_FULL_DESC"
+	}
+	option = {
+		name = diplo_range
+		text = "RULE_RENAME_CHAR_DIPLO"
+		desc = "RULE_RENAME_CHAR_DIPLO_DESC"
+	}
+	option = {
+		name = off
+		text = "RULE_RENAME_CHAR_OFF"
+		desc = "RULE_RENAME_CHAR_OFF_DESC"
+	}
+}
+
+FD_ARTIFACT_SEARCH = {
+	name = "FD_RULE_ARTIFACT_SEARCH"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = full
+		text = "FD_RULE_ARTIFACT_SEARCH_FULL"
+		desc = "FD_RULE_ARTIFACT_SEARCH_FULL_DESC"
+	}
+	option = {
+		name = minimal
+		text = "FD_RULE_ARTIFACT_SEARCH_MINIMAL"
+		desc = "FD_RULE_ARTIFACT_SEARCH_MINIMAL_DESC"
+	}
+	option = {
+		name = off
+		text = "FD_RULE_ARTIFACT_SEARCH_OFF"
+		desc = "FD_RULE_ARTIFACT_SEARCH_OFF_DESC"
+	}
+}
+
+FD_CANNIBALISM = {
+	name = "FD_RULE_CANNIBALISM"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = off
+		text = "FD_RULE_CANNIBALISM_OFF"
+		desc = "FD_RULE_CANNIBALISM_OFF_DESC"
+	}
+	option = {
+		name = on
+		text = "FD_RULE_CANNIBALISMS_ON"
+		desc = "FD_RULE_CANNIBALISM_ON_DESC"
+	}
+}
+
+FD_EASTER_EGGS = {
+	name = "FD_RULE_EASTER_EGGS"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = off
+		text = "FD_RULE_EASTER_EGGS_OFF"
+		desc = "FD_RULE_EASTER_EGGS_OFF_DESC"
+	}
+	option = {
+		name = on
+		text = "FD_RULE_EASTER_EGGS_ON"
+		desc = "FD_RULE_EASTER_EGGS_ON_DESC"
+	}
+}
+
+FD_COUNCILLOR_XP = {
+	name = "FD_RULE_COUNCILLOR_XP"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = on
+		text = "FD_RULE_COUNCILLOR_XP_ON"
+		desc = "FD_RULE_COUNCILLOR_XP_ON_DESC"
+	}
+	option = {
+		name = off
+		text = "FD_RULE_COUNCILLOR_XP_OFF"
+		desc = "FD_RULE_COUNCILLOR_XP_OFF_DESC"
+	}
+}
+
+FD_LEADERSHIP_CHANGES = {
+	name = "FD_RULE_LEADERSHIP_CHANGES"
+	group = "RULE_FOUNDATION"
+	option = {
+		name = on
+		text = "FD_RULE_LEADERSHIP_CHANGES_ON"
+		desc = "FD_RULE_LEADERSHIP_CHANGES_ON_DESC"
+	}
+	option = {
+		name = off
+		text = "FD_RULE_LEADERSHIP_CHANGES_OFF"
+		desc = "FD_RULE_LEADERSHIP_CHANGES_OFF_DESC"
+	}
+}

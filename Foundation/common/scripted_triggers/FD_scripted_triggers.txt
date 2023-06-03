@@ -1,0 +1,90 @@
+has_negative_congenital_trigger = {
+	OR = {
+		trait = ugly
+		trait = clubfooted
+		trait = hunchback
+		trait = dwarf
+		trait = giant
+		trait = harelip
+		trait = stutter
+		trait = lisp
+		trait = slow
+		trait = inbred
+		trait = weak
+		trait = imbecile
+		trait = minus_1
+		trait = minus_2
+		trait = minus_4
+		trait = minus_6
+		trait = infertile
+		trait = infertile_1
+		trait = infertile_2
+		trait = negative_fair_1
+		trait = negative_fair_2
+		trait = weak_1
+		trait = short
+		trait = mute
+	}
+}
+
+has_positive_congenital_trigger = {
+	OR = {
+		trait = strong
+		trait = fair
+		trait = quick
+		trait = genius
+		trait = base_1
+		trait = base_2
+		trait = quick_1
+		trait = genius_1
+		trait = fertile
+		trait = fertile_1
+		trait = fertile_2
+		trait = base_fair_1
+		trait = base_fair_2
+		trait = strong_1
+		trait = tall
+		trait = booming_voice
+		trait = silver_tongue
+	}
+}
+
+is_smart_trigger = {
+	OR = {
+		trait = genius
+		trait = quick
+		trait = shrewd
+		trait = base_1
+		trait = base_2
+		trait = quick_1
+		trait = genius_1
+	}
+}
+
+is_dumb_trigger = {
+	OR = {
+		trait = dull
+		trait = slow
+		trait = imbecile 
+		trait = minus_1
+		trait = minus_2
+		trait = minus_4
+		trait = minus_6
+	}
+}
+
+is_strong_trigger = {
+	OR = {
+		trait = strong
+		trait = robust
+		trait = strong_1
+	}
+}
+
+is_weak_trigger = {
+	OR = {
+		trait = weak
+		trait = feeble
+		trait = weak_1
+	}
+}

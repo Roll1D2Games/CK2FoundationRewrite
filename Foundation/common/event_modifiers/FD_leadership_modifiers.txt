@@ -1,0 +1,8 @@
+fd_leading_troops = { 
+	icon = 19
+	diplomacy = -2
+	stewardship = -3
+	intrigue = -2
+	martial = 1
+	fertility = -5
+}

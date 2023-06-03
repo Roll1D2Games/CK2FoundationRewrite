@@ -1,0 +1,75 @@
+### Character Modifiers ###
+lodge_building_in_progress = {
+	icon = 11 
+}
+
+fight_club = {	#Dueling 
+	icon = 1
+	levy_reinforce_rate = 0.1
+}
+
+game_room = { #Gamer
+	icon = 13 
+	liege_prestige = 0.1
+}
+
+institution = {	#Scholar
+	icon = 12 
+	tech_growth_modifier = 0.3
+}
+
+office = {	#Administrator
+	icon = 12
+}
+
+store_house = {	#Architect
+	icon = 12
+}
+
+greenhouse = {	#Gardener
+	icon = 12
+}
+
+lair_of_debauchery = {	#Hedonist
+	icon = 12
+}
+
+hunters_lounge = {	#Hunter
+	icon = 12
+}
+
+torture_lair = {	#Impaler
+	icon = 12
+}
+
+guild_of_secrets = {	#Schemer
+	icon = 12
+}
+
+seduction_chamber = {	#Seducer/Seductress
+	icon = 12
+}
+
+mystical_chamber = {	#Mystic
+	icon = 12
+}
+
+socialite_club = {		#Socializer
+	icon = 12
+}
+
+war_room = {	#Strategist
+	icon = 12
+}
+
+private_shrine = {	 	#Theologian
+	icon = 12
+}
+
+### Supernatural Modifiers ###
+
+vampire_thralls = {
+	icon = 83
+	assassinate_chance_modifier = 0.1
+	plot_power_modifier = 0.1
+}

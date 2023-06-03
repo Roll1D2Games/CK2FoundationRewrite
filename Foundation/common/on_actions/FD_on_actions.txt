@@ -1,0 +1,44 @@
+on_birth = {
+	events = {
+		FDMaintenance.1 # Genetics Calculation
+	}
+}
+
+on_startup = {
+	events = {
+		FDMaintenance.3 	#Employment Menus
+		ckf_rename.001			#Rename rule
+		FD_artifact_search.1 	#Artifact recalc
+	}
+}
+
+on_death = {
+	events = {
+		FDroulette.1		#Ruler roulette
+		FDrealmremove.5		#Dynamic realm removal
+		FDroulette.3		#Ruler roulette 
+		FDCannibalism.1		#Cannibal gains
+	}
+}
+
+on_chronicle_start = {
+	events = {
+		FDrealmremove.1			#Dynamic realm removal
+		FD_artifact_sale.6		#Local economy Calculation
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		FD_bloodline.001		#Plague bloodline
+		FD_artifact_sale.1		#Recalculate economy
+		FD_artifact_search.1 	#Artifact recalc
+		FD_councillor_xp		#Councillor XP gains
+	}
+}
+
+on_five_year_pulse = {
+	events = {
+		FD_purge.001			#Purge save game
+	}
+}

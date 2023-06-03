@@ -1,0 +1,5 @@
+400000 = {
+	name="Unknown"
+	culture="FDPlaceholder"
+	religion="FDPlaceholder"
+}

@@ -1,0 +1,26 @@
+FDPlaceholder_group = {
+	graphical_cultures = { westerngfx }
+	alternate_start = { always = no }
+		
+	FDPlaceholder = {
+		alternate_start = { always = no }
+		graphical_cultures = { westerngfx }
+		color = { 0.6 0.2 1 }
+		founder_named_dynasties = no
+
+		male_names = {
+			Unknown
+		}
+		female_names = {
+			Unknown
+		}
+		
+		prefix = no
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
+
+		modifier = default_culture_modifier
+		
+	}
+}

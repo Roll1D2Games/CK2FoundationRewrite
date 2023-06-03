@@ -1,0 +1,43 @@
+FDPlaceholder_group = {
+	has_coa_on_barony_only = yes
+	graphical_culture = westerngfx
+	playable = yes
+	ai_peaceful = yes 
+
+	ai_convert_same_group = 1
+	ai_convert_other_group = 1
+
+	color = { 0.8 0.8 0.6 }
+
+	male_names = {
+	}
+	
+	female_names = {
+	}
+	
+	FDPlaceholderReligion = {
+		graphical_culture = pagangfx
+		alternate_start = { always = no }
+		icon = 1
+		heresy_icon = 1
+		color = { 0.1 0.1 0.1 }
+
+		god_names = {
+			Placeholder
+		}
+
+		evil_god_names = {
+			Placeholder
+		}
+
+		religious_clothing_head = 1
+		religious_clothing_priest = 1
+
+		scripture_name = placeholder
+		priest_title = placeholder
+		piety_name = placeholder
+
+		dynamic_cult = no
+		secret_religion = no
+	}
+}

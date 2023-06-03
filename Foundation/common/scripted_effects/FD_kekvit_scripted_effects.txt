@@ -1,0 +1,1045 @@
+fd_check_tribal_buildings = {
+	random_demesne_title = {
+		limit = {
+			tier = baron
+			is_tribal = yes
+		}
+		preferred_limit = {
+			holder_scope = {
+				is_capital = PREV
+			}
+		}
+						
+		random_list = {
+			50 = {
+				trigger = {
+					wealth = 25
+					NOR = { 
+						has_building = tb_hillfort_1
+						has_building = tb_hillfort_2
+						has_building = tb_hillfort_3
+						has_building = tb_hillfort_4
+					}
+				}
+				wealth = -25
+				add_building = tb_hillfort_1
+			}
+			1 = {
+				trigger = {
+					wealth = 50
+					NOT = { has_building = tb_hillfort_2 }
+					has_building = tb_hillfort_1
+				}
+				wealth = -50
+				add_building = tb_hillfort_2
+			}
+			1 = {
+				trigger = {
+					wealth = 75
+					NOT = { has_building = tb_hillfort_3 }
+					has_building = tb_hillfort_2
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 1 }
+				}
+				wealth = -75
+				add_building = tb_hillfort_3
+			}
+			1 = {
+				trigger = {
+					wealth = 100
+					NOT = { has_building = tb_hillfort_4 }
+					has_building = tb_hillfort_3
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 1 }
+				}
+				wealth = -100
+				add_building = tb_hillfort_4
+			}
+			50 = {
+				trigger = {
+					wealth = 25
+					NOR = { 
+						has_building = tb_market_town_1
+						has_building = tb_market_town_2
+						has_building = tb_market_town_3
+						has_building = tb_market_town_4
+					}
+				}
+				wealth = -25
+				add_building = tb_market_town_1
+			}
+			1 = {
+				trigger = {
+					wealth = 50
+					NOT = { has_building = tb_market_town_2 }
+					has_building = tb_market_town_1
+				}
+				wealth = -50
+				add_building = tb_market_town_2
+			}
+			1 = {
+				trigger = {
+					wealth = 75
+					NOT = { has_building = tb_market_town_3 }
+					has_building = tb_market_town_2
+					FROMFROM = { TECH_CITY_CONSTRUCTION = 1 }
+				}
+				wealth = -75
+				add_building = tb_market_town_3
+			}
+			1 = {
+				trigger = {
+					wealth = 100
+					NOT = { has_building = tb_market_town_4 }
+					has_building = tb_market_town_3
+					FROMFROM = { TECH_CITY_CONSTRUCTION = 1 }
+				}
+				wealth = -100
+				add_building = tb_market_town_4
+			}
+			1 = {
+				trigger = {
+					piety = 100
+					NOT = { has_building = tb_defensive_fortifications_1 }
+					ROOT = {
+						OR = {
+							religion = baltic_pagan_reformed
+							religion = baltic_pagan
+							religion = finnish_pagan_reformed
+							religion = finnish_pagan
+							religion = slavic_pagan_reformed
+							religion = slavic_pagan
+							religion = west_african_pagan_reformed
+							religion = west_african_pagan
+							religion = bon
+							religion = bon_reformed
+						}
+					}
+				}
+				piety = -100
+				add_building = tb_defensive_fortifications_1
+			}
+			1 = {
+				trigger = {
+					piety = 150
+					NOT = { has_building = tb_defensive_fortifications_2 }
+					has_building = tb_defensive_fortifications_1
+					ROOT = {
+						NOR = {
+							religion = baltic_pagan_reformed
+							religion = baltic_pagan
+							religion = finnish_pagan_reformed
+							religion = finnish_pagan
+							religion = slavic_pagan_reformed
+							religion = slavic_pagan
+							religion = west_african_pagan_reformed
+							religion = west_african_pagan
+							religion = bon
+							religion = bon_reformed
+						}
+					}
+				}
+				piety = -150
+				add_building = tb_defensive_fortifications_2
+			}
+			1 = {
+				trigger = {
+					piety = 200
+					NOT = { has_building = tb_defensive_fortifications_3 }
+					has_building = tb_defensive_fortifications_2
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 1 }
+					ROOT = {
+						NOR = {
+							religion = baltic_pagan_reformed
+							religion = baltic_pagan
+							religion = finnish_pagan_reformed
+							religion = finnish_pagan
+							religion = slavic_pagan_reformed
+							religion = slavic_pagan
+							religion = west_african_pagan_reformed
+							religion = west_african_pagan
+							religion = bon
+							religion = bon_reformed
+						}
+					}
+				}
+				piety = -200
+				add_building = tb_defensive_fortifications_3
+			}
+			1 = {
+				trigger = {
+					piety = 250
+					NOT = { has_building = tb_defensive_fortifications_4 }
+					has_building = tb_defensive_fortifications_3
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 1 }
+					ROOT = {
+						NOR = {
+							religion = baltic_pagan_reformed
+							religion = baltic_pagan
+							religion = finnish_pagan_reformed
+							religion = finnish_pagan
+							religion = slavic_pagan_reformed
+							religion = slavic_pagan
+							religion = west_african_pagan_reformed
+							religion = west_african_pagan
+							religion = bon
+							religion = bon_reformed
+						}
+					}
+				}
+				piety = -250
+				add_building = tb_defensive_fortifications_4
+			}
+			25 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_shipyard_1 }
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 1 }
+				}
+				prestige = -100
+				add_building = tb_shipyard_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_shipyard_2 }
+					has_building = tb_shipyard_1
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 2 }
+				}
+				prestige = -200
+				add_building = tb_shipyard_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_shipyard_3 }
+					has_building = tb_shipyard_2
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 3 }
+				}
+				prestige = -300
+				add_building = tb_shipyard_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_shipyard_4 }
+					has_building = tb_shipyard_3
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 4 }
+				}
+				prestige = -400
+				add_building = tb_shipyard_4
+			}
+			1 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_training_grounds_1 }
+				}
+				prestige = -100
+				add_building = tb_training_grounds_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_training_grounds_2 }
+					has_building = tb_training_grounds_1
+				}
+				prestige = -200
+				add_building = tb_training_grounds_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_training_grounds_3 }
+					has_building = tb_training_grounds_2
+				}
+				prestige = -300
+				add_building = tb_training_grounds_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_training_grounds_4 }
+					has_building = tb_training_grounds_3
+				}
+				prestige = -400
+				add_building = tb_training_grounds_4
+			}
+			1 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_war_camp_1 }
+				}
+				prestige = -100
+				add_building = tb_war_camp_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_war_camp_2 }
+					has_building = tb_war_camp_1
+				}
+				prestige = -200
+				add_building = tb_war_camp_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_war_camp_3 }
+					has_building = tb_war_camp_2
+				}
+				prestige = -300
+				add_building = tb_war_camp_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_war_camp_4 }
+					has_building = tb_war_camp_3
+				}
+				prestige = -400
+				add_building = tb_war_camp_4
+			}
+			1 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_practice_range_1 }
+				}
+				prestige = -100
+				add_building = tb_practice_range_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_practice_range_2 }
+					has_building = tb_practice_range_1
+				}
+				prestige = -200
+				add_building = tb_practice_range_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_practice_range_3 }
+					has_building = tb_practice_range_2
+				}
+				prestige = -300
+				add_building = tb_practice_range_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_practice_range_4 }
+					has_building = tb_practice_range_3
+				}
+				prestige = -400
+				add_building = tb_practice_range_4
+			}
+			1 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_steppe_barracks_1 }
+					county = {
+						terrain = steppe
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+						}
+					}
+				}
+				prestige = -100
+				add_building = tb_steppe_barracks_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_steppe_barracks_2 }
+					has_building = tb_steppe_barracks_1
+					county = {
+						terrain = steppe
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+						}
+					}
+				}
+				prestige = -200
+				add_building = tb_steppe_barracks_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_steppe_barracks_3 }
+					has_building = tb_steppe_barracks_2
+					county = {
+						terrain = steppe
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+						}
+					}
+				}
+				prestige = -300
+				add_building = tb_steppe_barracks_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_steppe_barracks_4 }
+					has_building = tb_steppe_barracks_3
+					county = {
+						terrain = steppe
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+						}
+					}
+				}
+				prestige = -400
+				add_building = tb_steppe_barracks_4
+			}
+			1 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_steppe_stable_1 }
+					county = {
+						OR = {
+							terrain = plains
+							terrain = steppe
+						}
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+							culture = alan
+						}
+					}
+				}
+				prestige = -100
+				add_building = tb_steppe_stable_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_steppe_stable_2 }
+					has_building = tb_steppe_stable_1
+					county = {
+						OR = {
+							terrain = plains
+							terrain = steppe
+						}
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+							culture = alan
+						}
+					}
+				}
+				prestige = -200
+				add_building = tb_steppe_stable_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_steppe_stable_3 }
+					has_building = tb_steppe_stable_2
+					county = {
+						OR = {
+							terrain = plains
+							terrain = steppe
+						}
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+							culture = alan
+						}
+					}
+				}
+				prestige = -300
+				add_building = tb_steppe_stable_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_steppe_stable_4 }
+					has_building = tb_steppe_stable_3
+					county = {
+						OR = {
+							terrain = plains
+							terrain = steppe
+						}
+					}
+					ROOT = {
+						OR = {
+							culture_group = altaic
+							culture_group = magyar
+							culture = alan
+						}
+					}
+				}
+				prestige = -400
+				add_building = tb_steppe_stable_4
+			}
+			1 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_arsenal_1 }
+				}
+				prestige = -100
+				add_building = tb_arsenal_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_arsenal_2 }
+					has_building = tb_arsenal_1
+				}
+				prestige = -200
+				add_building = tb_arsenal_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_arsenal_3 }
+					has_building = tb_arsenal_2
+				}
+				prestige = -300
+				add_building = tb_arsenal_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_arsenal_4 }
+					has_building = tb_arsenal_3
+				}
+				prestige = -400
+				add_building = tb_arsenal_4
+			}
+			1 = {
+				trigger = {
+					prestige = 100
+					NOT = { has_building = tb_desert_stable_1 }
+					county = {
+						terrain = desert
+					}
+					ROOT = {
+						OR = {
+							culture_group = east_african
+							culture_group = west_african
+							culture_group = arabic
+							culture_group = iranian
+						}
+					}
+				}
+				prestige = -100
+				add_building = tb_desert_stable_1
+			}
+			1 = {
+				trigger = {
+					prestige = 200
+					NOT = { has_building = tb_desert_stable_2 }
+					has_building = tb_desert_stable_1
+					county = {
+						terrain = desert
+					}
+					ROOT = {
+						OR = {
+							culture_group = east_african
+							culture_group = west_african
+							culture_group = arabic
+							culture_group = iranian
+						}
+					}
+				}
+				prestige = -200
+				add_building = tb_desert_stable_2
+			}
+			1 = {
+				trigger = {
+					prestige = 300
+					NOT = { has_building = tb_desert_stable_3 }
+					has_building = tb_desert_stable_2
+					county = {
+						terrain = desert
+					}
+					ROOT = {
+						OR = {
+							culture_group = east_african
+							culture_group = west_african
+							culture_group = arabic
+							culture_group = iranian
+						}
+					}
+				}
+				prestige = -300
+				add_building = tb_desert_stable_3
+			}
+			1 = {
+				trigger = {
+					prestige = 400
+					NOT = { has_building = tb_desert_stable_4 }
+					has_building = tb_desert_stable_3
+					county = {
+						terrain = desert
+					}
+					ROOT = {
+						OR = {
+							culture_group = east_african
+							culture_group = west_african
+							culture_group = arabic
+							culture_group = iranian
+						}
+					}
+				}
+				prestige = -400
+				add_building = tb_desert_stable_4
+			}
+		}
+	}
+}
+
+fd_check_castle_buildings = {
+	random_demesne_title = {
+		limit = {
+			tier = baron
+			is_tribal = yes
+		}
+		preferred_limit = {
+			holder_scope = {
+				is_capital = PREV
+			}
+		}
+						
+		random_list = {
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_wall_1
+						has_building = ca_wall_2
+						has_building = ca_wall_3
+						has_building = ca_wall_4
+						has_building = ca_wall_5
+					}
+				}
+				add_building = ca_wall_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_2 }
+					has_building = ca_wall_1
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+				}
+				add_building = ca_wall_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_3 }
+					has_building = ca_wall_2
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+				}
+				add_building = ca_wall_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_4 }
+					has_building = ca_wall_3
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+				}
+				add_building = ca_wall_4
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_5 }
+					has_building = ca_wall_4
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+				}
+				add_building = ca_wall_5
+			}
+			50 = {
+				trigger = {
+					has_building = ca_wall_1
+					
+					NOR = { 
+						has_building = ca_wall_q_1
+						has_building = ca_wall_q_2
+						has_building = ca_wall_q_3
+						has_building = ca_wall_q_4
+						has_building = ca_wall_q_5
+					}
+				}
+				add_building = ca_wall_q_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_q_2 }
+					has_building = ca_wall_q_1
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+				}
+				add_building = ca_wall_q_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_q_3 }
+					has_building = ca_wall_q_2
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+				}
+				add_building = ca_wall_q_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_q_4 }
+					has_building = ca_wall_q_3
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+				}
+				add_building = ca_wall_q_4
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_wall_q_5 }
+					has_building = ca_wall_q_4
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+				}
+				add_building = ca_wall_q_5
+			}
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_keep_1
+						has_building = ca_keep_2
+						has_building = ca_keep_3
+						has_building = ca_keep_4
+						has_building = ca_keep_5
+						has_building = ca_keep_6
+					}
+				}
+				add_building = ca_keep_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_keep_2 }
+					has_building = ca_keep_1
+				}
+				add_building = ca_keep_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_keep_3 }
+					has_building = ca_keep_2
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+				}
+				add_building = ca_keep_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_keep_4 }
+					has_building = ca_keep_3
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+				}
+				add_building = ca_keep_4
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_keep_5 }
+					has_building = ca_keep_4
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+				}
+				add_building = ca_keep_5
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_keep_6 }
+					has_building = ca_keep_5
+					FROMFROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+				}
+				add_building = ca_keep_6
+			}
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_militia_barracks_1
+						has_building = ca_militia_barracks_2
+						has_building = ca_militia_barracks_3
+						has_building = ca_militia_barracks_4
+					}
+				}
+				add_building = ca_militia_barracks_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_militia_barracks_2 }
+					has_building = ca_militia_barracks_1
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 1 }
+				}
+				add_building = ca_militia_barracks_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_militia_barracks_3 }
+					has_building = ca_wall_q_2
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 5 }
+				}
+				add_building = ca_militia_barracks_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_militia_barracks_4 }
+					has_building = ca_militia_barracks_3
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 7 }
+				}
+				add_building = ca_militia_barracks_4
+			}
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_training_grounds_1
+						has_building = ca_training_grounds_2
+						has_building = ca_training_grounds_3
+					}
+				}
+				add_building = ca_training_grounds_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_training_grounds_2 }
+					has_building = ca_training_grounds_1
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 3 }
+				}
+				add_building = ca_training_grounds_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_training_grounds_3 }
+					has_building = ca_training_grounds_2
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 6 }
+				}
+				add_building = ca_training_grounds_3
+			}
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_barracks_1
+						has_building = ca_barracks_2
+						has_building = ca_barracks_3
+						has_building = ca_barracks_4
+						has_building = ca_barracks_5
+						has_building = ca_barracks_6
+					}
+				}
+				add_building = ca_barracks_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_barracks_2 }
+					has_building = ca_barracks_1
+				}
+				add_building = ca_barracks_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_barracks_3 }
+					has_building = ca_barracks_2
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 1 }
+				}
+				add_building = ca_barracks_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_barracks_4 }
+					has_building = ca_barracks_3
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 3 }
+				}
+				add_building = ca_barracks_4
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_barracks_5 }
+					has_building = ca_barracks_4
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 5 }
+				}
+				add_building = ca_barracks_5
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_barracks_6 }
+					has_building = ca_barracks_5
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 7 }
+				}
+				add_building = ca_barracks_6
+			}
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_stable_1
+						has_building = ca_stable_2
+						has_building = ca_stable_3
+						has_building = ca_stable_4
+						has_building = ca_stable_5
+						has_building = ca_stable_6
+					}
+				}
+				add_building = ca_stable_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_stable_2 }
+					has_building = ca_stable_1
+				}
+				add_building = ca_stable_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_stable_3 }
+					has_building = ca_stable_2
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 2 }
+				}
+				add_building = ca_stable_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_stable_4 }
+					has_building = ca_stable_3
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 4 }
+				}
+				add_building = ca_stable_4
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_stable_5 }
+					has_building = ca_stable_4
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 6 }
+				}
+				add_building = ca_stable_5
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_stable_6 }
+					has_building = ca_stable_5
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 8 }
+				}
+				add_building = ca_stable_6
+			}
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_town_1
+						has_building = ca_town_2
+						has_building = ca_town_3
+						has_building = ca_town_4
+						has_building = ca_town_5
+						has_building = ca_town_6
+					}
+				}
+				add_building = ca_town_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_town_2 }
+					has_building = ca_town_1
+				}
+				add_building = ca_town_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_town_3 }
+					has_building = ca_town_2
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 2 }
+				}
+				add_building = ca_town_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_town_4 }
+					has_building = ca_town_3
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 4 }
+				}
+				add_building = ca_town_4
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_town_5 }
+					has_building = ca_town_4
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 6 }
+				}
+				add_building = ca_town_5
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_town_6 }
+					has_building = ca_town_5
+					FROMFROM = { TECH_CASTLE_CONSTRUCTION = 8 }
+				}
+				add_building = ca_town_6
+			}
+			50 = {
+				trigger = {
+					NOR = { 
+						has_building = ca_shipyard_1
+						has_building = ca_shipyard_2
+						has_building = ca_shipyard_3
+						has_building = ca_shipyard_4
+					}
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 1 }
+				}
+				add_building = ca_shipyard_1
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_shipyard_2 }
+					has_building = ca_shipyard_1
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 2 }
+				}
+				add_building = ca_shipyard_2
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_shipyard_3 }
+					has_building = ca_shipyard_2
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 3 }
+				}
+				add_building = ca_shipyard_3
+			}
+			1 = {
+				trigger = {
+					NOT = { has_building = ca_shipyard_4 }
+					has_building = ca_shipyard_3
+					county = {
+						port = yes
+					}
+					FROMFROM = { TECH_NAVAL = 4 }
+				}
+				add_building = ca_shipyard_4
+			}
+		}
+	}
+}

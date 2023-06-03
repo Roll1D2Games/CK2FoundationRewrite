@@ -1,0 +1,5 @@
+FD_another_skull = {
+	monthly_character_prestige = 0.05
+	icon = 41
+	stacking = yes
+}

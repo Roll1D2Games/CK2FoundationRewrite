@@ -1,0 +1,444 @@
+fort = {	
+	fort_lodge = {
+		desc = fort_lodge_desc
+		add_number_to_name = no
+		gold_cost = 300
+		build_time = 720
+		fort_level = 1.0
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+	}
+
+	fort_lodge_fight_club = {
+		desc = fort_lodge_fight_club_desc
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				OR = {
+					trait = duelist
+					combat_rating = 50
+				}
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				trait = duelist
+				combat_rating = 50
+			}
+		} 
+	}
+
+	fort_lodge_game_room = {
+		desc = fort_lodge_game_room_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = gamer
+			}
+		}
+		is_active_trigger = {
+			FROM = { 
+				trait = gamer
+			}
+		}
+	}
+
+	fort_lodge_institution = {
+		desc = fort_lodge_institution_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				OR = {
+					trait = scholar
+					AND = {
+						trait = erudite
+						learning = 15
+					}
+				}
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				OR = {
+					trait = scholar
+					AND = {
+						trait = erudite
+						learning = 15
+					}
+				}
+			}
+		}
+	}
+
+	fort_lodge_office = {
+		desc = fort_lodge_office_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = administrator
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = administrator
+			}
+		}
+	}
+
+	fort_lodge_store_house = {
+		desc = fort_lodge_store_house_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = architect
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = architect
+			}
+		}
+	}
+
+	fort_lodge_garden = {
+		desc = fort_lodge_garden_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = gardener
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = gardener
+			}
+		}
+	}
+
+	fort_lodge_hidden_chamber = {
+		desc = fort_lodge_hidden_chamber_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = hedonist
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = hedonist
+			}
+		}
+	}
+
+	fort_lodge_hunters_lounge = {
+		desc = fort_lodge_hunters_lounge_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = hunter
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = hunter
+			}
+		}
+	}
+
+	fort_lodge_dungeon = {
+		desc = fort_lodge_dungeon_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = impaler
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = impaler
+			}
+		}
+	}
+
+	fort_lodge_planning_room = {
+		desc = fort_lodge_planning_room_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = schemer
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = schemer
+			}
+		}
+	}
+
+	fort_lodge_private_room = {
+		desc = fort_lodge_private_room_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				OR = {
+					trait = seducer
+					trait = seductress
+				}
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				OR = {
+					trait = seducer
+					trait = seductress
+				}
+			}
+		}
+	}
+
+	fort_lodge_tower = {
+		desc = fort_lodge_tower_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = mystic	
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = mystic
+			}
+		}
+	}
+
+	fort_lodge_socialite_club = {
+		desc = fort_lodge_socialite_club_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = socializer	
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = socializer
+			}
+		}
+	}
+
+	fort_lodge_war_room = {
+		desc = fort_lodge_war_room_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = strategist	
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = strategist
+			}
+		}
+	}
+
+	fort_lodge_private_shrine = {
+		desc = fort_lodge_private_shrine_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = theologian	
+			}
+		}
+		is_active_trigger = {
+			FROM = { 
+				trait = theologian
+			}
+		} 
+	}
+}
