@@ -1,0 +1,39 @@
+#### Culture ####
+skinchanger_group;Skinchangers;;;;;;;;;;;;;x
+skinchanger;Skinchanger;;;;;;;;;;;;;x
+skinchanger_desc;This character is a skinchanger;;;;;;;;;;;;;x
+
+#### Event Modifiers ####
+
+skinchanger_base;Skinchanger;;;;;;;;;;;;;x
+skinchanger_base_desc;A base form skinchanger, repulsive and reclusive.;;;;;;;;;;;;;x
+skinchanger_norse;Skinchanger: Norse;;;;;;;;;;;;;x
+skinchanger_norse_desc;A Skinchanger that has assumed a generic norse-style appearance and language.;;;;;;;;;;;;;x
+skinchanger_latin;Skinchanger: Latin;;;;;;;;;;;;;x
+skinchanger_latin_desc;A Skinchanger that has assumed a generic latin-style appearance and language.;;;;;;;;;;;;;x
+skinchanger_cooldown;Skinchanger Cooldown;;;;;;;;;;;;;x
+skinchanger_cooldown_desc;This skinchanger has recently changed form and cannot change for sometime.;;;;;;;;;;;;;x
+recently_manipulated;Recently Manipulated Flesh;;;;;;;;;;;;;x
+
+#### Decisions ####
+
+enable_skinchanger_decisions;Enable Skinchanger Decisions;;;;;;;;;;;;;x
+enable_skinchanger_decisions_desc;Show the Skinchanger decision list.;;;;;;;;;;;;;x
+disable_skinchanger_decisions;Disable Skinchanger Decisions;;;;;;;;;;;;;x
+disable_skinchanger_decisions_desc;Hide the Skinchanger decision list.;;;;;;;;;;;;;x
+skinchanger_norse_decision;Skinchange - Norse;;;;;;;;;;;;;x
+skinchanger_norse_decisiondesc;Change your appearance and mannerisms to that of a Norse person.;;;;;;;;;;;;;x
+skinchanger_latin_decision;Skinchange - Latin;;;;;;;;;;;;;x
+skinchanger_latin_decisiondesc;Change your appearance and mannerisms to that of a Latin person.;;;;;;;;;;;;;x
+skinchanger_base_decision;Skinchange - Base;;;;;;;;;;;;;x
+skinchanger_base_decisiondesc;Change your appearance and mannerisms back to your natural skinchanger form.;;;;;;;;;;;;;x
+skinchanger_latin_mod;Skinchanger Appearance: Latin;;;;;;;;;;;;;x
+skinchanger_base_mod;Skinchanger Appearance: Natural;;;;;;;;;;;;;x
+skinchanger_norse_mod;Skinchanger Appearance: Norse;;;;;;;;;;;;;x
+
+#### Tooltip ####
+
+has_not_manipulated_recently;Has not manipulated recently.;;;;;;;;;;;;;x
+has_inspiration;Has inspiration.;;;;;;;;;;;;;x
+not_already_manipulate;Not already manipulating;;;;;;;;;;;;;x
+

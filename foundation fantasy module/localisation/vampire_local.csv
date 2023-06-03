@@ -1,0 +1,380 @@
+####################
+#                  #
+#      Events      #
+#                  #
+####################
+
+EVTTITLEvamptech.1;The New Fledgling;;;;;;;;;;;;;x
+EVTDESCvamptech.1;"The Curse of Justinian now flows through my veins. Though I am now immune to the ailments of man, and even death itself, the cost is great. 
+The only way I can survive is with the mana taken directly from other's blood. 
+And though the priests and holy men guard the secret of our existence closely from the peasantry and nobility alike, their patience will not extend far before they find a reason within their holy scriptures to destroy me...";;;;;;;;;;;;;x
+vamptech1optA;"What have I become...?";;;;;;;;;;;;;x
+
+#### Vampire Hunting Events ####
+
+EVTDESCvampirehunt.11111;You manage to catch your target fleeing down a dark alley, perhaps from you, or perhaps from the more normal city dangers. [FromFrom.GetTitledNameWithNick] doesn't immediately recognise you through your disguise, and you take the opportunity to render them unconcious and begin feeding.;;;;;;;;;;;;;x
+vampirehunt11111optA;"Now to make my escape...";;;;;;;;;;;;;x
+
+EVTDESCvampirehunt.1;You stalk your prey for some time until finally an opportunity to strike presents itself.;;;;;;;;;;;;;x
+vampirehunt1optA;"I will feed!";;;;;;;;;;;;;x
+vampirehunt1optB;"The risk is too great.";;;;;;;;;;;;;x
+
+EVTDESCvampirehunt.2;Using your charm and wit, you manage to make aquaintances with your target, all that remains is to temporarily bind them to your will.;;;;;;;;;;;;;x
+vampirehunt2optA;"Look into my eyes!";;;;;;;;;;;;;x
+vampirehunt2optB;"Excuse me, I must be going.";;;;;;;;;;;;;x
+EVTOPTC_HFP_10105_fighting_vampire;Feed on your target...;;;;;;;;;;;;;x
+EVTOPTC_HFP_10105_fighting_vampire_2;Drain the last of their life force...;;;;;;;;;;;;;x
+
+EVTDESCvampirehunt.3;You wait until your target is alone and vulnerable before perparing to strike at them, turning them into a mindless servant for simple feeding cattle, or for nefarious political gain.
+All that remains is to attack!;;;;;;;;;;;;;x
+vampirehunt3optA;"Look into my eyes!";;;;;;;;;;;;;x
+vampirehunt3optB;"Excuse me, turns out I have the wrong person!";;;;;;;;;;;;;x
+avoiding_suspicion_thrall_success;of enthralling target and avoiding suspicion.;;;;;;;;;;;;;x
+people_ask_questions_thrall;of enthralling target but becoming suspicious!;;;;;;;;;;;;;x
+failure_thrall_gain_suspicion;of failing to enthrall the target and becoming suspicious!;;;;;;;;;;;;;x
+escape_no_suspicion;of escaping with no suspicion.;;;;;;;;;;;;;x
+escaping_suspicion;of escaping but gaining suspicion!;;;;;;;;;;;;;x
+
+EVTDESCvamphunger.1;Your vampiric hunger begins to grow. If you do not feed frequently and maintain your Haemomana you will eventually wither away and risk death!;;;;;;;;;;;;;x
+vamphunger1OPTa;I will soon feed.;;;;;;;;;;;;;x
+vamphunger1OPTb;The pain grows!;;;;;;;;;;;;;x
+vamphunger1OPTc;I feel so weak...;;;;;;;;;;;;;x
+hunger_grows;Your hunger grows and you will need to feed soon!;;;;;;;;;;;;;x
+hunger_grows_strong;Your hunger continues to grow and drains you greatly!;;;;;;;;;;;;;x
+hunger_grows_greatly;Your hunger is all consuming, and you risk death!;;;;;;;;;;;;;x
+EVTDESCvamphunger.3;You no longer have the Haemomana to sustain your power. Death approaches rapidly and you begin to wither and die.;;;;;;;;;;;;;x
+vamphunger3OPTa;No... not like this...;;;;;;;;;;;;;x
+
+EVTDESCvampirehunt.11112;You summon the thrall to your personal quarters and drain them of their blood. After you are finished the thrall bows and continues their business.;;;;;;;;;;;;;x
+vampirehunt11112optA;A necessary feed.;;;;;;;;;;;;;x
+
+EVTDESCvamphunger.4;You have remained well fed for sometime now, and you have regained your previous strength!;;;;;;;;;;;;;x
+vamphunger4OPTa;My power has finally returned to me!;;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.6;You conjure up your blood magic and wipe the mind of your thrall, releasing them of their unquestioning service, and making them forget the entire ordeal.;;;;;;;;;;;;;x
+EVTDESCvampirepowersoptA;You have no further value to me.;;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.7;Success! [FromFrom.GetTitledNameWithNick] is now hypnotised and will act in accordance with your wishes, albeit temporarily...;;;;;;;;;;;;;x 
+vampirehunt7optA;Perfect!;;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.8;By enthralling [FromFrom.GetTitledNameWithNick] you have gained an obedient, unquestioning servant, and occasional blood bag for desperate times.;;;;;;;;;;;;;x 
+vampirehunt8optA;Perfect!;;;;;;;;;;;;;x
+
+EVTDESCvampirehunt.9;You fully drink down the thickest of [FromFrom.GetTitledNameWithNick]'s blood until the colour drains from their face. The oversaturation of blood leaves you feeling both empowered and weakened.;;;;;;;;;;;;;x 
+vampirehunt9optA;A rare treat!;;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.10;Either through acute awareness or paranoia, [FromFrom.GetTitledNameWithNick] was more elusive than you expected. Though you're certain your disguise held up, you decide to lay low for a little while to avoid suspicion...;;;;;;;;;;;;;x 
+vampirehunt10optA;Not every hunt can be a success...;;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.11;You can use the powers of Haemomana to adjust your form to gain powerful boons.;;;;;;;;;;;;;x
+vampirehunt11optA;"I will gain the powers of a master seducer";;;;;;;;;;;;;x
+vampirehunt11optB;"I will become unparalleled in my combat prowess";;;;;;;;;;;;;x
+vampirehunt11optC;"I will purge my ailments";;;;;;;;;;;;;x
+vampirehunt11optD;"I do not need to change myself after all...";;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.12;You have coalesced enough power to bestow the powers of your blood on another person, granted you a powerful ally or potentially a dangerous foe. \n\nJoining this person to your bloodline will not grant you power or influence over them and they will retain their free will entirely. Choose carefully.;;;;;;;;;;;;;x 
+vampirepowers12optA;"I grant them this gift!";;;;;;;;;;;;;x
+vampirepowers12optB;"They are not worthy...";;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.13;All Vampires can inherently sense other Vampires of the same bloodline. These people are linked to me as either sires, or the sired.;;;;;;;;;;;;;x
+vampirepowers13optA;Bloodline Founder;;;;;;;;;;;;;x
+vampirepowers13optB;Notable Bloodline Members;;;;;;;;;;;;;x
+vampirepowers13optC;All Bloodline Members;;;;;;;;;;;;;x
+vampirepowers13optD;My Sire;;;;;;;;;;;;;x
+vampirepowers13optE;You are the founder of this bloodline!;;;;;;;;;;;;;x
+vampire_founder_tooltip;This option is available because you are the founder of this bloodline!;;;;;;;;;;;;;x
+
+#### Vampire Suspicion Events ####
+
+EVTDESCvampsuspicion.1;Your actions have been less than subtle as of late, and the last demostration of your powers has caused quite a stir. 
+Depending on your targets connections and status, you may find things going somewhat awry...;;;;;;;;;;;;;x
+vampsuspicion1OPTa;Perhaps I should be more discreet...;;;;;;;;;;;;;x
+EVTDESCvampsuspicion.2;Curses! Your target had some connections in high up places and now a full investigation has been funded! 
+Either through torture or paranoia, some have pointed fingers in your direction. While there is no absolute evidence to lead back to you, many grow more suspicious towards you.;;;;;;;;;;;;;x
+vampsuspicion2OPTa;Curses! Better lay low...;;;;;;;;;;;;;x
+EVTDESCvampsuspicion.3;"[Root.GetTitledNameWithNick], \n\nMy investigation is complete and though I believe you to be the culprit, the evidence is so unexplainable I cannot arrest you. Just know I am always watching.\n\n[FromFrom.GetTitledNameWithNick]";;;;;;;;;;;;;x
+vampsuspicion3OPTa;Mistaken identity, I'm sure...;;;;;;;;;;;;;x
+suspicion_increases;characters become more suspicious of you!;;;;;;;;;;;;;x
+suspicion_avoided;you avoid suspicion!;;;;;;;;;;;;;x
+succeeding_unnoticed;succeeding unnoticed.;;;;;;;;;;;;;x
+people_ask_questions;of people asking questions...;;;;;;;;;;;;;x
+suspicion_increases_text;Your §Bsuspicion§! level increases!;;;;;;;;;;;;;x
+
+EVTDESCvampsuspicion.4;"Dear [Root.GetTitledNameWithNick], \n\nMy investigation is complete and I have found no connection linking you to your accused crime. \n\n[vRoot.vampire_current_investigator.GetTitledNameWithNick]";;;;;;;;;;;;;x
+vampsuspicion4OPTa;"That could have been dangerous...";;;;;;;;;;;;;x
+
+EVTDESCvampsuspicion.5;You've been less than discreet as of late and finally the religious authorities have come knocking - with an armed escort. Though the holy man is cordial and walks with you as an equal, it is clear his suspicion is piqued.;;;;;;;;;;;;;x
+vampsuspicion5OPTa;"All a mix up, I'm sure of it!";;;;;;;;;;;;;x
+EVTDESCvampsuspicion.6;Your unnatural abilities have once again drawn the ire of the religious authorities who already had their eye fixed on you. This time they drag you from your home, but remain civil, as to brand an innocent lord would harm the standing of the faith in your realm.;;;;;;;;;;;;;x
+vampsuspicion6OPTa;"Any more of this and we will not be kind.";;;;;;;;;;;;;x
+EVTDESCvampsuspicion.7;Yet again your suspcious actions have grown, and now the religious authorities seek to make an example of you. You are dragged through the streets, in plain view of lord and peasant alike. Though they do not intend to destroy you, and instead rely on your subjects and colleges to do the job for them instead.;;;;;;;;;;;;;x
+vampsuspicion7OPTa;"From this I may not recover...";;;;;;;;;;;;;x
+EVTDESCvampsuspicion.8;A great stomping comes towards your bedchambers, and a huge armoured brute knocks you unconcious with his plated gauntlet. When you awaked you are tied to a post in the city square as the local holy leader circles you. He preaches for a moment to the gathered crowd about how even nobles are not immune to the effects of evil. He then turns to you, stake in hand.;;;;;;;;;;;;;x
+vampsuspicion8OPTa;"Begone foul beast!";;;;;;;;;;;;;x
+
+EVTDESCvampsuspicion.999;An inexplainable murder has taken place and you have been called upon to investigate the crime and find whoever, or whatever, did this!;;;;;;;;;;;;;x
+vampsuspicion999OPTa;"I will present my findings!";;;;;;;;;;;;;x
+
+#### Blood Artifice Events ####
+
+EVTDESCvampirepowers.15;Using your Haemoalchemy you can transform decently crafted weapons into mighty objects of Vampiric power, amplifying their abilities at the risk of drawing more attention to yourself.;;;;;;;;;;;;;x
+vampirepowers15optA;"I have a sword that may work";;;;;;;;;;;;;x
+vampirepowers15optB;"This mace will act as a good foundation";;;;;;;;;;;;;x
+vampirepowers15optC;"An axe will take on the power I need";;;;;;;;;;;;;x
+vampirepowers15optD;"I've changed my mind";;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.16;Now all that remains is to begin the long, arduous task of transferring the blood essence from yourself into the weapon. It will not be wieldable during this process.;;;;;;;;;;;;;x
+vampirepowers16optA;"I will begin immediately";;;;;;;;;;;;;x
+vampirepowers16optB;"This is not the right time";;;;;;;;;;;;;x
+
+EVTDESCvampirepowers.17;You have finally poured enough blood essence into your weapon to complete its transformation from a fairly average weapon to a truly fearsome tool, worthy of your use!;;;;;;;;;;;;;x
+vampirepowers17optA;"A far more suitable weapon!";;;;;;;;;;;;;x
+
+#### Vampire Leveling Events ####
+
+EVTTITLEvampirelevelup.1;Vampiric Power Grows;;;;;;;;;;;;;x
+EVTDESCvampirelevelup.1;"I have tasted a wide array of blood, mastered my current abilities, and avoided the wrath of the authorities who would put me to the sword. I feel a great new power growing within me!"\nAs Vampires harness their abilities more, and taste a wider variety of blood, that power coalesces and imbues the Vampire with new vigour, and more importantly, the power to uncover even more occult abilities.;;;;;;;;;;;;;x
+vampirelevelup1optA;"My power grows!";;;;;;;;;;;;;x
+
+#### Vampire Tutorial Events ####
+
+EVTDESCvamptutorial.1;"So you've been transformed into an ungodly creature of the night. 
+I've written down all of my observations from my time with the curse - maybe my sacrifice will help you."
+
+vamptutorial1OPTa;Haemomana;;;;;;;;;;;;;x
+vamptutorial2OPTa;Vampiric Power;;;;;;;;;;;;;x
+vamptutorial3OPTa;More Options;;;;;;;;;;;;;x
+vamptutorial4OPTa;Exit;;;;;;;;;;;;;x
+vamptutorial5OPTa;Children;;;;;;;;;;;;;x
+vamptutorial6OPTa;Suspicion;;;;;;;;;;;;;x
+vamptutorial7OPTa;Passing the Curse;;;;;;;;;;;;;x
+vamptutorial8OPTa;Back;;;;;;;;;;;;;x
+
+EVTDESCvamptutorial.3;"Haemomana is the magical energy exclusive to Vampires, produced when they feed on another being, and expended when they use their supernatural abilities. Vampires can only retain a certain amount of Haemomana before it is wasted. Should a vampire expend all of their Haemomana they will wither resulting in death. Far eastern scholars have written of the curse lifting during withering, though only death has been officially observed.";;;;;;;;;;;;;x
+EVTDESCvamptutorial.4;"Vampiric Power describes how powerful a Vampire has become since the time they first obtained the curse. Unlike Haemomana which comes and goes, Vampiric Power can only increase with time. Scholars believe that whenever a vampire feeds, a part of the vampire's prey lives on and strengthens their blood.";;;;;;;;;;;;;x 
+EVTDESCvamptutorial.5;"One of the many costs of Vampirism is the reduced ability to create life. Should the vampire succeed, the curse grows even greater, making the process even more difficult. Should a vampire's progeny die, then the curse lessens somewhat. Rumours also speak of a Vampire's child inheriting some of the Vampire's powers, but no such crossbreeds have been officially documented.";;;;;;;;;;;;;x 
+EVTDESCvamptutorial.6;"Vampiric activities will draw additional suspicion, and it won't take long before a careless vampire will be branded as an apostate and left to the mercy of the church or monster hunters. Choosing targets wisely should be a vampires top priority, but a careful, skilled, vampire may find eyes looking elsewhere.";;;;;;;;;;;;;x 
+EVTDESCvamptutorial.7;The notes are heavily damaged and bloodstained to the point of illegibility.;;;;;;;;;;;;;x 
+
+### Vampire Victim Events ###
+
+EVTDESCvampirevictim.5;[From.GetTitledNameWithNick] fell to the floor and began convulsing violently before snapping straight and pulling themselves to their feet. Their new blood placates them, and though their opinion towards you, nor their personality, has changed, they simply nod in your direction, aware of what you have done, and walk out of sight.;;;;;;;;;;;;;x 
+vampirevictim5optA;"I shall watch their progress... carefully.";;;;;;;;;;;;;x 
+
+#### Thrall Related Events ####
+
+EVTDESCvamphunger.6;You sip on your loyal thrall to keep hunger away, but gain no benefit or strength from the act.;;;;;;;;;;;;;x
+EVTOPTavampthrall.2;Your loyal thrall has died and you feel the essence you used to sustain their loyalty return to you. You can now take a new thrall.;;;;;;;;;;;;;x
+
+####################
+#                  #
+#  Focus/Ambition  #
+#                  #
+####################
+
+focus_magic_title;Occult;;;;;;;;;;;;;x
+focus_magic_desc;[This.GetTitledFirstName] seeks to study magical and unnatural matters relevant to [This.GetPossPronoun] lifestyle. This focus will only provide the basics to characters without any prior relation to the supernatural.;;;;;;;;;;;;;x
+RULERSHIP_magic;Occult Focus;;;;;;;;;;;;;x
+
+####################
+#                  #
+#    Decisions     #
+#                  #
+####################
+
+little_red_book;Little Blood Red Book;;;;;;;;;;;;;x
+little_red_book_desc;A mysterious blood red book with hand scrawled notes on vampirism from one of the Bloodmage schools.;;;;;;;;;;;;;x
+
+show_vampiric_powers;Show Vampiric Powers;;;;;;;;;;;;;x
+show_vampiric_powers_desc;Display all of the powers you know currently;;;;;;;;;;;;;x
+
+take_on_vampiric_form;Take on Vampiric Form;;;;;;;;;;;;;x
+take_on_vampiric_form_desc;Use Haemomana to change your body for various benefits;;;;;;;;;;;;;x
+
+close_vampiric_powers;Close Vampiric Powers;;;;;;;;;;;;;x
+close_vampiric_powers_desc;Close the Vampiric power menu;;;;;;;;;;;;;x
+
+show_my_bloodline;Show my Bloodline;;;;;;;;;;;;;x
+show_my_bloodline_desc;Show Vampires of your Bloodline.;;;;;;;;;;;;;x
+
+debug_max_blood;Debug: Add max Haemomana;;;;;;;;;;;;;x
+debug_max_blood_desc;Debug command to max Haemomana for testing!;;;;;;;;;;;;;x
+
+debug_max_blood;Debug: Add 25 Experience;;;;;;;;;;;;;x
+debug_max_blood_desc;Debug command to add experience for testing!;;;;;;;;;;;;;x
+
+vampire_diseases_are_cured;All temporary wounds and diseases will be §Gcured§!!;;;;;;;;;;;;;x
+
+debug_add_powers;Debug: Add Powers;;;;;;;;;;;;;x
+debug_add_powers_desc;Debug command to add random powers for testing!;;;;;;;;;;;;;x
+
+debug_experience;Debug: Add Experience;;;;;;;;;;;;;x
+debug_experience_desc;Debug command to add 25 experience!;;;;;;;;;;;;;x
+
+debug_add_random_artifact;Give Random Vampiric Artifact;;;;;;;;;;;;;x
+debug_add_random_artifact_desc;Grants a random, unowned, vampiric artifact;;;;;;;;;;;;;x
+
+vampire_power_blood_artifice;Begin Blood Artifice;;;;;;;;;;;;;x
+vampire_power_blood_artifice;Using your Haemoalchemy you can transform decently crafted weapons into mighty objects of Vampiric power;;;;;;;;;;;;;x
+
+#### Targeted Decisions ####
+
+hypontise_target;Hypnotise;;;;;;;;;;;;;x
+hypontise_target_desc;Hypnotise this target and bend them to your will. This is not without risk...;;;;;;;;;;;;;x
+feed_on_target;Feed on;;;;;;;;;;;;;x
+feed_on_target_desc;Stalk your prey and attempt to feed on them. This is not without risk...;;;;;;;;;;;;;x
+feed_on_target_lethal;Feed on (Lethal);;;;;;;;;;;;;x
+feed_on_target_lethal_desc;Give into the ultimate Vampire indulgence and drink from a target until their death!;;;;;;;;;;;;;x
+thrall_target;Enthrall Target;
+thrall_target_desc;Enthrall this target and turn them into a mindless, unquestioning, servant.;;;;;;;;;;;;;x
+has_not_thralled_recently;Has not thralled recently.;;;;;;;;;;;;;x
+has_not_hypnotised_recently;Has not hypnotised recently.;;;;;;;;;;;;;x
+has_not_fed_recently;Has not fed recently.;;;;;;;;;;;;;x
+release_thrall;Release Thrall;;;;;;;;;;;;;x
+release_thrall_desc;Release this Thrall from your service and wipe their mind, allowing you to take a new Thrall in their stead.;;;;;;;;;;;;;x
+sire_new_vampire;Sire New Spawn;;;;;;;;;;;;;x
+sire_new_vampire_desc;Forceably convert this character into a Vampire of your bloodline, turning them into a powerful ally, or dangerous rival...\n\n§KWarning!§!: This character will retain their free will. They will not be bound to you, except by blood, nor will they have any reason to listen to your demands!;;;;;;;;;;;;;x
+
+####################
+#                  #
+# Opinion Modifier #
+#                  #
+####################
+
+loyal_thrall;Loyal Thrall;;;;;;;;;;;;;x
+
+####################
+#                  #
+#   Custom Loc     #
+#                  #
+####################
+
+form_of_vrykolakas;\n- Form of Vrykolakas;;;;;;;;;;;;;x
+form_of_asanbosam;\n- Form of Asanbosam;;;;;;;;;;;;;x
+form_of_alukah;\n- Form of Alukah;;;;;;;;;;;;;x
+vampire_power_sire;\n- Power of the Sire;;;;;;;;;;;;;x
+vampire_power_devour;\n- Power of Total Devourment;;;;;;;;;;;;;x
+vampire_power_hypnotise;\n- Power of Hypnotise;;;;;;;;;;;;;x
+vampire_power_blood_artifice;\n- Power of Blood Artifice;;;;;;;;;;;;;x
+
+####################
+#                  #
+#    Modifiers     #
+#                  #
+####################
+
+vampiric_power;Vampire Statistics;;;;;;;;;;;;;x
+vampiric_power_desc;§YVampire Tier§!: [Root.vampire_tier.GetValue]/5\n§YVampiric Experience§!: [Root.total_blood_drank.GetValue]\n§YVampiric Powers Known§!:[Root.GetVampirePowersSire][Root.GetVampirePowersDevour][Root.GetVampirePowersHypnotise]\n§YVampiric Forms Known§!:[Root.GetVampireFormVrykolakas][Root.GetVampireFormAsambosam][Root.GetVampireFormAlukah]\n\nThis character's total Vampiric experience. It can be used to unlock new abilities and powers, along with granting powerful passive boons.;;;;;;;;;;;;;x
+
+suspicion_level;Overall Suspicion: [Root.overall_suspicion.GetValue];;;;;;;;;;;;;x
+
+vampire_laying_low;Laying Low;;;;;;;;;;;;;x
+vampire_laying_low_desc;This Vampire is laying low after a failed hunt to try and avoid suspicion...;;;;;;;;;;;;;x
+richest_blood;Blood Oversaturation;;;;;;;;;;;;;x
+richest_blood_desc;This Vampire has indulged in the usually forbidden act of total blood draining and needs to recover;;;;;;;;;;;;;x
+
+alukah_form;Form of the Alukah;;;;;;;;;;;;;x
+alukah_form_desc;This character has adopted the form of an Alukah, renowned for their powers of love and seduction;;;;;;;;;;;;;x
+asanbosam_form;Form of the Asanbosam;;;;;;;;;;;;;x
+asanbosam_form_desc;This character has adopted the form of an Asanbosam, known for their unbreakable fangs and combat prowess;;;;;;;;;;;;;x
+vrykolakas_form;Form of the Vrykolakas;;;;;;;;;;;;;x
+vrykolakas_form_desc;This character has adopted the form of an Vrykolakas, immune to decay and death, but hideous to behold;;;;;;;;;;;;;x
+
+blood_count_0;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_0_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_1;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_1_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_2;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_2_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_3;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_3_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_4;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_4_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_5;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_5_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_6;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_6_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_7;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_7_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_8;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_8_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_9;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_9_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+blood_count_10;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+blood_count_10_desc;H§momana is the special form of mana used for blood magic.;;;;;;;;;;;;;x
+
+drained;Bloodloss;;;;;;;;;;;;;x
+drained_desc;For various reasons, this character has lost a lot of blood...;;;;;;;;;;;;;x
+recently_fed;Recently Fed;;;;;;;;;;;;;x
+recently_fed_desc;This character recently fed and must wait to avoid suspicion.;;;;;;;;;;;;;x
+hypnotised;Strange Obsession;;;;;;;;;;;;;x
+hypnotised_desc;This character has began to act strangely.;;;;;;;;;;;;;x
+recently_hypnotised;Recently Hypnotised Prey;;;;;;;;;;;;;x
+recently_hypnotised_desc;This character recently used their powers of hypnotism and must wait to regain their focus.;;;;;;;;;;;;;x
+
+rumoured_vampire;This character is suspected by religious authories of something unexplainable...;;;;;;;;;;;;;x
+suspected_vampire;This character has had several runnings in with religious authorities and rumours circulate amongst noble and peasant.;;;;;;;;;;;;;x
+strongly_suspected_vampire;This character is almost universally accepted as creature of the night!;;;;;;;;;;;;;x
+
+vampire_fertility_minus_1;Vampiric Child Drain;;;;;;;;;;;;;x
+vampire_fertility_minus_1_desc;As a creature of unlife, to bring children into the world Vampires must trade a part of their own vitality.;;;;;;;;;;;;;x
+vampire_fertility_minus_2;Vampiric Child Drain;;;;;;;;;;;;;x
+vampire_fertility_minus_2_desc;As a creature of unlife, to bring children into the world Vampires must trade a part of their own vitality.;;;;;;;;;;;;;x
+vampire_fertility_minus_3;Vampiric Child Drain;;;;;;;;;;;;;x
+vampire_fertility_minus_3_desc;As a creature of unlife, to bring children into the world Vampires must trade a part of their own vitality.;;;;;;;;;;;;;x
+vampire_fertility_minus_4;Vampiric Child Drain;;;;;;;;;;;;;x
+vampire_fertility_minus_4_desc;As a creature of unlife, to bring children into the world Vampires must trade a part of their own vitality.;;;;;;;;;;;;;x
+vampire_fertility_minus_5;Vampiric Child Drain;;;;;;;;;;;;;x
+vampire_fertility_minus_5_desc;As a creature of unlife, to bring children into the world Vampires must trade a part of their own vitality.;;;;;;;;;;;;;x
+
+####################
+#                  #
+#     Universal    #
+#                  #
+####################
+
+blood_count;Haemomana;;;;;;;;;;;;;x
+total_blood_count;Vampiric Experience;;;;;;;;;;;;;x
+
+blood_recalc_text;Your §KHaemomana§! fluctuates!;;;;;;;;;;;;;x
+blood_recalc_text_large;Your §KHaemomana§! fluctuates!;;;;;;;;;;;;;x
+vampiric_experience_text;Your §ZVampiric Experience§! increases!;;;;;;;;;;;;;x
+vampiric_experience_text_greatly;Your §ZVampiric Experience§! increases significantly!;;;;;;;;;;;;;x
+vampiric_experience_text_none;As this was a thrall, you gain no §ZVampiric Experience§!.;;;;;;;;;;;;;x
+
+duel_vampire;Your target is alerted and manages to escape.;;;;;;;;;;;;;x
+sneak_vampire;You sneak up on your unsuspecting target and rendering them unconcious.;;;;;;;;;;;;;x
+
+not_already_hunting;NOT already hunting prey;;;;;;;;;;;;;x
+at_max_blood_power;NOT at maximum haemomana;;;;;;;;;;;;;x
+has_not_fed_recently;Has NOT fed recently;;;;;;;;;;;;;x
+
+you_must_feed;You must now actively feed to use your vampiric powers and avoid §Kwithering§!!;;;;;;;;;;;;;x
+total_feeding_info;The more times you feed throughout your life, the §Zstronger§! your own blood will become!;;;;;;;;;;;;;x
+suspicion_active;You will now have to actively avoid §Bsuspicion§! or face the wrath of fearful lords and peasants alike!;;;;;;;;;;;;;x
+
+has_5_blood_power;Has 5 blood power.;;;;;;;;;;;;;x
+has_7_blood_power;Has 7 blood power.;;;;;;;;;;;;;x
+
+not_thralling_prey;Is not already thralling prey.;;;;;;;;;;;;;x
+not_already_hypnotising;Is not already hypnotising.;;;;;;;;;;;;;x
+
+vampire_starving;This vampire will soon begin to wither from a lack of feeding.;;;;;;;;;;;;;x
+vampire_hunger;This vampire has forgone feeding for some time...;;;;;;;;;;;;;x
+
+DEATH_EXECUTION_STAKED;Was staked by the inquisition;;;;;;;;;;;;;x
+
+has_thralled_recently;Recently Created Thrall;;;;;;;;;;;;;x
+has_thralled_recently_desc;The character has recently created a Vampiric Thrall.;;;;;;;;;;;;;x
+
+vampiric_tier_increases;Your §GVampiric Tier§! increases!;;;;;;;;;;;;;x
+vampire_gain_devour;You gain the §GLethal Drain§! power!\nUnlocks a new targeted decision allowing you to attempt to lethally drain a character, killing them, and gaining significant Vampiric Experience!;;;;;;;;;;;;;x
+vampire_gain_hypnotise;You gain the §GHypnotise§! power!\nUnlocks a new targeted decision allowing you to attempt to hypnotise a character, granting you a single favour from them!;;;;;;;;;;;;;x
+vampire_gain_blood_artifice;You gain the §GBlood Artifice§! power!\nUnlocks a new decision allowing you to imbue a weapon with Vampiric power!;;;;;;;;;;;;;x
+vampire_gain_sire;You gain the §GSire§! power!\nUnlocks a new targeted decision allowing you to grant Vampirism to another character!;;;;;;;;;;;;;x
+
+vampiric_can_learn_higher_powers;Allows §Ghigher tier§! abilities to be unlocked!;;;;;;;;;;;;;x
+#### Offmap ####
+
+c_vampire_offmap_power;Halls of the Progenitor;;;;;;;;;;;;;x
+Progenitor;Progenitor;;;;;;;;;;;;;x

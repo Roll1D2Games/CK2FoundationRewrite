@@ -1,0 +1,55 @@
+defined_text = {
+	name = GetVampireFormVrykolakas
+	text = {
+		trigger = { has_character_flag = form_of_vrykolakas }
+		localisation_key = form_of_vrykolakas
+	}
+}
+
+defined_text = {
+	name = GetVampireFormAsambosam	
+	text = {
+		trigger = { has_character_flag = form_of_asanbosam }
+		localisation_key = form_of_asanbosam
+	}
+}
+
+defined_text = {
+	name = GetVampireFormAlukah
+	text = {
+		trigger = { has_character_flag = form_of_alukah }
+		localisation_key = form_of_alukah
+	}
+}
+
+defined_text = {
+	name = GetVampirePowersSire
+	text = {
+		trigger = { has_character_flag = vampire_power_sire }
+		localisation_key = vampire_power_sire
+	}
+}
+
+defined_text = {
+	name = GetVampirePowersDevour
+	text = {
+		trigger = { has_character_flag = vampire_power_devour }
+		localisation_key = vampire_power_devour
+	}
+}
+
+defined_text = {
+	name = GetVampirePowersHypnotise
+	text = {
+		trigger = { has_character_flag = vampire_power_hypnotise }
+		localisation_key = vampire_power_hypnotise
+	}
+}
+
+defined_text = {
+	name = GetVampirePowersBloodArtifice
+	text = {
+		trigger = { has_character_flag = vampire_power_blood_artifice }
+		localisation_key = vampire_power_blood_artifice
+	}
+}

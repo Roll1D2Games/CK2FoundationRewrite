@@ -1,0 +1,63 @@
+PV_FORT;Lodge;;;;;;;;;;;;;x
+open_lodge_menu;Open Lodge Upgrades;;;;;;;;;;;;;x
+open_lodge_menu_desc;View available upgrades for your lodge.;;;;;;;;;;;;;x
+close_lodge_menu;Close Lodge Upgrades;;;;;;;;;;;;;x
+close_lodge_menu_desc;Stop viewing the available lodge upgrades.;;;;;;;;;;;;;x
+
+### Capital Buildings ###
+
+fort_lodge_1;Capital Lodge 1;;;;;;;;;;;;;x
+fort_lodge_1_desc;A basic lodge, situated in the capital of a duchy, kingdom, or empire, capable of being upgraded and outfitted for various functions.;;;;;;;;;;;;;x
+
+### Lodge Upgrade Decisions ###
+z_buy_upgrade_vampire_thralls;Construct Thrall Barracks;;;;;;;;;;;;;x
+z_buy_upgrade_vampire_thralls_desc;Construct a special barracks for feeding, housing, and otherwise ensuring the safety and sanctity of your thralls.;;;;;;;;;;;;;x
+z_buy_upgrade_fight_club;Construct Fight Club;;;;;;;;;;;;;x
+z_buy_upgrade_fight_club_desc;Construct an underground arena for secretive combat.;;;;;;;;;;;;;x
+z_buy_upgrade_game_room;Construct Game Room;;;;;;;;;;;;;x
+z_buy_upgrade_game_room_desc;Construct a Game Room for war game simulation and practice.;;;;;;;;;;;;;x
+z_buy_upgrade_institution;Construct Institution;;;;;;;;;;;;;x
+z_buy_upgrade_institution_desc;Construct a scientific insitution for the unbridaled study and development of technology.;;;;;;;;;;;;;x
+z_buy_upgrade_office;Construct Office;;;;;;;;;;;;;x
+z_buy_upgrade_office_desc;Construct an office dedicated to realm management.;;;;;;;;;;;;;x
+z_buy_upgrade_store_house;Construct Store House;;;;;;;;;;;;;x
+z_buy_upgrade_store_house_desc;Construct a store house for helping with distribution and development.;;;;;;;;;;;;;x
+z_buy_upgrade_greenhouse;Construct Greenhouse;;;;;;;;;;;;;x
+z_buy_upgrade_greenhouse_desc;Construct a greenhouse for exploring the very limits of gardening itself.;;;;;;;;;;;;;x
+z_buy_upgrade_lair_of_debauchery;Construct Lair of Debauchery;;;;;;;;;;;;;x
+z_buy_upgrade_lair_of_debauchery_desc;Construct a secret, reclusive lair, for debauchery and sin.;;;;;;;;;;;;;x
+z_buy_upgrade_hunters_lounge;Construct Hunter's Lodge;;;;;;;;;;;;;x
+z_buy_upgrade_hunters_lounge_desc;Construct a hunter's lodge for meeting and discussion of the grandest and most prestigious hunts.;;;;;;;;;;;;;x
+z_buy_upgrade_torture_lair;Construct Torture Lair;;;;;;;;;;;;;x
+z_buy_upgrade_torture_lair_desc;Construct a torture lair for the comfort and hospitality of your worst enemies.;;;;;;;;;;;;;x
+z_buy_upgrade_guild_of_secrets;Construct Guild of Secrets;;;;;;;;;;;;;x
+z_buy_upgrade_guild_of_secrets_desc;Construct a guild of secrets for your spymasters to coordinate your plots and desires.;;;;;;;;;;;;;x
+z_buy_upgrade_seduction_chamber;Construct Seduction Chamber;;;;;;;;;;;;;x
+z_buy_upgrade_seduction_chamber_desc;Construct a private seduction chamber away from the prying eyes of your court.;;;;;;;;;;;;;x
+z_buy_upgrade_mystical_chamber;Construct Mystic's Safehouse;;;;;;;;;;;;;x
+z_buy_upgrade_mystical_chamber_desc;Construct a mystic's safehouse, free of the watchful eyes of the holy men and zealots.;;;;;;;;;;;;;x
+z_buy_upgrade_socialite_club;Construct Socialite Club;;;;;;;;;;;;;x
+z_buy_upgrade_socialite_club_desc;Construct a social club for high society meetings and arrangements.;;;;;;;;;;;;;x
+z_buy_upgrade_war_room;Construct War Room;;;;;;;;;;;;;x
+z_buy_upgrade_war_room_desc;Construct a war room for planning and preparing military conflicts.;;;;;;;;;;;;;x
+z_buy_upgrade_private_shrine;Construct Private Shrine;;;;;;;;;;;;;x
+z_buy_upgrade_private_shrine_desc;Construct a private shrine for religious pursuits of a deeply personal nature.;;;;;;;;;;;;;x
+
+### Lodge Events ###
+
+EVTTITLElodgeupgrade.1;Lodge Upgrade Complete;;;;;;;;;;;;;x
+EVTDESClodgeupgrade.1;The long awaited upgrade to your lodge is complete and you can now begin a new project.;;;;;;;;;;;;;x
+OPT1Alodgeupgrade.1;"At long last.";;;;;;;;;;;;;x
+
+### Lodge Modifiers ###
+
+vampire_thralls;Thrall Barracks;;;;;;;;;;;;;x
+vampire_thralls_desc;Barracks constructed for the thralls of the Vampire lord who commissioned them.;;;;;;;;;;;;;x
+lodge_building_in_progress;Upgrading Lodge;;;;;;;;;;;;;x
+lodge_building_in_progress_desc;This ruler is upgrading their lodge in pursuit of personal projects;;;;;;;;;;;;;x
+game_room;Game Room;;;;;;;;;;;;;x
+game_room_desc;The local lodge features a fully equipped game room for war games, simulations, and escapism.;;;;;;;;;;;;;x
+fight_club;Fight Club;;;;;;;;;;;;;x
+fight_club_desc;The owner of this province has funded a local fighting tournament for warriors to showcase their abilities.;;;;;;;;;;;;;x
+institution;Institution;;;;;;;;;;;;;x
+institution_desc;Thanks to the local lord's interest in scientific pursuits, a fully funded institution dedicated to scientific study has been established here.;;;;;;;;;;;;;x

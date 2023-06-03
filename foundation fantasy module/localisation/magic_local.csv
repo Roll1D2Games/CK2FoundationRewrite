@@ -1,0 +1,25 @@
+mana_meter;Mana: [Root.mana_current.GetValue];;;;;;;;;;;;;x
+mana_meter_desc;;;;;;;;;;;;;;x
+mana_current;Current Mana;;;;;;;;;;;;;;x
+
+#### Traits ####
+
+mage_scholar;Mage Scholar;;;;;;;;;;;;;x
+mage_scholar_desc;This person has a small perception of magic, but has no training or aptitude.;;;;;;;;;;;;;x
+apprentice_wizard;Apprentice Wizard;;;;;;;;;;;;;x
+apprentice_wizard_desc;This person has some occult experience but lacks any talent.;;;;;;;;;;;;;x
+experienced_mage;Experienced Mage;;;;;;;;;;;;;x
+experienced_mage_desc;This character is either naturally skilled or well trained at magic.;;;;;;;;;;;;;x
+expert_sorcerer;Expert Sorcerer;;;;;;;;;;;;;x
+expert_sorcerer_desc;This character has a high proficiency for magic studies and casting.;;;;;;;;;;;;;x
+
+#### Events ####
+
+EVTDESCmagicEvnt.1;This is a debug event to setup mana meters and to tell the game you're a wizard (harry), this will be hidden after we know shit works.;;;;;;;;;;;;;x
+magicEvnt1OPTa;Understood.;;;;;;;;;;;;;x
+magic_initialised;Magic is now active for this character.;;;;;;;;;;;;;x
+EVTDESCmagicEvnt.2;This is a 20-day mana event that gives you a quarter of your learning as mana, capped at a maximum of 60 mana.;;;;;;;;;;;;;x
+magicEvnt2OPTa;Confirm and show me more!;;;;;;;;;;;;;x
+magicEvnt2OPTb;Confirm and NEVER show me again.;;;;;;;;;;;;;x
+EVTDESCmagicEvnt.3;Your diligence in magical studies have progressed well recently, and you have gained significant progress in your journey.;;;;;;;;;;;;;x
+magicEvnt3OPTa;My studies are progressing!;;;;;;;;;;;;;x

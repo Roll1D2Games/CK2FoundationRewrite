@@ -1,0 +1,93 @@
+mage_society;Mage's Guild;;;;;;;;;;;;;x
+string_mage_society;Mage's Guild;;;;;;;;;;;;;x
+#The society description
+mage_society_desc;Mage's Guild is an unoriginally named society of mages learning various magics. That is, all magics besides necromancy, which was outlawed by Hannibal Traven.;;;;;;;;;;;;;x
+#Leader description
+mage_society_leader_desc;The Archmage is the sole authority on magic afforded the endorsement of many feudal rulers, unbeknownst to the peasantry and lower lords alike.;;;;;;;;;;;;;x
+#Name of the ranks
+mage_society_rank_1_female;Applicant;;;;;;;;;;;;;x
+mage_society_rank_2_female;Member;;;;;;;;;;;;;x
+mage_society_rank_3_female;Authority;;;;;;;;;;;;;x
+mage_society_rank_4_female;Archmage;;;;;;;;;;;;;x
+mage_society_rank_1_male;Applicant;;;;;;;;;;;;;x
+mage_society_rank_2_male;Member;;;;;;;;;;;;;x
+mage_society_rank_3_male;Authority;;;;;;;;;;;;;x
+mage_society_rank_4_male;Archmage;;;;;;;;;;;;;x
+mage_society_currency;Respect;;;;;;;;;;;;;x
+currency_name_mage_society;Respect;;;;;;;;;;;;;x
+#Rank up button name
+request_to_rank_up_within_mage_society;Request to rank up.;;;;;;;;;;;;;x
+#For tooltip that require being a member
+IS_mage_society_TRIGGER;Is a member of the mage Society.;;;;;;;;;;;;;x
+#Rank up decision if you made a custom one, alongside the required custom_local
+request_to_rank_up_within_mage_society;Request a Promotion.;;;;;;;;;;;;;x
+request_to_rank_up_within_mage_society_tt;Has §Y[Root.Society.GetCurrency]§! greater or equal to [Root.GetSocietyRankUpTooltip1];;;;;;;;;;;;;x
+GetmageRankUpTooltip_Standard_Rank1;§Y[Root.Society.GetCurrency]§!;;;;;;;;;;;;;x
+GetmageRankUpTooltip_Standard_Rank2;§Y[Root.Society.GetCurrency]§!;;;;;;;;;;;;;x
+GetmageRankUpTooltip_Standard_Rank3;§Y[Root.Society.GetCurrency]§!;;;;;;;;;;;;;x
+#
+#Name of the decision
+mage_society_power_1;Rediscover Inspiration;;;;;;;;;;;;;x
+#Tooltip of the decision
+mage_society_power_1_desc;Follow in the footsteps of the great mage scholars and gain the ability to immediately compose another book. 
+§RYou may only use this ability once!§!;;;;;;;;;;;;;x
+#Tooltip of the decision in the society menu
+mage_society_power_1_power_desc;Trade mage Points for gold, the power description.;;;;;;;;;;;;;x
+#The name of the passive power
+passive_power_tooltip;Passive Power;;;;;;;;;;;;;x
+#The description of the passive power
+passive_power_tooltip_power_desc;Passive powers are not real decision powers. They are to mark if X events have special interactions with people of that society and rank.;;;;;;;;;;;;;x
+#
+#The localization for the currency gain
+society_gain_tier_duke_tooltip;Is a Duke: §G+3.0§!;;;;;;;;;x # §G mean green
+society_gain_tier_catholic_tooltip;Is Catholic: §R-3.0§!;;;;;;;;;x # §R is red
+#
+#Modifiers
+mage_successful_mission;One Successful Mission;;;;;;;;;;;;;x
+mage_failed_mission;One Failed Mission;;;;;;;;;;;;;x
+mage_successful_mission_stacked;Many Successful Missions;;;;;;;;;;;;;x #the _stacked is for when there is several modifiers added to each others, so make them plural.
+mage_failed_mission_stacked;Many Failed Missions;;;;;;;;;;;;;x
+#
+#This event is for joining
+EVTDESC_MAGESOCI_102;You want to join my glorious society?;;;;;;;;;;;;;x
+EVTOPTA_MAGESOCI_102;Yes sir.;;;;;;;;;;;;;x
+EVTOPTB_MAGESOCI_102;I'm not so sure anymore.;;;;;;;;;;;;;x
+#
+#This event is for rank up
+EVTDESC_MAGESOCI_122;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\nYou can rank up. [Root.Society.GetName].\n\nSigned,\n[From.GetSocietyRank] [From.GetFirstName];;;;;;;;;;;;;x
+EVTOPTA_EVTDESC_MAGESOCI_122_122;Great.;;;;;;;;;;;;;x
+#
+#Name for a quest
+quest_mage_quest_1;Press the button;;;;;;;;;;;;;x
+#Name for a quest if there is no quest target
+quest_mage_quest_1_fallback;Press the button;;;;;;;;;;;;;x
+quest_mage_quest_1_desc;Press the button and gain gold!;;;;;;;;;;;;;x
+quest_mage_quest_1_tooltip;Press the button in the intrige menu.;;;;;;;;;;;;;x
+#
+#Start Quest event
+EVTDESC_MAGESOCI_141;You want a quest?;;;;;;;;;;;;;x
+#
+#End Quest event
+EVTDESC_MAGESOCI_142;You want to complete or fail the quest?;;;;;;;;;;;;;x
+EVTOPTA_MAGESOCI_142;Complete it.;;;;;;;;;;;;;x
+EVTOPTB_MAGESOCI_142;Fail it..;;;;;;;;;;;;;x
+#
+#End Quest event
+EVTDESC_MAGESOCI_150;Here be the event text.;;;;;;;;;;;;;x
+EVTOPTA_MAGESOCI_150;Choice 1.;;;;;;;;;;;;;x
+EVTOPTB_MAGESOCI_150;Choice 2..;;;;;;;;;;;;;x
+
+#### Mage Shop Events ####
+
+EVTDESC_MAGESOCI_200;You arrive at the Mage stockpile where the excess stock from experiments, assignments, and other more questionable aquisitions are made available to purchase for assosciates of the Mage's Guild.;;;;;;;;;;;;;x
+EVTTITL_MAGESOCI_200;Mage's Bazaar;;;;;;;;;;;;;x
+EVTOPTA_MAGESOCI_200;Visit the Weapons Custodian;;;;;;;;;;;;;x
+EVTOPTB_MAGESOCI_200;Leave the Bazaar;;;;;;;;;;;;;x
+
+EVTDESC_MAGESOCI_201;The weapon custodian looks over you once, and presents you with a brief selection of weapons approved for use by assosciates of the guild.;;;;;;;;;;;;;x
+EVTTITL_MAGESOCI_201;A Fighting Chance;;;;;;;;;;;;;x
+EVTOPTA_MAGESOCI_201;"I'll take the sword.";;;;;;;;;;;;;x
+EVTOPTB_MAGESOCI_201;"A mace suits me fine.";;;;;;;;;;;;;x
+EVTOPTC_MAGESOCI_201;"The axe looks good...";;;;;;;;;;;;;x
+EVTOPTD_MAGESOCI_201;Return to the Main Supply Hall;;;;;;;;;;;;;x
+

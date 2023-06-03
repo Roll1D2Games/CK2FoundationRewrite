@@ -1,0 +1,39 @@
+vampire_offmap;Halls of the Progenitor;;;;;;;;;;;;;x
+vampire_offmap_full;Halls of the Progenitor;;;;;;;;;;;;;x
+vampire_offmap_title_holder;Progenitor;;;;;;;;;;;;;x
+
+offmap_vampire_blood;Haemomana;;;;;;;;;;;;;x
+monthly_vampire_blood;Monthly Haemomana;;;;;;;;;;;;;x
+
+vampire_policy_untrusting;Untrusting;;;;;;;;;;;;;x
+vampire_policy_untrusting_desc;The current holder of the progenitor blood is untrusting of any and all diplomatic relations.;;;;;;;;;;;;;x
+vampire_stable;Uncontested;;;;;;;;;;;;;x
+vampire_stable_desc;The current holder of the progenitor blood stands uncontested.;;;;;;;;;;;;;x
+
+#### Likes ####
+
+is_vampire_FROM;Vampirism;;;;;;;;;;;;;x
+is_haemophiliac;Haemophiliac;;;;;;;;;;;;;x
+is_haemoarch;Haemoarch;;;;;;;;;;;;;x
+is_haemophant;Haemophant;;;;;;;;;;;;;x
+has_has_bubonic_plague;Has Bubonic Plague;;;;;;;;;;;;;x
+has_has_small_pox;Has Small Pox;;;;;;;;;;;;;x
+has_sickly;Has Sickly;;;;;;;;;;;;;x
+has_scurvy;Has Scurvy;;;;;;;;;;;;;x
+has_rabies;Has Rabies;;;;;;;;;;;;;x
+has_pneumonic;Has Pneumonic;;;;;;;;;;;;;x
+has_has_measles;Has Measles;;;;;;;;;;;;;x
+has_leper;Is a Leper;;;;;;;;;;;;;x
+has_ill;Has illness;;;;;;;;;;;;;x
+has_has_typhoid_fever;Has Typhoid Fever;;;;;;;;;;;;;x
+has_syphilitic;Has Syphilis;;;;;;;;;;;;;x
+has_gout;Has Gout;;;;;;;;;;;;;x
+has_food_poisoning;Has Food Poisoning;;;;;;;;;;;;;x
+has_flu;Has Flu;;;;;;;;;;;;;x
+has_has_dysentery;Has Dysentery;;;;;;;;;;;;;x
+has_dancing_plague;Has Dancing Plague;;;;;;;;;;;;;x
+has_has_tuberculosis;Has Tuberculosis;;;;;;;;;;;;;x
+has_cancer;Has Cancer;;;;;;;;;;;;;x
+has_has_typhus;Has Typhus;;;;;;;;;;;;;x
+has_has_aztec_disease;Has Aztec Disease;;;;;;;;;;;;;x
+is_flu;Has Flu;;;;;;;;;;;;;x

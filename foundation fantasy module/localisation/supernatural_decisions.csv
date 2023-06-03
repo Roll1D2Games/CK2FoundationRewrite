@@ -1,0 +1,6 @@
+open_employment_menu;Open Employment Menu;;;;;;;;;;;;;x
+open_employment_menu_desc;Show a list of employment options;;;;;;;;;;;;;x
+close_employment_menu;Close Employment Menu;;;;;;;;;;;;;x
+close_employment_menu_desc;Close list of employable courtiers;;;;;;;;;;;;;x 
+employ_tutor;Employ Tutor;;;;;;;;;;;;;x
+employ_tutor_desc;Employ a skilled tutor for assisting with education;;;;;;;;;;;;;x

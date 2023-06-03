@@ -1,0 +1,17 @@
+RULE_GODS_ON_EARTH;§GFantasy:§! Gods on Earth Scenario;;;;;;;;;;;;;x
+RULE_GODS_DISABLED;No Pantheons;;;;;;;;;;;;;x
+RULE_GODS_DISABLED_DESC;The Pagan Pantheons remain the stuff of legend.;;;;;;;;;;;;;x
+RULE_GODS_ENABLED;Landed Pantheons;;;;;;;;;;;;;x
+RULE_GODS_ENABLED_DESC;The Pagan Pantheons will be landed in historically relevant areas.;;;;;;;;;;;;;x
+
+RULE_EASTER_EGGS;§GFantasy:§! Easter Eggs;;;;;;;;;;;;;x
+RULE_EASTER_EGGS_DISABLED;Disabled Easter Eggs;;;;;;;;;;;;;x
+RULE_EASTER_EGGS_DISABLED_DESC;§Y(Recommended)§! Silly Easter Eggs and references will be disabled.;;;;;;;;;;;;;x
+RULE_EASTER_EGGS_ENABLED;Easter Eggs Enabled;;;;;;;;;;;;;x
+RULE_EASTER_EGGS_ENABLED_DESC;Easter Eggs are enabled - references are random, vague, and most likely confusing, however, they are still incredibly rare.;;;;;;;;;;;;;x
+
+RULE_SUSPICION_VISIBLE;§GFantasy:§! Suspicion Visibility;;;;;;;;;;;;;x
+RULE_SUSPICION_VISIBLE_DISABLED;Hidden Suspicion;;;;;;;;;;;;;x
+RULE_SUSPICION_VISIBLE_DISABLED_DESC;Suspicion is hidden for extra challenge.;;;;;;;;;;;;;x
+RULE_SUSPICION_VISIBLE_ENABLED;Visible Suspicion;;;;;;;;;;;;;x
+RULE_SUSPICION_VISIBLE_ENABLED_DESC;Suspicion is always known to supernatural characters.;;;;;;;;;;;;;x

@@ -1,0 +1,38 @@
+### Milk Snatcher ###
+
+EVTDESCeastereggs.1;Long believed to have perised in the great Irish uprisings, rumours have swirled the British isles of the legedary Milk Snatcher walking once more!
+This vengeful spirit will surely curse, haunt, and destroy those she holds responsible for her untimely demise. 
+Court Factions across the realms have began to disband en masse as to avoid incurring the wrath of this malevolent spectre!;;;;;;;;;;;;;x
+eastereggstitle.1;Milk Snatcher Rises!;;;;;;;;;;;;;x
+eastereggOpt1A;"Ach, Hans, Run! It's the Milk Snatcher!";;;;;;;;;;;;;x
+eastereggOpt1B;"Ach, Cenn-Fáelad, beir an hobelar! Is é an Snatcher Bainne é!";;;;;;;;;;;;;x
+
+### Lament Config ###
+
+eastereggstitle.2;The Desire;;;;;;;;;;;;;x
+EVTDESCeastereggs.2;You are not the most discrete in your activities and indulgences. The usual court rumours and gossips have trailed you for many years, and it is something you have grown accustomed to. 
+These rumours must have spread beyond the castle walls, to circles and cabals best left forgotten, as today you receive a visitor to your court. The man says very little, but presents you with a small puzzle cube.
+"A gift, for one such as yourself" he says.;;;;;;;;;;;;;x
+eastereggOpt2A;"Thank you, my good man.";;;;;;;;;;;;;x
+eastereggOpt2B;"Take your trinkets elsewhere.";;;;;;;;;;;;;x
+tooltip_lament_config_warning;You have a terrible feeling as you reach for the cube...;;;;;;;;;;;;;x
+tooltip_lament_config_safe;You feel relieved to have not taken the cube.;;;;;;;;;;;;;x
+
+eastereggstitle.3;Further and Further;;;;;;;;;;;;;x
+EVTDESCeastereggs.3;You have become increasing curious towards the cube that was gifted you some time ago. Your attention has become almost undivided in solving the puzzle and tonight is no exception.
+With your determination reaching new heights, you rotate the puzzle pieces in strange and contorted ways until an entirely unexpected click rattles from the device.;;;;;;;;;;;;;x
+eastereggOpt3A;Press in the final piece...;;;;;;;;;;;;;x
+eastereggOpt3B;Burn it immediately!;;;;;;;;;;;;;x
+tooltip_lament_final_warning;You get the feeling there is no going back from this.;;;;;;;;;;;;;x
+
+eastereggstitle.4;Angels to Some...;;;;;;;;;;;;;x
+EVTDESCeastereggs.4;The cube springs to life, rotating and opening through its own power! A great burst of light fills the room and all goes dark. Then you hear footsteps.
+"We have been summoned" a deep voice growls, your eyes begin to adjust to the light, but you can only make out the silhouettes of three people. 
+"Now you must come with us. Taste our pleasures..."
+You feel a something pierce your flesh, then it happens again, and again, countlessly. The hooks pull at you until, at long last, you're torn limb from limb - relief!;;;;;;;;;;;;;x
+eastereggOpt4A;"We have such sights to show you!";;;;;;;;;;;;;x
+
+### Artifacts ###
+
+lament_configuration;Lament Configuration;;;;;;;;;;;;;x
+lament_configuration_desc;"We have such sights to show you...";;;;;;;;;;;;;x

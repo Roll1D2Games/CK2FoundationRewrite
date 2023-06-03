@@ -1,0 +1,28 @@
+#### Werewolf Traits ####
+
+werewolf;Werewolf;;;;;;;;;;;;;x
+werewolf_desc;This character is a werewolf!;;;;;;;;;;;;;x
+
+#### Vampire Traits ####
+
+vampire;Vampire;;;;;;;;;;;;;x
+vampire_desc;This character is a Vampire!;;;;;;;;;;;;;x
+vampire_dying;Dying Vampire;;;;;;;;;;;;;x
+vampire_dying_desc;This Vampire has not fed in some time and is close to succumbing to death!;;;;;;;;;;;;;x
+vampire_verge_of_death;Soon-dead Vampire;;;;;;;;;;;;;x
+vampire_verge_of_death_desc;This Vampire has not fed for a significant amount of time and will die soon!;;;;;;;;;;;;;x
+vampire_gen_5;Transcendent;;;;;;;;;;;;;x
+vampire_gen_5_desc;A Vampire that has undergone a unique ritual to gain near-perfection and wields monstrous power.;;;;;;;;;;;;;x
+vampire_gen_4;Progenitor;;;;;;;;;;;;;x
+vampire_gen_4_desc;An extremely powerful progenitor Vampire;;;;;;;;;;;;;x
+vampire_gen_3;Abettor;;;;;;;;;;;;;x
+vampire_gen_3_desc;A mighty, ancient Vampire;;;;;;;;;;;;;x
+vampire_gen_2;Sycophant;;;;;;;;;;;;;x
+vampire_gen_2_desc;An older, well equipped Vampire;;;;;;;;;;;;;x
+vampire_gen_1;Supplicant;;;;;;;;;;;;;x
+vampire_gen_1_desc;A new, inexperienced Vampire;;;;;;;;;;;;;x
+vampire_blood_10;First Vampire;;;;;;;;;;;;;x
+vampire_blood_10_desc;This character is the original Vampire, the sole source of cross continental mythology, rumour, and folk tale. \n\nWhen the Plague of Justinian ripped through the city of Constantinople in the late 6th Century over a fifth of the city perished and many were isolated to avoid the spread, even Imperial soldiers and courtiers. Whilst locked in a plague camp and left to die, isolated outside the walls of the city, one lone soldier, in a fit of hunger and madness, devoured the dying and rotting bodies around him. Before long he found that the very disease that almost claimed his life had changed inside of him. Instead of death, he was granted longevity, immunity to disease and fatal wounds, and a host of other supernatural powers, along with an unceasing hunger for the flesh of man.\n;;;;;;;;;;;;;x
+
+thrall;Thrall;;;;;;;;;;;;;x
+thrall_desc;This character has been made an unquestioning Thrall by a powerful Vampire;;;;;;;;;;;;;x
