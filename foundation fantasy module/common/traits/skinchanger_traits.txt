@@ -1,0 +1,11 @@
+##### Basic #####
+
+skinchanger = {
+	random = no
+	#hidden = yes	removed for testing
+	immortal = yes
+	male_insult = INSULT_MIMIC
+	female_insult = INSULT_MIMIC
+	male_insult_adj = INSULT_MIMICING
+	female_insult_adj = INSULT_MIMICING
+}

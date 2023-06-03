@@ -1,0 +1,60 @@
+focus_magic = {
+	type = character
+	
+	modifier_name = "MAGIC_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		prisoner = no
+		OR = {
+			trait = vampire
+		}
+	}
+
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0
+			trait = stressed
+		}
+		modifier = {
+			factor = 0.25
+			trait = depressed
+		}
+		modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+		modifier = {
+			factor = 2.0
+			trait = vampire
+		}
+		modifier = {
+			factor = 3.0
+			trait = mystic
+		}
+	}
+	
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	learning = 2
+	intrigue = 1
+}

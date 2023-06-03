@@ -1,0 +1,25 @@
+on_birth = {
+	events = {
+		RB.1		#trait recalculation
+		
+	}
+}
+
+on_chronicle_start = {
+	events = {
+		vamptech.1	#intitalise player-made custom vampires
+		RB.3	#close employment menu
+	}
+}
+
+on_death = {
+	events = {
+		vampthrall.1 #thrall died, notify vampire
+	}
+}
+
+on_pregnancy = {
+	events = {
+		vampirechildren.1 #inform vampire mother about dangers of vampire pregnancy
+	}
+}

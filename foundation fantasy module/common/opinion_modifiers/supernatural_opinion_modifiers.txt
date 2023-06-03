@@ -1,0 +1,4 @@
+loyal_thrall = {
+	opinion = 15
+	months = 1000
+}

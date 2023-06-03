@@ -1,0 +1,94 @@
+obj_learn_magic = {
+	type = character
+
+	
+	potential = {
+		independent = no
+	}
+
+	allow = {
+		is_adult = yes
+		is_ruler = yes
+		war = no
+	}
+	
+	chance = {
+		factor = 100
+		
+		modifier = {
+			factor = 0.01
+			trait = content
+		}
+		modifier = {
+			factor = 0.1
+			trait = shy
+		}
+		modifier = {
+			factor = 0.25
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.25
+			from_ruler_dynasty = yes
+		}
+		modifier = {
+			factor = 1.5
+			trait = poet
+		}
+		modifier = {
+			factor = 1.5
+			trait = falconer
+		}
+		modifier = {
+			factor = 1.5
+			trait = gregarious
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = naive_appeaser
+		}
+		modifier = {
+			factor = 2.0
+			trait = underhanded_rogue
+		}
+		modifier = {
+			factor = 10.0
+			OR = {
+				trait = charismatic_negotiator
+				trait = grey_eminence
+			}
+		}
+		modifier = {
+			factor = 1.25
+			diplomacy = 10
+		}
+		modifier = {
+			factor = 1.25
+			diplomacy = 12
+		}
+		modifier = {
+			factor = 1.25
+			diplomacy = 14
+		}
+		modifier = {
+			factor = 1.5
+			diplomacy = 16
+		}
+	}
+	success = {
+		has_character_flag = obj_magic_learnt
+	}
+	abort = {
+		trait = incapable
+
+	}
+	abort_effect = {
+	}
+	effect = {
+		change_intrigue = 1
+	}
+}

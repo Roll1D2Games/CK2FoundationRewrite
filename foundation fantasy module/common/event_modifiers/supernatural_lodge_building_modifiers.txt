@@ -1,0 +1,7 @@
+### Supernatural Modifiers ###
+
+vampire_thralls = {
+	icon = 83
+	assassinate_chance_modifier = 0.1
+	plot_power_modifier = 0.1
+}

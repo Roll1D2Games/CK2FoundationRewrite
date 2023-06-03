@@ -1,0 +1,28 @@
+fort = {	
+	fort_lodge_vampire_sanctum = {
+		desc = fort_vampire_sanctum_desc
+		add_number_to_name = no
+		gold_cost = 350
+		build_time = 720
+		prerequisites = { fort_lodge }
+		ai_creation_factor = 105
+		extra_tech_building_start = -1
+		potential = {
+			FROM = { 
+				capital_scope = {
+					province = PREVPREV
+				}
+			}
+		}
+		trigger = {
+			FROM = { 
+				trait = vampire
+			}
+		} 
+		is_active_trigger = {
+			FROM = { 
+				trait = vampire
+			}
+		}
+	}
+}	

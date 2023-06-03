@@ -1,0 +1,5 @@
+clear_skinchanger_mods = {
+	remove_character_modifier = skinchanger_norse_mod
+	remove_character_modifier = skinchanger_latin_mod
+	remove_character_modifier = skinchanger_base_mod
+}

@@ -1,0 +1,3 @@
+vampire_policy_untrusting = {
+	frame = 1
+}

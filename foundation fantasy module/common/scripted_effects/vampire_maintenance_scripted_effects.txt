@@ -1,0 +1,486 @@
+is_new_vampire = {
+	ROOT = {
+		custom_tooltip = {
+			text = you_must_feed
+			set_variable = { which = total_thralls value = 0 }
+			set_variable = { which = vampire_tier value = 1 }
+			set_variable = { which = overall_suspicion value = 0 }
+			set_variable = { which = total_blood_drank value = 0 }
+			set_variable = { which = mana_current value = 2 }	#between 0 and 10 (10 is full, 0 is empty)
+			add_character_modifier = { name = blood_count_2 days = -1 }
+			set_character_flag = mage_init
+			add_character_modifier = {
+				name = vampiric_power
+				days = -1
+				stacking = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						name = suspicion_visible
+						value = enabled
+					}
+				}
+				add_character_modifier = { name = suspicion_level duration = -1 }
+			}
+		}
+		custom_tooltip = {
+			text = suspicion_active
+			set_variable = { which = overall_suspicion value = 0 }
+		}
+	}
+}
+
+susp_avoid_total = {
+	set_variable = { which = total_suspicion_var which = suspicion_var }
+	subtract_variable = { which = total_suspicion_var which = avoidance_var }
+}
+
+avoidance_calc = {
+	set_variable = { which = avoidance_var value = 0 }
+	if = {
+		limit = {
+			ROOT = { 
+				intrigue >= 10
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = { 
+				intrigue >= 15
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = { 
+				intrigue >= 20
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = shrewd
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = genius
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = quick
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = ambitious
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = patient
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = diligent
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = shrewd
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				combat_rating > 25
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				combat_rating > 50
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				combat_rating > 100
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				combat_rating > 150
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				combat_rating > 200
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				combat_rating > 250
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				combat_rating > 300
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				trait = paranoid
+			}
+		}
+		change_variable = { which = avoidance_var value = 1 }
+	}
+}
+
+suspicion_calc = {		#potential max = 16
+	set_variable = { which = suspicion_var value = 0 }
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				is_ruler = yes
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				primary_title = { higher_tier_than = BARON }
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				primary_title = { higher_tier_than = COUNT }
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				primary_title = { higher_tier_than = DUKE }
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				primary_title = { higher_tier_than = KING }
+			}
+		}
+		change_variable = { which = suspicion_var value = 2 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				controls_religion = yes
+			}
+		}
+		change_variable = { which = suspicion_var value = 5 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				prestige > 1000
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				prestige > 2000
+			}
+		}
+		change_variable = { which = suspicion_var value = 2 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				prestige > 3000
+			}
+		}
+		change_variable = { which = suspicion_var value = 3 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				prestige > 5000
+			}
+		}
+		change_variable = { which = suspicion_var value = 5 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				piety > 1000
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				piety > 2000
+			}
+		}
+		change_variable = { which = suspicion_var value = 2 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				piety > 3000
+			}
+		}
+		change_variable = { which = suspicion_var value = 3 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				piety > 5000
+			}
+		}
+		change_variable = { which = suspicion_var value = 5 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				is_lowborn = no
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				is_heir = yes
+			}
+		}
+		change_variable = { which = suspicion_var value = 2 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				is_priest = yes
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				is_patrician = yes
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				is_voter = yes
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				has_assigned_minor_title = title_commander
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+	if = {
+		limit = {
+			event_target:vampire_prey = {
+				has_assigned_minor_title = title_regent
+			}
+		}
+		change_variable = { which = suspicion_var value = 1 }
+	}
+}
+
+#### Mana Meter Icon Recalc ####
+
+vampire_meter_recalc = {
+	if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 0
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_0 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 1
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_1 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 2
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_2 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 3
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_3 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 4
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_4 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 5
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_5 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 6
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_6 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 7
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_7 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 8
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_8 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 9
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_9 days = -1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = mana_current
+				value == 10
+			}
+		}
+		remove_vampire_meters = yes
+		add_character_modifier = { name = blood_count_10 days = -1 }
+	}
+}
+
+remove_vampire_meters = {
+	remove_character_modifier = blood_count_0
+	remove_character_modifier = blood_count_1
+	remove_character_modifier = blood_count_2
+	remove_character_modifier = blood_count_3
+	remove_character_modifier = blood_count_4
+	remove_character_modifier = blood_count_5
+	remove_character_modifier = blood_count_6
+	remove_character_modifier = blood_count_7
+	remove_character_modifier = blood_count_8
+	remove_character_modifier = blood_count_9
+	remove_character_modifier = blood_count_10
+}

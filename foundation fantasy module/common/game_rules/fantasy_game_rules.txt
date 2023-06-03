@@ -1,0 +1,44 @@
+gods_on_earth = {
+	name = "RULE_GODS_ON_EARTH"
+	group = "RULE_FANTASY"
+	option = {
+		name = disabled
+		text = "RULE_GODS_DISABLED"
+		desc = "RULE_GODS_DISABLED_DESC"
+	}
+	option = {
+		name = enabled
+		text = "RULE_GODS_ENABLED"
+		desc = "RULE_GODS_ENABLED_DESC"
+	}
+}
+
+suspicion_visible = {
+	name = "RULE_SUSPICION_VISIBLE"
+	group = "RULE_FANTASY"
+	option = {
+		name = disabled
+		text = "RULE_SUSPICION_VISIBLE_DISABLED"
+		desc = "RULE_SUSPICION_VISIBLE_DISABLED_DESC"
+	}
+	option = {
+		name = enabled
+		text = "RULE_SUSPICION_VISIBLE_ENABLED"
+		desc = "RULE_SUSPICION_VISIBLE_ENABLED_DESC"
+	}
+}
+
+easter_eggs = {
+	name = "RULE_EASTER_EGGS"
+	group = "RULE_FANTASY"
+	option = {
+		name = disabled
+		text = "RULE_EASTER_EGGS_DISABLED"
+		desc = "RULE_EASTER_EGGS_DISABLED_DESC"
+	}
+	option = {
+		name = enabled
+		text = "RULE_EASTER_EGGS_ENABLED"
+		desc = "RULE_EASTER_EGGS_ENABLED_DESC"
+	}
+}

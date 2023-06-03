@@ -1,0 +1,182 @@
+blood_count_0 = {
+	icon = 135
+	monthly_character_prestige = 0.1
+}
+blood_count_1 = {
+	icon = 136
+	monthly_character_prestige = 0.1
+}
+blood_count_2 = {
+	icon = 137
+	monthly_character_prestige = 0.1
+}
+blood_count_3 = {
+	icon = 138
+	monthly_character_prestige = 0.1
+}
+blood_count_4 = {
+	icon = 139
+	monthly_character_prestige = 0.1
+}
+blood_count_5 = {
+	icon = 140
+	monthly_character_prestige = 0.1
+}
+blood_count_6 = {
+	icon = 141
+	monthly_character_prestige = 0.1
+}
+blood_count_7 = {
+	icon = 142
+	monthly_character_prestige = 0.1
+}
+blood_count_8 = {
+	icon = 143
+	monthly_character_prestige = 0.1
+}
+blood_count_9 = {
+	icon = 144
+	monthly_character_prestige = 0.1
+}
+blood_count_10 = {
+	icon = 145
+	monthly_character_prestige = 0.1
+}
+
+#### Event Added Modifiers ###
+
+drained = {
+	icon = 84
+	health = -0.5
+}
+vampire_hunger = {
+	icon = 40
+	health = -0.5
+	diplomacy = -1
+	martial = -1
+	stewardship = -1
+	intrigue = -1
+	learning = -1
+}
+vampire_starving = {
+	icon = 40
+	health = -1.5
+	diplomacy = -3
+	martial = -3
+	stewardship = -3
+	intrigue = -3
+	learning = -3
+}
+recently_fed = {
+	icon = 39 
+	health = 0.5
+}
+richest_blood = {
+	icon = 39 
+	prestige = 0.1
+	martial = 1
+	intrigue = 1
+}
+hypnotised = {
+	icon = 82
+	prestige = -0.1
+}
+recently_hypnotised = {
+	icon = 81
+	prestige = 0.1
+}
+has_thralled_recently = {
+	icon = 79
+	prestige = 0.1
+}
+thrall = {
+	icon = 80
+	prestige = -0.1
+}
+vampire_laying_low = {
+	icon = 35
+	prestige = -0.1
+}
+
+#### Suspicion Modifiers ####
+
+rumoured_vampire  = {
+	icon = 35
+	general_opinion = -10
+	global_revolt_risk = 0.01
+}
+
+suspected_vampire  = {
+	icon = 35
+	general_opinion = -20
+	global_revolt_risk = 0.02
+}
+
+strongly_suspected_vampire  = {
+	icon = 35
+	general_opinion = -50
+	global_revolt_risk = 0.03
+}
+
+#### Fertility Modifiers ####
+
+vampire_fertility_minus_1 = {
+	icon = 35
+	fertility = -0.1
+}
+
+vampire_fertility_minus_2 = {
+	icon = 35
+	fertility = -0.25
+}
+
+vampire_fertility_minus_3 = {
+	icon = 35
+	fertility = -0.40
+}
+
+vampire_fertility_minus_4 = {
+	icon = 35
+	fertility = -0.50
+}
+
+vampire_fertility_minus_5 = {
+	icon = 35
+	fertility = -0.75
+}
+
+### Vampiric Power (experience system) ###
+
+vampiric_power = {
+	icon = 147
+	prestige = 0.1
+}
+
+### Suspicion Modifier ###
+
+suspicion_level = {
+	icon = 146
+	prestige = 0.1
+}
+
+### Buff forms ###
+
+alukah_form = {
+	icon = 39
+	sex_appeal_opinion = 30
+	intrigue = 1
+}
+
+asanbosam_form = {
+	martial = 3
+	general_opinion = -10
+	combat_rating = 10
+	icon = 59
+}
+
+vrykolakas_form = {
+	icon = 79
+	sex_appeal_opinion = -25
+	monthly_character_prestige = -0.5
+	icon = 40
+}

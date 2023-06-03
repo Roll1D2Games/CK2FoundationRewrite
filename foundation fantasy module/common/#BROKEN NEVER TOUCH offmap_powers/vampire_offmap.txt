@@ -1,0 +1,273 @@
+offmap_vampire = {
+	name = vampire_offmap
+	window_name = vampire_domestic_offmaps_window
+	button_name = icon_offmaps_vampire
+	
+	currency_name = offmap_vampire_blood
+	currency_gain = monthly_vampire_blood
+	currency_reset_on_dynasty_change = no
+	currency_below_zero = no
+	
+	holder_title = vampire_offmap_holder
+	governor_title = c_vampire_offmap_power
+	tier = emperor
+	coa_religion = catholic
+	government = feudal
+	beginning_of_history = 1.1.1
+	sound = china_interaction_interface
+	display_trigger = {
+		FROM = {
+			trait = vampire
+		}
+	}
+	
+	policies = {
+		vampire_stable
+	}
+	statuses = {
+		vampire_policy_untrusting
+	}
+	
+	buttons = {
+		offmap_vampire_gifts = {
+		}
+		offmap_vampire_boons = {
+		}
+	}
+
+	icon_triggers = {
+
+	}
+
+	monthly_currency_gain = { 
+		is_vampire_FROM = {
+			value = 2
+			FROM = {
+				trait = vampire
+			}
+		}
+		is_haemophiliac = {
+			value = 1
+			FROM = {
+				trait = bloodthirsty_gods_1
+			}
+		}
+		is_haemoarch = {
+			value = 2
+			FROM = {
+				trait = bloodthirsty_gods_2
+			}
+		}
+		is_haemophant= {
+			value = 3
+			FROM = {
+				trait = bloodthirsty_gods_3
+			}
+		}
+		is_flu = {
+			value = 1
+			FROM = {
+				trait = flu
+			}
+		}
+		has_has_aztec_disease = {
+			value = 2
+			FROM = {
+				trait = has_aztec_disease
+			}
+		}
+		has_has_typhus = {
+			value = 2
+			FROM = {
+				trait = has_typhus
+			}
+		}
+		has_cancer = {
+			value = 3
+			FROM = {
+				trait = cancer
+			}
+		}
+		has_has_tuberculosis = {
+			value = 2
+			FROM = {
+				trait = has_tuberculosis
+			}
+		}
+		has_dancing_plague = {
+			value = 4
+			FROM = {
+				trait = dancing_plague
+			}
+		}
+		has_has_dysentery = {
+			value = 2
+			FROM = {
+				trait = dysentery
+			}
+		}
+		has_flu = {
+			value = 2
+			FROM = {
+				trait = flu
+			}
+		}
+		has_food_poisoning = {
+			value = 1
+			FROM = {
+				trait = food_poisoning
+			}
+		}
+		has_gout = {
+			value = 2
+			FROM = {
+				trait = gout 
+			}
+		}
+		has_syphilitic = {
+			value = 1
+			FROM = {
+				trait = syphilitic 
+			}
+		}
+		has_has_typhoid_fever = {
+			value = 2
+			FROM = {
+				trait = has_typhoid_fever 
+			}
+		}
+		has_ill = {
+			value = 1
+			FROM = {
+				trait = ill 
+			}
+		}
+		has_leper = {
+			value = 2
+			FROM = {
+				trait = leper 
+			}
+		}
+		has_has_measles = {
+			value = 2
+			FROM = {
+				trait = has_measles 
+			}
+		}
+		has_pneumonic = {
+			value = 2
+			FROM = {
+				trait = pneumonic 
+			}
+		}
+		has_rabies = {
+			value = 4
+			FROM = {
+				trait = rabies  
+			}
+		}
+		has_scurvy = {
+			value = 1
+			FROM = {
+				trait = scurvy  
+			}
+		}
+		has_sickly = {
+			value = 1
+			FROM = {
+				trait = sickly  
+			}
+		}
+		has_has_small_pox = {
+			value = 2
+			FROM = {
+				trait = has_small_pox  
+			}
+		}
+		has_has_bubonic_plague = {
+			value = 4
+			FROM = {
+				trait = has_bubonic_plague  
+			}
+		}
+		
+	}
+
+	temple_names = {
+		{
+			Progenitor				#DO NOT REMOVE, CRASHES THE GAME FOR FUCKING REASONS BEYOND KNOWN
+		}
+		{
+			Progenitor
+		}
+	}
+	
+	holder_succession = {
+		is_female = {
+			value = 0
+			additive_modifier = {
+				value = 0
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+			}
+		}
+		culture = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		graphical_culture = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		religion = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		dynasty = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		likes = {
+			likes_concubines = {
+				value = 300
+				modifier = {
+					factor = 0.1
+					FROMFROM = { is_female = yes }
+				}
+			}
+			likes_eunuchs = {
+				value = 300
+			}
+			likes_wealth = {
+				value = 300
+			}
+			likes_tributaries = {
+				value = 100
+			}
+		}
+
+		dislikes = {
+			likes_concubines = {
+				value = 100
+				modifier = {
+					factor = 5.0
+					FROMFROM = { is_female = yes }
+				}
+			}
+		}
+	}
+
+    diplomatic_range = {
+		trait = vampire
+    }
+}

@@ -1,0 +1,6 @@
+### Powers and Other ###
+
+werewolf = {
+	combat_rating = 15
+	#hidden = yes	removed for testing
+}

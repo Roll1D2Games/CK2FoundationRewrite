@@ -1,0 +1,10 @@
+is_new_mage = {
+	ROOT = {
+		custom_tooltip = {
+			text = magic_initialised
+			set_variable = { which = mana_current value = 0 }
+			add_character_modifier = { name = mana_meter days = -1 }
+			set_character_flag = mage_init
+		}
+	}
+}

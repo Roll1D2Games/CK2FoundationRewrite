@@ -1,0 +1,4 @@
+mana_meter = {
+	icon = 135
+	monthly_character_prestige = 0.1
+}

@@ -1,0 +1,12 @@
+696969 = {
+	name="Olympus"
+	culture="greek"
+}
+696970 = {
+	name="Asgard"
+	culture="norse"
+}
+696971 = {
+	name="Isäinen"	#isä = father, -nen naming suffix
+	culture="finnish"
+}

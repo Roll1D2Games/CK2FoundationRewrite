@@ -1,0 +1,43 @@
+###############################
+### Hunter Education Traits ###
+###############################
+
+neophyte_hunter = {
+	attribute = martial
+
+	combat_rating = 10
+	diplomacy = -2
+	martial = 2
+	learning = 2
+	health = 0.5
+}
+journeyman_hunter = {
+	attribute = martial
+
+	combat_rating = 20
+	diplomacy = -2
+	martial = 3
+	intrigue = 1
+	learning = 3
+	health = 1
+}
+expert_hunter = {
+	attribute = martial
+
+	combat_rating = 30
+	diplomacy = -2
+	martial = 4
+	intrigue = 2
+	learning = 4
+	health = 1.5
+}
+master_hunter = {
+	attribute = martial
+
+	combat_rating = 40
+	diplomacy = -2
+	martial = 5
+	intrigue = 3
+	learning = 5
+	health = 2
+}

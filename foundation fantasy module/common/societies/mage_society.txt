@@ -1,0 +1,227 @@
+mage_society = {
+	primary_attribute = learning 
+	society_ranks_gfx = mage_society_ranks
+	opinion_to_other_members = -10
+	opinion_per_rank_above = +10
+	opinion_to_pretenders = -40
+	opinion_to_perceived_members = -10
+	society_rank_up_decision = request_to_rank_up_within_mage_society
+	sound = hermetic_society_interface 
+	is_secret = no
+	criminal = no
+	is_religious = no
+	devil_worshipper = no
+	society_influence = yes
+	
+	non_interference = {
+		always = no 
+	}
+	active = { 
+		
+	}
+	indestructible = yes 
+	
+	can_join_society = { 
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = { 
+					society = mage_society
+					rank = 1
+				}
+			}
+		}
+		NOR = { 
+			trait = incapable 
+			trait = blood_mage
+		}
+		age = 16
+		has_character_flag = mage_init
+	}
+
+	show_society = {
+		age = 16
+		has_character_flag = mage_init
+	}
+	
+	potential = {
+		NOT = { has_character_flag = blood_mage }
+	}
+	
+	society_rank = { 
+		level = 1 
+		limit = 30
+		startup_limit = 25 
+		modifier = { 
+			learning = 1
+		}
+		decisions = { 
+			mage_society_power_1 
+			passive_power_tooltip
+		}
+	}
+	
+	society_rank = {
+		level = 2
+		limit = 15
+		startup_limit = 15
+		modifier = { 
+			learning = 2
+		}
+		decisions = {
+			mage_society_power_3	#I know how to count
+		}
+	}
+	
+	society_rank = {
+		level = 3
+		limit = 5
+		startup_limit = 5
+		modifier = { 
+			learning = 3
+		}
+		decisions = {
+			mage_society_power_2	#get confused
+		}
+	}
+
+	society_rank = {
+		level = 4
+		limit = 1
+		startup_limit = 1
+		modifier = { 
+			learning = 3
+		}
+		decisions = {
+		}
+	}
+	
+	plots = {
+	}
+	
+	monthly_currency_gain = { #how much society currency they gain
+		name = mage_society_currency #localization name of the society currency, also see custom_localization
+		
+		per_attribute = { #based on attribute
+    		name = learning
+    		value = 0.5
+    	}
+		### Trait Positives ###
+		has_trait = {
+			value = 1
+			trait = scholar
+		}
+		has_trait = {
+			value = 1
+			trait = erudite
+		}
+		has_trait = {
+			value = 1
+			trait = mystic
+		}
+		has_trait = {
+			value = 1
+			trait = ambitious
+		}
+		has_trait = {
+			value = 1
+			trait = quick
+		}
+		has_trait = {
+			value = 2
+			trait = genius
+		}
+		has_trait = {
+			value = 3
+			trait = quick_1
+		}
+		has_trait = {
+			value = 4
+			trait = genius_1
+		}
+		### Trait Negatives ###
+		has_trait = {
+			value = -1
+			trait = slow
+		}
+		has_trait = {
+			value = -3
+			trait = imbecile
+		}
+		has_trait = {
+			value = -1
+			trait = zealous
+		}
+		### Rank Bonus ###
+		society_rank = { 
+			rank = 1
+			value = 2
+		}
+		society_rank = { 
+			rank = 2
+			value = 4
+		}
+		society_rank = { 
+			rank = 3
+			value = 6
+		}
+		society_rank = { 
+			rank = 4
+			value = 10
+		}
+		### Triggered Positives ###
+		triggered_gain = {
+			desc = "society_gain_tier_count_tooltip" #draw attention to a tenuous order
+			trigger = {
+				tier = count
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = "society_gain_tier_duke_tooltip" #draw attention to a tenuous order
+			trigger = {
+				tier = duke
+			}
+			value = -2
+		}
+		triggered_gain = { 
+			desc = "society_gain_tier_king_tooltip" #draw attention to a tenuous order
+			trigger = {
+				tier = king
+			}
+			value = -3
+		}
+		triggered_gain = { 
+			desc = "society_gain_tier_king_tooltip" #no one wants celebrities cramping their style
+			trigger = {
+				tier = emperor
+			}
+			value = -3
+		}
+		### Triggered Negatives ###
+	}
+
+	member_score_per_attribute = 3
+	member_score_per_rank = 100
+
+	member_score = {
+		value = 10
+		modifier = {
+			factor = 3
+			trait = genius
+		}
+		modifier = {
+			factor = -3
+			trait = slow
+		}
+	}
+	
+	startup_populate = { 
+	    trigger = {
+			ai = yes
+	    	controls_religion = no
+			age = 16
+			is_in_society = no
+		}
+	}
+}

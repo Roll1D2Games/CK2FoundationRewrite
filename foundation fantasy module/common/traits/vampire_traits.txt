@@ -1,0 +1,118 @@
+##### Basic #####
+
+vampire = {
+	random = no
+	#hidden = yes	removed for testing
+	immortal = yes
+	male_insult = INSULT_VAMPIRE
+	female_insult = INSULT_VAMPIRE
+	male_insult_adj = INSULT_VAMPIRIC
+	female_insult_adj = INSULT_VAMPIRIC
+}
+
+thrall = {
+	random = no
+	#hidden = yes	removed for testing
+}
+
+vampire_dying = {
+	random = no
+	#hidden = yes
+	diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	learning = -2
+}
+
+vampire_verge_of_death = {
+	random = no
+	#hidden = yes
+	diplomacy = -5
+	martial = -5
+	stewardship = -5
+	intrigue = -5
+	learning = -5
+}
+
+##### Generations #####
+
+vampire_gen_5 = {	  #Only obtainable through event chain
+	potential = {
+		trait = vampire
+	}
+	combat_rating = 25
+	caste_tier = 1 
+	opposites = {
+		vampire_gen_3
+		vampire_gen_2
+		vampire_gen_1
+		vampire_gen_4
+	}
+}
+
+vampire_gen_4 = {	  #Strongest normally obtainable
+	potential = {
+		trait = vampire
+	}
+	combat_rating = 16
+	caste_tier = 1 
+	opposites = {
+		vampire_gen_3
+		vampire_gen_2
+		vampire_gen_1
+	}
+}
+
+vampire_gen_3 = {	
+	potential = {
+		trait = vampire
+	}
+	combat_rating = 12
+	caste_tier = 2
+	opposites = {
+		vampire_gen_4
+		vampire_gen_2
+		vampire_gen_1
+	}
+}
+
+vampire_gen_2 = {	
+	potential = {
+		trait = vampire
+	}
+	combat_rating = 8
+	caste_tier = 3
+	opposites = {
+		vampire_gen_3
+		vampire_gen_4
+		vampire_gen_1
+	}
+}
+
+vampire_gen_1 = {	
+	potential = {
+		trait = vampire
+	}
+	combat_rating = 5
+	caste_tier = 4
+	opposites = {
+		vampire_gen_3
+		vampire_gen_2
+		vampire_gen_4
+	}
+}
+
+##### Blood Power (Horrible name, please change) #####
+
+vampire_blood_10 = {	
+	potential = {
+		trait = vampire
+	}
+	customizer = no
+	diplomacy = 5
+	intrigue = 5
+	martial = 5
+	learning = 5
+	combat_rating = 666
+}

@@ -1,0 +1,198 @@
+bm_the_old_gods = {
+	name = "BM_SUPERNATURAL_ERA"
+	desc = "BM_SUPERNATURAL_ERA_INFO"
+	date = 867.1.1
+	
+	era = yes						## Will be shown on Era screen.
+	picture = GFX_pick_era_supernatural
+
+	selectable_character = {
+		id = 69696969 # Vampire
+		age = 17
+		name = ERA_CHAR_NAME_VAMP
+		title = c_cornwall
+		title_name = ERA_CORNWALL
+		
+		character = {
+			dna = wsrzgzddyey
+			properties = tg0djd000000
+			religion="catholic"
+			culture="english"
+			government = feudal_government
+			dynasty=696969
+		}
+	}
+
+	selectable_character = {
+		id = 69696970 # Werewolf
+		age = 37
+		name = ERA_CHAR_NAME_WEREWOLF
+		title = c_oxford
+		title_name = ERA_OXFORD
+		
+		character = {
+			dna = tczeyfghtom
+			properties = th0ebd000000
+			religion="catholic"
+			culture="english"
+			government = feudal_government
+			dynasty=696969
+		}
+	}
+
+	selectable_character = {
+		id = 69696970 #Skinchanger
+		age = 43
+		name = ERA_CHAR_NAME_SKINCHANGER
+		title = c_rennes
+		title_name = ERA_RENNES
+		
+		character = {
+			dna = cjlcjygaaar
+			properties = an0abb000000
+			religion="catholic"
+			culture="breton"
+			government = feudal_government
+			dynasty=696969
+		}
+	}
+
+	selectable_character = {
+		id = 90105 #Placeholder
+		age = 43
+		name = ERA_CHAR_NAME_REDACTED
+		title = d_swabia
+		title_name = d_swabia
+		
+		character = {
+			dna = cjlcjygaaar
+			properties = an0abb000000
+			religion="catholic"
+			culture="german"
+			government = feudal_government
+			dynasty=25061
+		}
+	}
+
+	selectable_character = {
+		id = 159137 #Placeholder
+		age = 43
+		name = ERA_CHAR_NAME_REDACTED
+		title = k_magyar
+		title_name = k_magyar
+		
+		character = {
+			dna = cjlcjygaaar
+			properties = an0abb000000
+			religion="tengri_pagan"
+			culture="hungarian"
+			government = feudal_government
+			dynasty=708
+		}
+	}
+
+	selectable_character = {
+		id = 163134 #Placeholder
+		age = 43
+		name = ERA_CHAR_NAME_REDACTED
+		title = d_galilee
+		title_name = d_galilee
+		
+		character = {
+			dna = cjlcjygaaar
+			properties = an0abb000000
+			religion="sunni"
+			culture="greek"
+			government = feudal_government
+			dynasty=242000
+		}
+	}
+
+	### These are not shown unless the player is viewing custom bookmarks
+
+	selectable_character = {
+		id = 69696969 # Vampire
+	}
+
+	selectable_character = {
+		id = 69696970 # Werewolf
+	}
+
+	selectable_character = {
+		id = 69696971 # Skinchanger
+	}
+}
+
+bm_gods_on_earth = {
+	name = "BM_GODS_ERA"
+	desc = "BM_GODS_ERA_INFO"
+	date = 867.2.2
+	
+	era = yes						## Will be shown on Era screen.
+	picture = GFX_pick_era_gods
+
+	selectable_character = {
+		id = 69696969 # Vampire
+		age = 17
+		name = ERA_CHAR_NAME_VAMP
+		title = c_cornwall
+		title_name = ERA_CORNWALL
+		
+		character = {
+			dna = wsrzgzddyey
+			properties = tg0djd000000
+			religion="catholic"
+			culture="english"
+			government = feudal_government
+			dynasty=696969
+		}
+	}
+
+	selectable_character = {
+		id = 69696970 # Werewolf
+		age = 37
+		name = ERA_CHAR_NAME_WEREWOLF
+		title = c_oxford
+		title_name = ERA_OXFORD
+		
+		character = {
+			dna = tczeyfghtom
+			properties = th0ebd000000
+			religion="catholic"
+			culture="english"
+			government = feudal_government
+			dynasty=696969
+		}
+	}
+
+	selectable_character = {
+		id = 69696970 #Skinchanger
+		age = 43
+		name = ERA_CHAR_NAME_SKINCHANGER
+		title = c_rennes
+		title_name = ERA_RENNES
+		
+		character = {
+			dna = cjlcjygaaar
+			properties = an0abb000000
+			religion="catholic"
+			culture="breton"
+			government = feudal_government
+			dynasty=696969
+		}
+	}
+
+	### These are not shown unless the player is viewing custom bookmarks
+
+	selectable_character = {
+		id = 69696969 # Vampire
+	}
+
+	selectable_character = {
+		id = 69696970 # Werewolf
+	}
+
+	selectable_character = {
+		id = 69696971 # Skinchanger
+	}
+}

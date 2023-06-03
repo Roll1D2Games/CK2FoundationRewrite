@@ -1,0 +1,3 @@
+vampire_stable = {
+	frame = 1
+}

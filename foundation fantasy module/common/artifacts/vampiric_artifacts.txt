@@ -1,0 +1,248 @@
+### Curseable Weapons ###
+
+vampiric_blood_sword = {							#upgrade tier 1/2/3 sword into tier 4
+	monthly_character_prestige = 1
+	martial = 3
+	intrigue = -2
+	combat_rating = 15
+	command_modifier = {
+		heavy_infantry = 0.15
+		actual_light_infantry = 0.2
+	}
+	quality = 7
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	flags = { combat_weapon sword created vampire vampiric_crafted }
+	stacking = no
+	picture = "GFX_blood_sword"
+	slot = weapon
+}
+
+vampiric_blood_axe = {						#upgrade tier 1/2/3 axe into tier 4
+	monthly_character_prestige = 1
+	martial = 3
+	intrigue = -2
+	combat_rating = 15
+	command_modifier = {
+		heavy_infantry = 0.15
+		light_cavalry = 0.2
+	}
+	quality = 7
+	picture = "GFX_blood_axe"
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	flags = { combat_weapon axe created vampire vampiric_crafted }
+	stacking = no
+	slot = weapon
+}
+
+vampiric_blood_mace = {							#upgrade tier 1/2/3 mace into tier 4
+	monthly_character_prestige = 1
+	martial = 3
+	intrigue = -2
+	combat_rating = 15
+	command_modifier = {
+		heavy_infantry = 0.15
+		light_cavalry = 0.2
+	}
+	quality = 7
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	flags = { combat_weapon mace created vampire vampiric_crafted }
+	stacking = no
+	picture = "GFX_blood_mace"
+	slot = weapon
+}
+
+### Rare Weapons ###
+
+sword_of_eastern_vampire = {
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 0.5
+	martial = 2
+	intrigue = -3
+	combat_rating = 21
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	quality = 7
+	flags = { very_rare combat_weapon sword vampire }
+	stacking = no
+	picture = "GFX_eastern_blood_sword"
+	slot = weapon
+}
+
+### Clothihg ###
+
+vampiric_shroud = {
+	quality = 7
+	monthly_character_prestige = 0.2
+	intrigue = 3
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	flags = { textile clothing vampire }
+	picture = "GFX_vampiric_mantle"
+	stacking = no
+	slot = ceremonial_torso
+}
+
+### Miscellanious Vampire Artifacts ###
+
+vampiric_blood_tablet = {						#tablet written by original monk who discovered vampire, beaten with it
+	learning = 2
+	tech_growth_modifier = 0.07
+	intrigue = -2
+	quality = 7
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	flags = { text tablet vampire }
+	stacking = no
+	picture = "GFX_blood_tablet"
+}
+
+vampiric_book_of_blood = {				#teaches you new vampiric abilities
+	learning = 3
+	diplomacy = -1
+	intrigue = -2
+	quality = 7
+	monthly_character_piety = -1
+	flags = { book unholy curse vampire }
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	stacking = no
+	picture = "GFX_book_of_blood"
+}
+
+vampiric_papal_blood = {				#empowers blood magic duration
+	monthly_character_prestige = 1
+	quality = 7
+	learning = 3
+	intrigue = -3
+	flags = { unholy vampire }
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	stacking = no
+	picture = "GFX_vampiric_blood"
+}
+
+vampiric_unlimited_heart = {			#no need to drink with this
+	monthly_character_prestige = 1
+	combat_rating = 1
+	quality = 7
+	learning = 1
+	intrigue = -3
+	flags = { unholy vampire }
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	stacking = no
+	picture = "GFX_unending_heart"
+}
+
+vampiric_skull = {
+	monthly_character_piety = 0.10
+	monthly_character_prestige = 0.10
+	quality = 7
+	flags = { saint_item skull vampire }
+	stacking = no
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+					trait = vampire
+					trait = thrall
+					has_character_flag = vampire_knowledge
+				}
+			}
+		}
+	picture = "GFX_vampire_skull"
+}
+
+vampiric_sanguine_ruby = {
+	monthly_character_prestige = 1
+	quality = 7
+	flags = { diamond curse vampire }
+	stacking = no
+	picture = "GFX_sanguine_ruby"
+	indestructible = yes
+	active = {
+		custom_tooltip = { 
+			text = vampiric_magical_knowledge
+			OR = {
+				trait = vampire
+				trait = thrall
+				has_character_flag = vampire_knowledge
+			}
+		}
+	}
+}

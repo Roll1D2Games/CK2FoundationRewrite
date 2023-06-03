@@ -1,0 +1,283 @@
+### Lament Configuration ###
+
+lament_configuration = {
+	quality = 7
+	flags = { event curse unholy }
+	stacking = no
+	monthly_character_piety = -2
+	picture = "GFX_lament_config"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+### Containment ###
+
+hyper_cube = { 
+	quality = 6
+	flags = { eternity_container_space }
+	stacking = no
+	picture = "GFX_hyper_cube"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+puzzle_box = { 
+	quality = 6
+	flags = { eternity_container_mind }
+	stacking = no
+	picture = "GFX_puzzle_box"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+tree_feller = { 
+	quality = 6
+	flags = { eternity_container_reality }
+	stacking = no
+	picture = "GFX_tree_feller"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+strange_glowing_ornament = { 
+	quality = 6
+	flags = { eternity_container_power }
+	stacking = no
+	picture = "GFX_strange_glowing_ornament"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+eye_of_mountain_morbod = { 
+	quality = 6
+	flags = { eternity_container_time }
+	stacking = no
+	picture = "GFX_eye_of_mountain_morbod"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+crystal_heart = { 
+	quality = 6
+	flags = { eternity_container_soul }
+	stacking = no
+	picture = "GFX_crystal_heart"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+### Eternity pebbles ###
+
+space_pebble = { 
+	command_modifier = {
+		speed = 0.1	#can literally move armies around
+	}
+	martial = 4		#can literally move armies around
+	combat_rating = 20	#teleportation is useful in battle
+	monthly_character_prestige = 1
+	quality = 7
+	flags = { eternity_container_space }
+	stacking = no
+	picture = "GFX_space_pebble"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+	active = {
+		custom_tooltip = { text = armourequipped }
+		hidden_tooltip = {
+			any_artifact = {
+				AND = {
+					is_artifact_equipped = yes
+					has_artifact_flag = eternity_armour
+				}
+			}
+		}
+	}
+}
+
+mind_pebble = { 
+	stewardship = 2 	#better planning
+	learning = 5	#heightens mental ability
+	defensive_plot_power_modifier = 0.2	#sharpens senses
+	plot_power_modifier = 0.2	#better planning
+	combat_rating = 10	#sharpens senses
+	monthly_character_prestige = 1
+	quality = 7
+	flags = { eternity_container_mind }
+	stacking = no
+	picture = "GFX_mind_pebble"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+	active = {
+		custom_tooltip = { text = armourequipped }
+		hidden_tooltip = {
+			any_artifact = {
+				AND = {
+					is_artifact_equipped = yes
+					has_artifact_flag = eternity_armour
+				}
+			}
+		}
+	}
+}
+
+reality_pebble = { 
+	build_cost_modifier = -0.5	#summon what you want
+	build_time_modifier = -0.5	#same reason
+	health = 3	#can merge with stone
+	combat_rating = 40	#turn enemies weapons into dust
+	monthly_character_prestige = 1
+	quality = 7
+	flags = { eternity_container_reality }
+	stacking = no
+	picture = "GFX_reality_pebble"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+	active = {
+		custom_tooltip = { text = armourequipped }
+		hidden_tooltip = {
+			any_artifact = {
+				AND = {
+					is_artifact_equipped = yes
+					has_artifact_flag = eternity_armour
+				}
+			}
+		}
+	}
+}
+
+power_pebble = { 
+	combat_rating = 80	#stone of pure power
+	martial = 5		#empower armies
+	command_modifier = {
+		siege = 0.5		#destroy buildings and walls
+	}
+	monthly_character_prestige = 1
+	quality = 7
+	flags = { eternity_container_power }
+	stacking = no
+	picture = "GFX_power_pebble"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+	active = {
+		custom_tooltip = { text = armourequipped }
+		hidden_tooltip = {
+			any_artifact = {
+				AND = {
+					is_artifact_equipped = yes
+					has_artifact_flag = eternity_armour
+				}
+			}
+		}
+	}
+}
+
+time_pebble = { 
+	bloodline_effect_battle_survivor = 1	#might not work
+	combat_rating = 50	#difficult to kill
+	defensive_plot_power_modifier = 1	#undo time
+	monthly_character_prestige = 1
+	quality = 7
+	flags = { eternity_container_time }
+	stacking = no
+	picture = "GFX_time_pebble"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+	active = {
+		custom_tooltip = { text = armourequipped }
+		hidden_tooltip = {
+			any_artifact = {
+				AND = {
+					is_artifact_equipped = yes
+					has_artifact_flag = eternity_armour
+				}
+			}
+		}
+	}
+}
+
+soul_pebble = { 
+	diplomacy = 5
+	general_opinion = 10
+	sex_appeal_opinion = 10
+	global_revolt_risk = -0.2
+	monthly_character_prestige = 1
+	quality = 7
+	flags = { eternity_container_soul }
+	stacking = no
+	picture = "GFX_soul_pebble"
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+	active = {
+		custom_tooltip = { text = armourequipped }
+		hidden_tooltip = {
+			any_artifact = {
+				AND = {
+					is_artifact_equipped = yes
+					has_artifact_flag = eternity_armour
+				}
+			}
+		}
+	}
+}
+
+### misc ###
+
+eternity_armour = {
+	combat_rating = 25
+	monthly_character_prestige = 0.5
+	command_modifier = { morale_offence = 0.05 }
+	quality = 6
+	active = { 
+		AND = {
+			trait = colossus_trait
+			religion = dark_order
+			culture = colossus
+		}
+	}
+	flags = { eternity_armour }
+	picture = "GFX_suit_of_armor_gold"
+	stacking = no
+	slot = torso
+}
+
+generals_shield = {
+	combat_rating = 45
+	monthly_character_prestige = 1
+	command_modifier = { morale_offence = 0.08 }
+	quality = 5
+	active = { 
+		AND = {
+			trait = betavenger_trait
+		}
+	}
+	flags = { generals_shield }
+	picture = "GFX_generals_shield"
+	stacking = no
+	slot = torso
+}

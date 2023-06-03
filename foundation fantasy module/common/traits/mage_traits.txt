@@ -1,0 +1,51 @@
+### Education ###
+
+mage_scholar = {
+	attribute = learning
+	
+	learning = 1
+	diplomacy = -1
+	combat_rating = 4
+}
+
+apprentice_wizard = {
+	attribute = learning
+	
+	learning = 3
+	diplomacy = -1
+	combat_rating = 8
+}
+
+experienced_mage = {
+	attribute = learning
+	
+	learning = 6
+	martial = 1
+	diplomacy = -1
+	stewardship = 1
+	combat_rating = 12
+}
+
+expert_sorcerer = {
+	attribute = learning
+	
+	learning = 9
+	martial = 2
+	diplomacy = -1
+	stewardship = 2
+	combat_rating = 16
+}
+
+### Powers and Other ###
+
+blood_mage = {
+	general_opinion = -10
+	church_opinion = -15
+	combat_rating = 25
+}
+
+fire_mage = {
+	general_opinion = -5
+	church_opinion = -10
+	combat_rating = 15
+}

@@ -1,0 +1,37 @@
+death_execution_staked = {
+	violent = yes
+	long_desc = "DEATH_EXECUTION_STAKED"
+	can_nokiller = yes
+	execution = yes
+	sound_list = {
+		female = {
+			"impaling_female_01"
+			"impaling_female_02"
+			"impaling_female_03"
+		}
+		male = {
+			"impaling_male_01"
+			"impaling_male_02"
+			"impaling_male_03"
+		}
+	}
+}
+
+death_execution_staked = {
+	violent = yes
+	long_desc = "DEATH_EXECUTION_STAKED"
+	can_nokiller = yes
+	execution = yes
+	sound_list = {
+		female = {
+			"impaling_female_01"
+			"impaling_female_02"
+			"impaling_female_03"
+		}
+		male = {
+			"impaling_male_01"
+			"impaling_male_02"
+			"impaling_male_03"
+		}
+	}
+}

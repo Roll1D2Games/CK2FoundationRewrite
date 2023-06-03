@@ -1,0 +1,3 @@
+shapergfx = {
+	skin_tone = 0
+}

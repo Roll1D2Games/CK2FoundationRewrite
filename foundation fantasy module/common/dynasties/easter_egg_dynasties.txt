@@ -1,0 +1,24 @@
+420420 = {
+	name = "Biggus Diccus"	
+	culture = "roman"
+}
+420421 = {
+	name = "Morbod"
+	culture = "irish"
+}
+420422 = {
+	name = "Throog"	
+	culture = "maghreb_arabic"
+}
+420423 = {
+	name = "Doddley"
+	culture = "coptic"
+}
+420424 = {
+	name = "Karling"
+	culture = "frankish"
+}
+420425 = {
+	name = "Elfboi"	
+	culture = "ayleid"
+}

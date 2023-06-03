@@ -1,0 +1,26 @@
+skinchanger_base_mod = {
+	icon = 135
+	monthly_character_prestige = 0.1
+	defensive_plot_power_modifier = 0.30
+	general_opinion = -10
+}
+skinchanger_norse_mod = {
+	icon = 135
+	monthly_character_prestige = 0.1
+	general_opinion = -10
+	norse_opinion = 30
+}
+skinchanger_latin_mod = {
+	icon = 135
+	monthly_character_prestige = 0.1
+	general_opinion = -10
+	latin_opinion = 30
+}
+skinchanger_cooldown_mod = {
+	icon = 135
+	monthly_character_prestige = 0.1
+}
+recently_manipulated = {
+	icon = 135
+	monthly_character_prestige = 0.1
+}
