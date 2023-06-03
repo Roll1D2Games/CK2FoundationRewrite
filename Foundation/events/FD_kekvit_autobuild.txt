@@ -1,0 +1,34 @@
+namespace = fd_auto_build
+
+character_event = {
+	id = fd_auto_build.001
+	hide_window = yes
+	ai = yes
+	only_playable = yes
+	mean_time_to_happen = {
+		years = 1
+	}
+	trigger = {
+		is_tribal = yes
+	}
+	immediate = {
+		random_list = {
+			50 = {
+				if = {
+					limit = {
+						is_tribal = yes
+					}
+					fd_check_tribal_buildings = yes
+				}
+				else_if = {
+					limit = {
+						is_feudal = yes
+					}
+					fd_check_castle_buildings = yes
+				}
+			}
+			50 = { # Slowdown
+			}
+		}
+	}
+}

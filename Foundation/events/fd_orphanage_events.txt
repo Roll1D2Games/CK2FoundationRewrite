@@ -1,0 +1,715 @@
+namespace = FCOrphanage
+
+character_event = {			#Visit Orphanage#
+	id = FCOrphanage.1
+	title = FCOrphanageEvttitle1
+	desc = FCOrphanageEvtdesc1
+	picture = GFX_evt_monastery_monks
+
+	is_triggered_only = yes	
+
+	option = {
+		name = FCOrphanageEvt1OptA		#any child will do	
+		scaled_wealth = -1
+		character_event = { id = FCOrphanage.2 }
+	}
+
+	option = {
+		name = FCOrphanageEvt1OptB		#do any have potential?
+		scaled_wealth = -2
+		character_event = { id = FCOrphanage.2 }
+		set_character_flag = FCPotential
+	}
+
+	option = {
+		name = FCOrphanageEvt1OptC		#ones reserved for the clergy
+		scaled_wealth = -3
+		character_event = { id = FCOrphanage.2 }
+		set_character_flag = FCHighPotenial
+	}
+
+	option = {
+		name = FCOrphanageEvt1OptD		#You know, I've changed my mind
+		clr_character_flag = FCvisiting_orphanage
+	}
+}
+
+character_event = {			#Male or Female#
+	id = FCOrphanage.2
+	title = FCOrphanageEvttitle2
+	desc = FCOrphanageEvtdesc2
+	picture = GFX_evt_children_talking
+
+	is_triggered_only = yes	
+
+	option = {
+		name = FCOrphanageEvt2OptA			#male
+		character_event = { id = FCOrphanage.3 }
+		set_character_flag = FCMale
+	}
+
+	option = {
+		name = FCOrphanageEvt2OptB			#female
+		character_event = { id = FCOrphanage.3 }
+		set_character_flag = FCFemale
+	}
+}
+
+character_event = {			#Extra donation?
+	id = FCOrphanage.3
+	title = FCOrphanageEvttitle3
+	desc = FCOrphanageEvtdesc3
+	picture = GFX_evt_bribe_accepted
+
+	is_triggered_only = yes	
+
+	option = {
+		name = FCOrphanageEvt3OptA			#fine
+		character_event = { id = FCOrphanage.4 }
+		set_character_flag = FCExtraDonation
+		scaled_wealth = -1
+	}
+
+	option = {
+		name = FCOrphanageEvt3OptB			#fuck off
+		character_event = { id = FCOrphanage.4 }
+	}
+}
+
+character_event = {			#Generate Child
+	id = FCOrphanage.4
+	title = FCOrphanageEvttitle4
+	desc = FCOrphanageEvtdesc4
+	picture = GFX_evt_child_reading
+
+	is_triggered_only = yes	
+
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = FCFemale
+			}
+			create_character = {
+				random_traits = no
+				dynasty = none
+				religion = ROOT
+				culture = ROOT
+				female = yes
+				age = 8
+				health = 5
+				fertility = 1
+
+				attributes = {
+				martial = 5
+				diplomacy = 5
+				stewardship = 5
+				intrigue = 5
+				learning = 5
+				}
+			}
+		} 
+		else = {
+			create_character = {
+				random_traits = no
+				dynasty = none
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 8
+				health = 5
+				fertility = 1
+
+				attributes = {
+				martial = 2
+				diplomacy = 2
+				stewardship = 2
+				intrigue = 2
+				learning = 2
+				}
+			}
+		}
+		new_character = {
+			save_event_target_as = FCadopting_child
+			random_list = {
+				4 = {
+					add_trait = quick
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 2
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.5
+					}
+				}
+				1 = {
+					add_trait = genius
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 2
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.5
+					}
+				}
+				19 = { }
+			}
+			random_list = {
+				1 = {
+					add_trait = fair
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 2
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.5
+					}
+				}
+				19 = { }
+			}
+			random_list = {
+				1 = {
+					add_trait = strong
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 2
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.5
+					}
+				}
+				19 = { }
+			}
+			random_list = {
+				1 = {
+					change_diplomacy = -1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 0.1
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 0.5
+					}
+				}
+				1 = {
+					change_diplomacy = 1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.1
+					}
+				}
+				1 = {
+					change_diplomacy = 2
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.2
+					}
+				}
+				1 = {
+					change_diplomacy = 3
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.8
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.3
+					}
+				}
+				6 = { }
+			}
+			random_list = {
+				1 = {
+					change_martial = -1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 0.1
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 0.5
+					}
+				}
+				1 = {
+					change_martial = 1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.1
+					}
+				}
+				1 = {
+					change_martial = 2
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.2
+					}
+				}
+				1 = {
+					change_martial = 3
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.8
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.3
+					}
+				}
+				6 = { }
+			}
+			random_list = {
+				1 = {
+					change_intrigue = -1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 0.1
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 0.5
+					}
+				}
+				1 = {
+					change_intrigue = 1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.1
+					}
+				}
+				1 = {
+					change_intrigue = 2
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.2
+					}
+				}
+				1 = {
+					change_intrigue = 3
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.8
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.3
+					}
+				}
+				6 = { }
+			}
+			random_list = {
+				1 = {
+					change_stewardship = -1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 0.1
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 0.5
+					}
+				}
+				1 = {
+					change_stewardship = 1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.1
+					}
+				}
+				1 = {
+					change_stewardship = 2
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.2
+					}
+				}
+				1 = {
+					change_stewardship = 3
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.8
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.3
+					}
+				}
+				6 = { }
+			}
+			random_list = {
+				1 = {
+					change_learning = -1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 0.1
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 0.5
+					}
+				}
+				1 = {
+					change_learning = 1
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.1
+					}
+				}
+				1 = {
+					change_learning = 2
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 1.3
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.2
+					}
+				}
+				1 = {
+					change_learning = 3
+					modifier = {
+						ROOT = {
+							has_character_flag = FCHighPotenial
+						}
+						modifier = 1.8
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCPotential
+						}
+						modifier = 0.5
+					}
+					modifier = {
+						ROOT = {
+							has_character_flag = FCExtraDonation
+						}
+						modifier = 1.3
+					}
+				}
+				6 = { }
+			}
+		}
+	}
+
+	option = {
+		name = FCOrphanageEvt4OptA			#fine
+		character_event = { id = FCOrphanage.5 }
+		event_target:FCadopting_child = {
+			tooltip = { show_portrait = yes }
+		}
+	}
+}
+
+character_event = {			#Adopt child or take into court?
+	id = FCOrphanage.5
+	title = FCOrphanageEvttitle5
+	desc = FCOrphanageEvtdesc5
+	picture = GFX_evt_gathering_of_minds
+
+	is_triggered_only = yes	
+
+	option = {
+		name = FCOrphanageEvt5OptA			#adopt
+		event_target:FCadopting_child = {
+			dynasty = ROOT
+			add_trait = legit_bastard
+			prestige = -200
+			any_spouse = {
+				opinion = {
+					who = ROOT
+					modifier = legitimized_bastard
+					years = 20
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						is_female = no
+					}
+				}
+				set_father = ROOT
+			}
+			else = {
+				set_mother = ROOT
+			}
+		}
+		clr_character_flag = FCvisiting_orphanage
+		set_character_flag = FCadopted_child
+	}
+
+	option = {
+		name = FCOrphanageEvt5OptB			#leave houseless
+		clr_character_flag = FCvisiting_orphanage
+		set_character_flag = FCadopted_child
+	}
+}

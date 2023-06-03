@@ -1,0 +1,45 @@
+# Update supernatural_decision_icons.gfx with icons for the buildings
+
+decisions = {
+	open_lodge_menu = {
+		ai = no
+		only_playable = yes
+		is_high_prio = yes
+		potential = {
+			ROOT = { 
+				capital_scope = {
+					AND = {
+						has_fort = yes
+						fort_has_building = fort_lodge_1
+					}
+				}
+			}
+			NOT = { has_character_flag = lodge_menu_open }
+		}
+
+		allow = {
+			
+		}
+
+		effect = { 
+			set_character_flag  = lodge_menu_open
+		}
+	}
+
+	close_lodge_menu = {
+		ai = no
+		only_playable = yes
+		is_high_prio = yes
+		potential = {
+			has_character_flag = lodge_menu_open
+		}
+
+		allow = {
+			has_character_flag = lodge_menu_open
+		}
+
+		effect = { 
+			clr_character_flag = lodge_menu_open
+		}
+	}
+}

@@ -1,0 +1,229 @@
+namespace = FDlodge
+
+### Duelist ###
+
+character_event = {		#chance to gain duelist from fight club
+	id = FDlodge.1
+	title = EVTTITLEFDlodgee.1
+	desc = EVTDESCFDlodge.1
+	picture = GFX_evt_construction_site
+	
+	only_playable = yes
+	min_age = 25
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		NOT = { is_inaccessible_trigger = yes }
+		in_command = no
+		NOR = {
+			lifestyle_traits > 1
+			trait = duelist
+			has_character_flag = FDlodgeDuelFail
+		}
+		capital_scope = {
+			fort_has_building = fort_lodge_fight_club
+		}
+	}
+
+	mean_time_to_happen = {			#optimise me in future
+		days = 300
+	}
+
+	option = {
+		name = FDlodgeOpt1a			#sure
+		custom_tooltip = { text = FDLodge_train_duelist }
+		hidden_tooltip = {
+			random_list = {		
+				1 = {
+					character_event = { id = FDlodge.2 days = 60 }		#success
+				}
+				1 = {
+					character_event = { id = FDlodge.3 days = 60 }		#failure
+				}
+			}
+		}
+	}
+	option = {
+		name = FDlodgeOpt1b			#not for me 
+	}
+}
+
+character_event = {		#success, gain duelist
+	id = FDlodge.2
+	title = EVTTITLEFDlodgee.2
+	desc = EVTDESCFDlodge.2
+	picture = GFX_evt_construction_site
+	only_playable = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = FDlodgeOpt2a
+		add_trait = duelist
+	}
+}
+
+character_event = {		#fail, gain stressed, content
+	id = FDlodge.3
+	title = EVTTITLEFDlodgee.3
+	desc = EVTDESCFDlodge.3
+	picture = GFX_evt_construction_site
+	only_playable = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = FDlodgeOpt3a	
+		set_character_flag = FDlodgeDuelFail
+		random_list = {
+			2 = {
+				add_trait = stressed
+			}
+			1 = {
+				add_trait = content
+			}
+			7 = { }
+		}
+	}
+}
+
+character_event = {		#pratice dueling
+	id = FDlodge.4
+	title = EVTTITLEFDlodgee.4
+	desc = EVTDESCFDlodge.4
+	picture = GFX_evt_construction_site
+
+	only_playable = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		NOT = { is_inaccessible_trigger = yes }
+		in_command = no
+		trait = duelist
+		capital_scope = {
+			fort_has_building = fort_lodge_fight_club
+		}
+	}
+
+	mean_time_to_happen = {			#optimise me in future
+		days = 300
+	}
+
+	option = {
+		name = FDlodgeOpt4a			#sure
+		random_list = {
+			25 = {
+				add_trait = wounded
+				add_one_duel_experience_modifier = yes
+				modifier = {
+					factor = 0
+					trait = wounded
+				}
+			}
+			10 = {
+				add_trait = maimed
+				modifier = {
+					factor = 2
+					trait = wounded
+				}
+			}
+			8 = {
+				add_trait = brawny
+			}
+			2 = {
+				add_trait = strong
+			}
+			55 = {
+				add_one_duel_experience_modifier = yes
+			}
+		}
+	}
+	option = {
+		name = FDlodgeOpt4b			#now is not the time
+	}
+}
+
+character_event = {		#duel with random courtier/vassal
+	id = FDlodge.5
+	title = EVTTITLEFDlodgee.5
+	desc = EVTDESCFDlodge.5
+	picture = GFX_evt_construction_site
+
+	only_playable = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		NOT = { is_inaccessible_trigger = yes }
+		in_command = no
+		trait = duelist
+		capital_scope = {
+			fort_has_building = fort_lodge_fight_club
+		}
+	}
+
+	mean_time_to_happen = {			#optimise me in future
+		days = 300
+	}
+
+	immediate = {
+		save_event_target_as = FDDuelStarter
+		random_courtier_or_vassal = {
+			limit = {
+				is_adult = yes
+			}
+			preferred_limit = {
+				is_friend = ROOT
+				OR = {
+					trait = duelist
+					combat_rating = 50
+				}
+			}
+			preferred_limit = {
+				trait = duelist
+				combat_rating = 50
+			}
+			save_event_target_as = FDDuelPartner
+		}
+	}
+
+	option = {
+		name = FDlodgeOpt5a			#sure
+		custom_tooltip = { text = FDLodge_train_duelist }
+		event_target:FDDuelPartner = {
+			character_event = { id = FDlodge.6 days = 3 }		 
+		}
+	}
+	option = {
+		name = FDlodgeOpt5b			#now is not the time
+	}
+}
+
+character_event = {		#invite to duel
+	id = FDlodge.6
+	title = EVTTITLEFDlodgee.6
+	desc = EVTDESCFDlodge.6
+	picture = GFX_evt_construction_site
+
+	only_playable = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = FDlodgeOpt6a			#sure
+		custom_tooltip = { text = FDLodge_train_duelist }
+		event_target:FDDuelStarter = {
+			character_event = { id = FDlodge.7 days = 3 }		 
+		}
+	}
+	option = {
+		name = FDlodgeOpt6b			#now is not the time
+	}
+}

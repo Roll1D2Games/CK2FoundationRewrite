@@ -1,0 +1,33 @@
+namespace = FD_leadership_changes
+
+character_event = {
+    id = FD_leadership_changes.1
+    hide_window = yes
+
+    trigger = {
+        has_game_rule = { name = FD_LEADERSHIP_CHANGES value = on }
+        in_command = yes
+        NOT = { has_character_modifier = fd_leading_troops }
+    }
+
+    immediate = {
+        add_character_modifier = {
+            name = fd_leading_troops
+            months = -1
+        }
+    }
+}
+
+character_event = {
+    id = FD_leadership_changes.2
+    hide_window = yes
+
+    trigger = {
+        in_command = no
+        has_character_modifier = fd_leading_troops
+    }
+
+    immediate = {
+       remove_character_modifier = fd_leading_troops
+    }
+}

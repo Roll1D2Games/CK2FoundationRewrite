@@ -1,0 +1,120 @@
+namespace = FDCannibalism
+
+character_event = {	
+	id = FDCannibalism.1
+	title = FDCannibalismEvttitle1			#placeholder in case of expansion
+	desc = FDCannibalismEvtdesc1			#placeholder in case of expansion
+	picture = GFX_evt_monastery_monks		#placeholder in case of expansion
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_bloodline = {					#only trigger if they actually have a bloodline to eat
+			bloodline_is_active_for = ROOT
+		}
+		has_game_rule = { name = FD_CANNIBALISM value = on }
+		OR = {
+			death_reason = death_execution_eaten_unknown
+			death_reason = death_execution_eaten
+			death_reason = death_murder_unknown_butchered
+		}
+	}
+
+	immediate = {
+		save_event_target_as = FDCannibalEaten
+		if = {
+			limit = {
+				has_game_rule = { name = FD_RULE_EASTER_EGGS value = on }
+				event_target:FDCannibalEaten = {
+					culture = han
+				}
+			}
+			killer = {
+				save_event_target_as = FDCannibalEater
+				character_event = { id = FDCannibalism.3 }
+			}
+		}
+		else = {
+			killer = {
+				save_event_target_as = FDCannibalEater
+				character_event = { id = FDCannibalism.2 }
+			}
+		}
+	}
+}
+
+character_event = {	
+	id = FDCannibalism.2
+	title = FDCannibalismEvttitle2			
+	desc = FDCannibalismEvtdesc2
+	picture = GFX_evt_feast		
+
+	is_triggered_only = yes
+
+	option = {
+		name = FDCannibalismEvt2OptA
+		event_target:FDCannibalEaten = {			#on tooltip to give information to player about what they've just eaten
+			random_owned_bloodline = {
+				add_bloodline_member = event_target:FDCannibalEater
+			}
+		}
+		if = {
+			limit = {
+				event_target:FDCannibalEater = {
+					has_trait = immortal
+				}
+			}
+			health = 2
+		}
+	}
+}
+
+character_event = {	
+	id = FDCannibalism.3				#easter egg, reference to the Austrailian man looking to eat a succulent chinese meal
+	title = FDCannibalismEvttitle3			
+	desc = FDCannibalismEvtdesc3
+	picture = GFX_evt_chinese_emissary		
+
+	is_triggered_only = yes
+
+	option = {
+		name = FDCannibalismEvt2OptA
+		trigger = {
+			is_female = no
+		}
+		event_target:FDCannibalEater = {			#on tooltip to give information to player about what they've just eaten
+			random_owned_bloodline = {
+				add_bloodline_member = event_target:FDCannibalEater
+			}
+		}
+		if = {
+			limit = {
+				event_target:FDCannibalEater = {
+					has_trait = immortal
+				}
+			}
+			health = 2
+		}
+	}
+
+	option = {
+		name = FDCannibalismEvt2OptB
+		trigger = {
+			is_female = yes
+		}
+		event_target:FDCannibalEater = {			#on tooltip to give information to player about what they've just eaten
+			random_owned_bloodline = {
+				add_bloodline_member = event_target:FDCannibalEater
+			}
+		}
+		if = {
+			limit = {
+				event_target:FDCannibalEater = {
+					has_trait = immortal
+				}
+			}
+			health = 2
+		}
+	}
+}

@@ -1,0 +1,329 @@
+targeted_decisions = {
+	sell_artifact_decision = {
+		ai = no
+		filter = self
+		third_party_filter = artifacts
+		third_party = FROM
+		show_third_party_potential = yes
+		
+		potential = { 
+			any_artifact = {
+				OR = {
+					has_artifact_flag = book
+					has_artifact_flag = combat_weapon
+					has_artifact_flag = bodypart
+					has_artifact_flag = saint
+					has_artifact_flag = weapon
+					has_artifact_flag = jewelry
+					has_artifact_flag = armor
+					has_artifact_flag = armor_set
+					has_artifact_flag = created
+					has_artifact_flag = ingredient
+					has_artifact_flag = mask
+					has_artifact_flag = african_fetish
+					has_artifact_flag = crown
+					NOT = { has_artifact_flag = chinese }     #disallow, otherwise you can liquidate courtiers
+					NOT = { has_artifact_flag = invention }
+					NOT = { has_artifact_flag = unique }
+					NOT = { has_artifact_flag = curse }
+					NOT = { has_artifact_flag = event }
+					NOT = { has_artifact_flag = diamond }		#no selling cursed diamonds
+					NOT = { has_artifact_flag = very_rare }		#no selling the bones of st peter
+					NOT = { has_artifact_flag = fantasy }		#no selling the holy grail		
+				}
+			}
+		}
+
+		allow = {
+			is_adult = yes
+		}
+		
+		third_party_potential = {
+			FROMFROM = {
+				show_scope_change = no
+				OR = {
+					has_artifact_flag = book
+					has_artifact_flag = combat_weapon
+					has_artifact_flag = bodypart
+					has_artifact_flag = saint
+					has_artifact_flag = weapon
+					has_artifact_flag = jewelry
+					has_artifact_flag = armor
+					has_artifact_flag = armor_set
+					has_artifact_flag = created
+					has_artifact_flag = ingredient
+					has_artifact_flag = mask
+					has_artifact_flag = african_fetish
+					has_artifact_flag = crown
+					NOT = { has_artifact_flag = chinese }     #disallow, otherwise you can liquidate courtiers
+					NOT = { has_artifact_flag = invention }
+					NOT = { has_artifact_flag = unique }
+					NOT = { has_artifact_flag = curse }
+					NOT = { has_artifact_flag = event }
+					NOT = { has_artifact_flag = diamond }		#no selling cursed diamonds
+					NOT = { has_artifact_flag = very_rare }		#no selling the bones of st peter
+					NOT = { has_artifact_flag = fantasy }		#no selling the holy grail
+				}
+			}
+		}
+		
+		third_party_score = {
+			factor = 1
+			additive_modifier = {
+				value = 1
+				FROMFROM = { 
+					show_scope_change = no
+					quality == 2
+				}
+			}
+			additive_modifier = {
+				value = 2
+				FROMFROM = { 
+					show_scope_change = no
+					quality == 3
+				}
+			}
+			additive_modifier = {
+				value = 3
+				FROMFROM = { 
+					show_scope_change = no
+					quality == 4
+				}
+			}
+			additive_modifier = {
+				value = 4
+				FROMFROM = {
+					show_scope_change = no
+					quality == 5
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = sell_artifact_decision_desc_Tooltip
+			}	
+			hidden_tooltip = {
+				set_variable = {
+					which = global_sell_value
+					which = local_third_party_score
+				}
+				multiply_variable = {
+					which = global_sell_value
+					which = global_highest_monthly_income
+				}
+				FROMFROM = {
+					save_event_target_as = artifact_for_sale
+				}
+				character_event = { id = FD_artifact_sale.2 }
+			}
+		}
+	}
+
+	donate_book_decision = {
+		ai = no
+		filter = self
+		third_party_filter = artifacts
+		third_party = FROM
+		show_third_party_potential = yes
+		
+		potential = { 
+			any_artifact = {
+				AND = {
+					has_artifact_flag = book
+					has_artifact_flag = created
+				}
+			}
+		}
+
+		allow = {
+			is_adult = yes
+			OR = {
+				has_wonder = wonder_library
+				has_wonder = wonder_university
+				any_hospital = {
+					hospital_has_building = library_1
+				}
+			}
+		}
+		
+		third_party_potential = {
+			FROMFROM = {
+				show_scope_change = no
+				has_artifact_flag = book
+				has_artifact_flag = created
+			}
+		}
+		
+		third_party_score = {
+			factor = 1
+			additive_modifier = {
+				value = 1
+				FROMFROM = { 
+					show_scope_change = no
+					quality == 2
+				}
+			}
+			additive_modifier = {
+				value = 2
+				FROMFROM = { 
+					show_scope_change = no
+					quality == 3
+				}
+			}
+			additive_modifier = {
+				value = 3
+				FROMFROM = { 
+					show_scope_change = no
+					quality == 4
+				}
+			}
+			additive_modifier = {
+				value = 4
+				FROMFROM = {
+					show_scope_change = no
+					quality == 5
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					FROMFROM = {
+						has_artifact_flag = about_martial
+					}
+				}
+				random_list = {
+					1 = {
+						change_martial = 1
+					}
+					3 = {
+						military_techpoints = 100
+					}
+					1 = {
+						add_character_modifier = {
+							name = brilliant_insight
+							months = 48
+						}
+						modifier = {
+							factor = 0
+							has_character_modifier = brilliant_insight
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FROMFROM = {
+						has_artifact_flag = about_stewardship
+					}
+				}
+				random_list = {
+					1 = {
+						change_stewardship = 1
+					}
+					3 = {
+						economy_techpoints = 100
+					}
+					1 = {
+						add_character_modifier = {
+							name = brilliant_insight
+							months = 48
+						}
+						modifier = {
+							factor = 0
+							has_character_modifier = brilliant_insight
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FROMFROM = {
+						OR = {
+							has_artifact_flag = about_religion
+							has_artifact_flag = about_learning
+						}
+					}
+				}
+				random_list = {
+					1 = {
+						change_learning = 1
+					}
+					3 = {
+						culture_techpoints = 100
+					}
+					1 = {
+						add_character_modifier = {
+							name = brilliant_insight
+							months = 48
+						}
+						modifier = {
+							factor = 0
+							has_character_modifier = brilliant_insight
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FROMFROM = {
+						has_artifact_flag = about_intrigue
+					}
+				}
+				random_list = {
+					1 = {
+						change_intrigue = 1
+					}
+					3 = {
+						economy_techpoints = 100
+					}
+					1 = {
+						add_character_modifier = {
+							name = brilliant_insight
+							months = 48
+						}
+						modifier = {
+							factor = 0
+							has_character_modifier = brilliant_insight
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FROMFROM = {
+						OR = {
+							has_artifact_flag = about_dynasty
+							has_artifact_flag = about_relationships
+							has_artifact_flag = about_diplomacy
+						}
+					}
+				}
+				random_list = {
+					1 = {
+						change_diplomacy = 1
+					}
+					3 = {
+						culture_techpoints = 100
+					}
+					1 = {
+						add_character_modifier = {
+							name = brilliant_insight
+							months = 48
+						}
+						modifier = {
+							factor = 0
+							has_character_modifier = brilliant_insight
+						}
+					}
+				}
+			}
+
+			FROMFROM = {
+				unsafe_destroy_artifact = yes
+			}
+		}
+	}
+}

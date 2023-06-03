@@ -1,0 +1,899 @@
+namespace = FDMaintenance
+
+character_event = {	
+	id = FDMaintenance.1
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { which = intellect_points value = 0 }
+		set_variable = { which = appearance_points value = 0 }
+		set_variable = { which = strength_points value = 0 }
+		if = {	#### FATHER INTELLECT (Big brain time) ####
+			limit = {
+				father_even_if_dead = {
+					trait = genius_1
+				}
+			}
+			change_variable = { which = intellect_points value = 6 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = genius
+				}
+			}
+			change_variable = { which = intellect_points value = 5 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = quick_1
+				}
+			}
+			change_variable = { which = intellect_points value = 4 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = quick
+				}
+			}
+			change_variable = { which = intellect_points value = 3 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = base_2
+				}
+			}
+			change_variable = { which = intellect_points value = 2 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = base_1
+				}
+			}
+			change_variable = { which = intellect_points value = 1 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = minus_1
+				}
+			}
+			change_variable = { which = intellect_points value = -1 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = minus_2
+				}
+			}
+			change_variable = { which = intellect_points value = -2 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = slow
+				}
+			}
+			change_variable = { which = intellect_points value = -3 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = minus_4
+				}
+			}
+			change_variable = { which = intellect_points value = -4 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = inbred
+				}
+			}
+			change_variable = { which = intellect_points value = -5 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = minus_6
+				}
+			}
+			change_variable = { which = intellect_points value = -6 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = imbecile
+				}
+			}
+			change_variable = { which = intellect_points value = -8 }
+		}
+		if = {	#### MOTHER INTELLECT (Big brain time (better not let her drive though! HAHAHA (LMAO (LOL)))) ####
+			limit = {
+				mother_even_if_dead = {
+					trait = genius_1
+				}
+			}
+			change_variable = { which = intellect_points value = 6 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = genius
+				}
+			}
+			change_variable = { which = intellect_points value = 5 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = quick_1
+				}
+			}
+			change_variable = { which = intellect_points value = 4 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = quick
+				}
+			}
+			change_variable = { which = intellect_points value = 3 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = base_2
+				}
+			}
+			change_variable = { which = intellect_points value = 2 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = base_1
+				}
+			}
+			change_variable = { which = intellect_points value = 1 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = minus_1
+				}
+			}
+			change_variable = { which = intellect_points value = -1 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = minus_2
+				}
+			}
+			change_variable = { which = intellect_points value = -2 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = slow
+				}
+			}
+			change_variable = { which = intellect_points value = -3 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = minus_4
+				}
+			}
+			change_variable = { which = intellect_points value = -4 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = inbred
+				}
+			}
+			change_variable = { which = intellect_points value = -5 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = minus_6
+				}
+			}
+			change_variable = { which = intellect_points value = -6 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = imbecile
+				}
+			}
+			change_variable = { which = intellect_points value = -8 }
+		}
+		if = {		#### FATHER APPEARANCE BEGINS (HIT BATMAN SPIN OFF MOVIE) ####
+			limit = {
+				father_even_if_dead = {
+					trait = fair
+				}
+			}
+			change_variable = { which = appearance_points value = 3 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = base_fair_2
+				}
+			}
+			change_variable = { which = appearance_points value = 2 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = base_fair_1
+				}
+			}
+			change_variable = { which = appearance_points value = 1 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = negative_fair_1
+				}
+			}
+			change_variable = { which = appearance_points value = -1 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = negative_fair_2
+				}
+			}
+			change_variable = { which = appearance_points value = -2 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = ugly
+				}
+			}
+			change_variable = { which = appearance_points value = -3 }
+		}
+		if = {		#### MOTHER APPEARANCE BEGINS (Why doesn't Oedipus swear? Because he kisses his mother with that mouth) ####
+			limit = {
+				mother_even_if_dead = {
+					trait = fair
+				}
+			}
+			change_variable = { which = appearance_points value = 3 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = base_fair_2
+				}
+			}
+			change_variable = { which = appearance_points value = 2 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = base_fair_1
+				}
+			}
+			change_variable = { which = appearance_points value = 1 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = negative_fair_1
+				}
+			}
+			change_variable = { which = appearance_points value = -1 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = negative_fair_2
+				}
+			}
+			change_variable = { which = appearance_points value = -2 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = ugly
+				}
+			}
+			change_variable = { which = appearance_points value = -3 }
+		}
+		if = {		#### FATHER STRENGTH BEGINS (Youtuber trait is -6 to this btw) ####
+			limit = {
+				father_even_if_dead = {
+					trait = strong_1
+				}
+			}
+			change_variable = { which = strength_points value = 2 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = strong
+				}
+			}
+			change_variable = { which = strength_points value = 1 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = weak
+				}
+			}
+			change_variable = { which = strength_points value = -1 }
+		}
+		else_if = {
+			limit = {
+				father_even_if_dead = {
+					trait = weak_1
+				}
+			}
+			change_variable = { which = strength_points value = -2 }
+		}
+		if = {		#### MOTHER STRENGTH BEGINS (if you have rivalry with younger sibling it should give +10 to mum's strength) ####
+			limit = {
+				mother_even_if_dead = {
+					trait = strong_1
+				}
+			}
+			change_variable = { which = strength_points value = 2 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = strong
+				}
+			}
+			change_variable = { which = strength_points value = 1 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = weak
+				}
+			}
+			change_variable = { which = strength_points value = -1 }
+		}
+		else_if = {
+			limit = {
+				mother_even_if_dead = {
+					trait = weak_1
+				}
+			}
+			change_variable = { which = strength_points value = -2 }
+		}
+	}
+	
+	option = {
+		name = OPTCongenA
+		#### Intellect calc start ####
+		if = {
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value == 12
+				}
+			}
+			random_list = {
+				70 = {
+					add_trait = genius_1
+				}
+				20 = {
+					add_trait = genius
+				}
+				10 = {
+					add_trait = quick_1
+				}
+			}
+		}
+		else_if = {		#only executes if previous failed, don't panic about overwriting dummy
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= 10
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = genius_1
+				}
+				70 = {
+					add_trait = genius
+				}
+				20 = {
+					add_trait = quick_1
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= 8
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = genius
+				}
+				70 = {
+					add_trait = quick_1
+				}
+				20 = {
+					add_trait = quick
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= 6
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = quick_1
+				}
+				70 = {
+					add_trait = quick
+				}
+				20 = {
+					add_trait = base_2
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= 4
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = quick
+				}
+				70 = {
+					add_trait = base_2
+				}
+				20 = {
+					add_trait = base_1
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= 2
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = base_2
+				}
+				70 = {
+					add_trait = base_1
+				}
+				20 = {
+
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= 0
+				}
+			}
+			random_list = {
+				20 = {
+					add_trait = base_1
+				}
+				70 = {
+
+				}
+				10 = {
+					add_trait = minus_1
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= -2
+				}
+			}
+			random_list = {
+				20 = {
+					
+				}
+				70 = {
+					add_trait = minus_1
+				}
+				10 = {
+					add_trait = minus_2
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= -4
+				}
+			}
+			random_list = {
+				35 = {
+					add_trait = minus_1
+				}
+				55 = {
+					add_trait = minus_2
+				}
+				10 = {
+					add_trait = slow
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= -6
+				}
+			}
+			random_list = {
+				35 = {
+					add_trait = minus_2
+				}
+				55 = {
+					add_trait = slow
+				}
+				10 = {
+					add_trait = minus_4
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value >= -8
+				}
+			}
+			random_list = {
+				35 = {
+					add_trait = slow
+				}
+				55 = {
+					add_trait = minus_4
+				}
+				10 = {
+					add_trait = imbecile
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = intellect_points
+					value <= -10	
+				}
+			}
+			random_list = {
+				35 = {
+					add_trait = minus_4
+				}
+				55 = {
+					add_trait = imbecile
+				}
+			}
+		}
+		#### Intellect calc end ####
+		#### Strength calc start ####
+		if = {		#+4 to -4 scale, +4 would require two powerful parents, opposite is true for -4.
+			limit = {
+				check_variable = {
+					which = strength_points
+					value == 4
+				}
+			}
+			random_list = {
+				70 = {
+					add_trait = strong_1
+				}
+				20 = {
+					add_trait = strong
+				}
+				10 = {
+					#No trait, unlucky
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = strength_points
+					value >= 2
+				}
+			}
+			random_list = {
+				20 = {
+					add_trait = strong_1
+				}
+				70 = {
+					add_trait = strong
+				}
+				10 = {
+					#No trait, unlucky
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = strength_points
+					value >= 0
+				}
+			}
+			random_list = {
+				20 = {
+					add_trait = strong
+				}
+				70 = {
+					#No trait, average
+				}
+				10 = {
+					add_trait = weak
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = strength_points
+					value >= -2
+				}
+			}
+			random_list = {
+				40 = {
+					#No trait, lucky
+				}
+				50 = {		#bit more generous
+					add_trait = weak
+				}
+				10 = {
+					
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = strength_points
+					value >= -4
+				}
+			}
+			random_list = {
+				60 = {
+					add_trait = weak
+				}
+				40 = {		
+					add_trait = weak_1
+				}
+			}
+		}
+		#### Strength calc end ####
+		#### SEXYBOI calc end ####
+		if = {		#+6 to -6 scale, +6 would require two fair (attractive) parents, opposite is true for -6.
+			limit = {
+				check_variable = {
+					which = appearance_points
+					value == 6
+				}
+			}
+			random_list = {
+				70 = {
+					add_trait = fair
+				}
+				20 = {
+					add_trait = base_fair_2
+				}
+				10 = {
+					add_trait = base_fair_1		#even sexy boys can give birth to MUNTERS#
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = appearance_points
+					value >= 4
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = fair
+				}
+				70 = {
+					add_trait = base_fair_2
+				}
+				20 = {
+					add_trait = base_fair_2
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = appearance_points
+					value >= 2
+				}
+			}
+			random_list = {
+				20 = {
+					add_trait = base_fair_2
+				}
+				70 = {
+					add_trait = base_fair_1
+				}
+				10 = {
+					#nuffin, plain as a boot
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = appearance_points
+					value >= 0
+				}
+			}
+			random_list = {
+				20 = {
+					add_trait = base_fair_1
+				}
+				70 = {
+					#nuffin, plain as a boot
+				}
+				10 = {
+					add_trait = negative_fair_1
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = appearance_points
+					value >= -2
+				}
+			}
+			random_list = {
+				30 = {
+					#nuffin, plain as a boot
+				}
+				60 = {
+					add_trait = negative_fair_1
+				}
+				10 = {
+					add_trait = negative_fair_2
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = appearance_points
+					value >= -4
+				}
+			}
+			random_list = {
+				30 = {
+					add_trait = negative_fair_1
+				}
+				60 = {
+					add_trait = negative_fair_2
+				}
+				10 = {
+					add_trait = ugly
+				}
+			}
+		}
+		else_if = {	
+			limit = {
+				check_variable = {
+					which = appearance_points
+					value >= -6
+				}
+			}
+			random_list = {
+				50 = {
+					add_trait = negative_fair_2
+				}
+				50 = {
+					add_trait = ugly
+				}
+			}
+		}
+	}
+}
+
+### Age Cheat For Ruler Designer Tidy-Up ###
+
+narrative_event = {
+	id = FDMaintenance.2
+	
+	ai = no
+	only_playable = yes
+	hide_window = yes
+	   
+	trigger = {
+		OR = {
+			trait = age_2
+			trait = age_5
+			trait = age_10
+			trait = age_15
+			trait = age_25
+			trait = age_50
+			trait = age_100
+			trait = age_2_plus
+			trait = age_5_plus
+			trait = age_10_plus
+			trait = age_15_plus
+			trait = age_25_plus
+			trait = age_50_plus
+			trait = age_100_plus
+			trait = age_1000
+		}
+	}
+	   
+	immediate = {
+		remove_trait = age_2
+		remove_trait = age_5
+		remove_trait = age_10
+		remove_trait = age_15
+		remove_trait = age_25
+		remove_trait = age_50
+		remove_trait = age_100
+		remove_trait = age_2_plus
+		remove_trait = age_5_plus
+		remove_trait = age_10_plus
+		remove_trait = age_15_plus
+		remove_trait = age_25_plus
+		remove_trait = age_50_plus
+		remove_trait = age_100_plus
+		remove_trait = age_1000
+	}
+}
+
+### Close Menus ###
+
+character_event = {	
+	id = FDMaintenance.3
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_character_flag  =  employment_closed
+	}
+}

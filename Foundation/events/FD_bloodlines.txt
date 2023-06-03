@@ -1,0 +1,48 @@
+# Disease Bloodline idea by Lolfunacount/Ravenholme
+
+namespace = FD_bloodline
+
+narrative_event = {
+	id = FD_bloodline.001
+	picture = GFX_evt_danse_macabre
+	desc = FD_bloodline001
+	title = FD_bloodline001T
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_global_flag = FD_taken_disease_bloodline
+			immortal = yes
+		}
+		ROOT = {
+			count >= 4
+			has_character_flag = immune_tuberculosis
+			has_character_flag = immune_typhoid_fever
+			has_character_flag = immune_typhus
+			has_character_flag = immune_bubonic_plague
+			has_character_flag = immune_measles
+			has_character_flag = immune_smallpox
+			has_character_flag = immune_aztec_disease
+			has_character_flag = immune_dancing_plague
+		}
+	}
+	immediate = {
+		set_global_flag = FD_taken_disease_bloodline
+	}
+	option = {
+		name = {
+			trigger = {
+				NOT = { trait = cynical }
+			}
+			text = FD_bloodline001TTA
+		}
+		name = {
+			trigger = {
+				trait = cynical
+			}
+			text = FD_bloodline001TTB
+		}
+		create_bloodline = {
+			type = FD_harbringer
+		}
+	}
+}

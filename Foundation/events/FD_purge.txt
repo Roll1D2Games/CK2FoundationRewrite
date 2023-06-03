@@ -1,0 +1,114 @@
+namespace = FD_purge
+
+######
+# Remove family tree dead ends from the dynasty
+######
+
+character_event = {
+	id = FD_purge.001
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		any_child_even_if_dead = {
+			is_alive = no
+			has_children = no
+		}
+		has_game_rule = { name = FD_purge_dead value = enabled }
+	}
+	immediate = {
+		any_child_even_if_dead = {
+			limit = {
+				is_alive = no
+				has_children = no
+			}
+			set_mother = 0
+			set_father = 0
+			dynasty = none
+		}
+		character_event = { id = FD_purge.002 }
+	}
+}
+
+character_event = {
+	id = FD_purge.002
+	desc = FD_purge002
+	picture = GFX_evt_danse_macabre
+	is_triggered_only = yes
+	notification = yes
+	option = {
+		name = OK
+	}
+}
+
+#######
+# Purge old people who probably won't have any impact on the game
+#######
+
+character_event = {
+	id = FD_purge.3
+	
+	hide_window = yes
+
+	min_age = 40
+	only_women = yes
+	ai = yes
+
+	trigger = {
+		is_ruler = no
+		has_job_title = no
+		NOT = {	any_player = { family = ROOT } }
+		is_society_grandmaster = no
+		NOT = {	society = { society_has_active_progress = yes }	}
+		immortal = no
+		NOT = { any_player = { owes_favor_to = ROOT } }
+		NOT = { any_player = { holds_favor_on = ROOT } }
+		is_powerful_vassal = no
+		controls_religion = no
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			age = 45
+		}
+		modifier = {
+			factor = 0.5
+			age = 50
+		}
+		modifier = {
+			factor = 0.5
+			age = 55
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_married = yes }
+		}
+	}
+
+	option = {
+		trigger = {
+			spouse = {
+				NOT = { is_ruler = yes }
+			}
+		}
+		random_list = {
+			50 = {
+				add_trait = has_bubonic_plague
+			}
+			50 = {
+				death = { death_reason = death_missing }
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			spouse = {
+				is_ruler = yes
+			}
+		}
+
+		add_trait = cancer
+	}
+}

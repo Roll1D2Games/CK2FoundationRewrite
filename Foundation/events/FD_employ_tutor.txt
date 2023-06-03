@@ -1,0 +1,32 @@
+namespace = FD_court_tutor
+
+character_event = {
+	id = FD_court_tutor.1
+	picture = GFX_evt_emissary
+
+	is_triggered_only = yes
+
+	desc = {
+		text = EVTDESC_NE_1 #Not debutantes
+		trigger = { event_target:invited_character = { NOT = { has_character_flag = debutante } } }
+	}
+	
+	option = {
+		name = EVTOPTA_NE_1
+		event_target:invited_character = {
+			give_minor_title = title_teacher
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_NE_1
+		hidden_tooltip = {
+			event_target:invited_character = { 
+				any_artifact = { destroy_artifact = yes }
+				death = {
+					death_reason = death_missing
+				}
+			}
+		}
+	}
+}

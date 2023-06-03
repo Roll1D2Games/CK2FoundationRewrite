@@ -1,0 +1,72 @@
+namespace = FD_councillor_xp
+
+character_event = {
+    id = FD_councillor_xp.1
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+        has_game_rule = { name = FD_COUNCILLOR_XP value = on }          #swap to a global flag for this to affect AI
+        is_councillor = yes
+        liege = {
+            OR = {
+                tier = KING
+                tier = EMPEROR
+            }
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                has_job_title = job_chancellor
+            }
+            add_character_modifier = {
+                name = fd_job_chancellor_xp
+                months = -1
+                stacking = yes
+            }
+        }
+        else_if = {
+            limit = {
+                has_job_title = job_marshal
+            }
+            add_character_modifier = {
+                name = fd_job_marshal_xp
+                months = -1
+                stacking = yes
+            }
+        }
+        else_if = {
+            limit = {
+                has_job_title = job_treasurer
+            }
+            add_character_modifier = {
+                name = fd_job_treasurer_xp
+                months = -1
+                stacking = yes
+            }
+        }
+        else_if = {
+            limit = {
+                has_job_title = job_spymaster
+            }
+            add_character_modifier = {
+                name = fd_job_spymaster_xp
+                months = -1
+                stacking = yes
+            }
+        }
+        else_if = {
+            limit = {
+                has_job_title = job_spiritual
+            }
+            add_character_modifier = {
+                name = fd_job_spiritual_xp
+                months = -1
+                stacking = yes
+            }
+        }
+    }
+}

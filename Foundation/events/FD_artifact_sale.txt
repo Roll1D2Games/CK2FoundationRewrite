@@ -1,0 +1,206 @@
+namespace = FD_artifact_sale
+
+character_event = {
+    id = FD_artifact_sale.1
+
+    hide_window = yes
+    is_triggered_only = yes
+
+    ai = no
+    only_playable = yes
+
+    immediate = {
+        set_variable = {
+            which = global_highest_monthly_income
+            value = 0
+        }
+
+        any_independent_ruler = {
+            limit = {
+                ai = yes
+                is_within_diplo_range = ROOT
+                scaled_wealth = -2
+                monthly_income > global_highest_monthly_income
+                opinion = {
+                    who = ROOT
+                    value >= -25
+                }
+                OR = {
+                    is_merchant_republic = no
+                    ROOT = {
+                        is_patrician = yes
+                    }
+                }
+                OR = {
+                    AND = {
+                        is_tribal = no
+                        ROOT = { is_tribal = no }
+                    }
+                    AND = {
+                        is_tribal = yes
+                        ROOT = { is_tribal = yes }
+                    }
+                    religion = ROOT
+                    culture = ROOT
+                }
+                NOT = {
+                    war_with = ROOT
+                }
+            }
+
+            export_to_variable = {
+                which = global_highest_monthly_income
+                value = monthly_income
+            }
+        }
+    }
+}
+
+character_event = {
+    id = FD_artifact_sale.2
+
+    hide_window = yes
+    is_triggered_only = yes
+
+    ai = no
+    only_playable = yes
+
+    immediate = {
+        random_playable_ruler = {
+            if = {
+                limit = {
+                    ai = yes
+                    NOT = {
+                        is_foe = ROOT
+                        war = yes
+                    }
+                    is_within_diplo_range = ROOT
+                    wealth > 0
+                }
+                set_variable = {
+                    which = global_sell_value_negative
+                    value = 0
+                }
+                subtract_variable = {
+                    which = global_sell_value_negative
+                    which = global_sell_value
+                }
+                save_event_target_as = artifact_buyer
+                ROOT = {
+                    character_event = { 
+                        id = FD_artifact_sale.3
+                    }
+                }
+            }
+            else = {
+                multiply_variable = {
+                    which = global_sell_value
+                    value = 0.75
+                }
+                ROOT = {
+                    character_event = { 
+                        id = FD_artifact_sale.4
+                    }
+                }
+            }
+        }
+    }
+}
+
+character_event = {
+    id = FD_artifact_sale.3         #sell to an npc
+    desc = FD_artifact_sale_desc3
+	picture = GFX_evt_bribe_accepted
+
+    is_triggered_only = yes
+
+    ai = no
+    only_playable = yes
+
+    option = {
+		name = FDArtifactEvt3OptA
+        wealth = global_sell_value
+        event_target:artifact_for_sale = {
+            transfer_artifact = {
+                from = ROOT
+                to = event_target:artifact_buyer
+            }
+        }
+        event_target:artifact_buyer = {
+            wealth = global_sell_value_negative
+        }
+	}
+}
+
+character_event = {             #no valid npc found, sell to a faceless noble for a cheaper price and sling the artifact at someone in diplo range
+    id = FD_artifact_sale.4
+    desc = FD_artifact_sale_desc4
+	picture = GFX_evt_bribe_accepted
+
+    is_triggered_only = yes
+
+    ai = no
+    only_playable = yes
+
+    immediate = {
+        any_playable_ruler = {
+            limit = {
+                is_within_diplo_range = ROOT
+            }
+            save_event_target_as = lucky_ruler_artifact
+        }
+    }
+
+    option = {
+		name = FDArtifactEvt4OptA
+        wealth = global_sell_value
+        custom_tooltip = {
+            text = FDArtifactEvt4OptATooltip
+        }
+        tooltip_info_custom = FDNoBuyer
+        hidden_tooltip = {
+            event_target:lucky_ruler_artifact = {
+                character_event = { id = FD_artifact_sale.5 }
+            }
+            event_target:artifact_for_sale = {
+                transfer_artifact = {
+                    from = ROOT
+                    to = event_target:lucky_ruler_artifact
+                }
+            }
+        }
+	}
+
+    option = {
+		name = FDArtifactEvt4OptB
+        custom_tooltip = {
+			text = FDArtifactEvt4OptBTooltip
+		}	
+	}
+}
+
+character_event = {            
+    id = FD_artifact_sale.5             #lucky ruler gets an artifact confirmation
+    title = FD_artifact_sale_title5
+    desc = FD_artifact_sale_desc5
+
+    is_triggered_only = yes
+
+    option = {
+		name = FDArtifactEvt5OptA
+        tooltip_info_custom = FDNoBuyerRecipient
+	}
+}
+
+character_event = {            
+    id = FD_artifact_sale.6            
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        character_event = { 
+            id = { FD_artifact_sale.1 days = 35 }
+        }
+    }
+}

@@ -1,0 +1,202 @@
+namespace = FDroulette
+
+character_event = {
+	id = FDroulette.1
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+        has_game_rule = { name = FD_RULER_RANDOMISER value = enabled }
+        ai = no
+    }
+
+	immediate = {
+        save_event_target_as = fd_roulette_previous
+		random_list = {
+			1 = {
+				random_list = {
+					1 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = COUNT
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+					0.9 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = DUKE
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+					0.8 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = KING
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+					0.7 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = EMPEROR
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+				}
+			}
+			1 = {
+				random_list = {
+					1 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = COUNT
+								independent = yes
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+					0.9 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = DUKE
+								independent = yes
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+					0.8 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = KING
+								independent = yes
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+					0.7 = {
+						random_playable_ruler = {
+							limit = {
+								ai = yes
+								is_playable = yes
+								war = no
+								immortal = no
+								tier = EMPEROR
+							}
+							ROOT = {
+								set_player_character = PREV
+							}
+							character_event = { id = FDroulette.2 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = FDroulette.2
+	desc = FDroulettedesc2
+	title = FDroulettetitle2
+	picture = GFX_evt_mongols_pillage_oldgods #placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = FDroulette2OptA
+	}
+}
+
+character_event = {
+	id = FDroulette.3
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	only_rulers = yes
+	only_independent = yes
+
+	trigger = {
+        has_game_rule = { name = FD_RELIGION_RANDOMISER value = enabled }
+    }
+
+	immediate = {
+		random_character = {
+			LIMIT = {
+				NOT = {
+					religion = ROOT
+				}
+			}
+
+			save_event_target_as = selected_random_character
+		}
+
+		current_heir = {
+			religion = event_target:selected_random_character
+
+			# We do this here for cases where your heir is already the ruler of another realm
+			any_realm_character = {
+				religion = event_target:selected_random_character
+			}
+		}
+
+		any_realm_character = {
+			religion = event_target:selected_random_character
+		}
+	}
+}

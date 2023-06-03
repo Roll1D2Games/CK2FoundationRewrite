@@ -1,0 +1,71 @@
+decisions = {
+
+	# The zz is to ensure it will be seen last in the list (probably)
+	zz_ckf_rename_decision_turn_full = {
+		ai = no
+		only_playable = yes
+		potential = {
+			has_global_flag = ckf_rename_off
+		}
+		effect = {
+			clr_global_flag = ckf_rename_off
+			set_global_flag = ckf_rename_full
+		}
+	}
+
+	# The zz is to ensure it will be seen last in the list (probably)
+	zz_ckf_rename_decision_turn_diplo = {
+		ai = no
+		only_playable = yes
+		potential = {
+			has_global_flag = ckf_rename_full
+		}
+		effect = {
+			clr_global_flag = ckf_rename_full
+			set_global_flag = ckf_rename_diplo
+		}
+	}
+
+	# The zz is to ensure it will be seen last in the list (probably)
+	zz_ckf_rename_decision_turn_off = {
+		ai = no
+		only_playable = yes
+		potential = {
+			has_global_flag = ckf_rename_diplo
+		}
+		effect = {
+			clr_global_flag = ckf_rename_diplo
+			set_global_flag = ckf_rename_off
+		}
+	}
+	
+	ckf_hide_traits = {
+		ai = no
+		only_playable = yes
+
+		potential = {
+			ai = no
+		}
+		allow = {
+			always = yes
+		}
+
+		effect = { 
+			if = {
+				limit = {
+					has_character_flag = ckf_traits_hidden
+				}
+				clr_character_flag = ckf_traits_hidden
+				remove_character_modifier = ckf_hidden_traits
+			}
+			else = {
+				set_character_flag = ckf_traits_hidden
+				add_character_modifier = {
+					name = ckf_hidden_traits
+					duration = -1
+				}
+			}
+		}	
+
+	}
+}

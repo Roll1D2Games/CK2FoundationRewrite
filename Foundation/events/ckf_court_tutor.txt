@@ -1,0 +1,175 @@
+namespace = ckf_tutor
+
+character_event = {
+	id = ckf_tutor.001
+	hide_window = yes
+	is_triggered_only = yes
+	only_capable = yes
+	trigger = {
+		is_adult = no
+		OR = {
+			has_focus = focus_ch_pride
+			has_focus = focus_ch_humility
+			has_focus = focus_ch_duty
+			has_focus = focus_ch_etiquette
+			has_focus = focus_ch_thrift
+			has_focus = focus_ch_faith
+			has_focus = focus_ch_struggle
+			has_focus = focus_ch_heritage
+			has_focus = focus_ed_diplomacy
+			has_focus = focus_ed_martial
+			has_focus = focus_ed_stewardship
+			has_focus = focus_ed_intrigue
+			has_focus = focus_ed_learning
+		}
+	}
+	immediate = {
+		if = { # Child prisoners could lose stats
+			limit = {
+				prisoner = yes
+				NOR = { # Focuses that strengthen a child even in prison
+					has_focus = focus_ch_humility
+					has_focus = focus_ch_faith
+					has_focus = focus_ch_struggle
+					has_focus = focus_ed_intrigue
+					has_character_modifier = house_arrest # Child learns normally under house arrest
+				}
+			}
+			random_list = {
+				75 = { } # Nothing happens
+				25 = {
+					trigger_switch = {
+						on_trigger = has_focus
+						focus_ed_diplomacy = { change_diplomacy = -1 }
+						focus_ch_etiquette = { change_diplomacy = -1 }
+						focus_ed_martial = { change_martial = -1 }
+						focus_ch_pride = { change_martial = -1 }
+						focus_ch_duty = { change_stewardship = -1 }
+						focus_ch_thrift = { change_stewardship = -1 }
+						focus_ch_heritage = { change_learning = -1 }
+						focus_ed_stewardship = { change_stewardship = -1 }
+						focus_ed_learning = { change_learning = -1 }
+					}
+				}
+			}
+			break = yes
+		}
+		else_if = {
+			limit = {
+				educator = { always = yes }
+			}
+			random_list = {
+				50 = { } 	# Child gets no bonus
+				25 = {		# Good tutor potentially gives bonus
+					modifier = {
+						factor = 0
+						educator = {
+							NOT = { learning = 14 }
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_focus
+						focus_ch_pride = { 
+							change_martial = 1
+							change_stewardship = 1
+						}
+						focus_ch_struggle = { 
+							change_martial = 2
+						}
+						focus_ch_duty = { 
+							change_stewardship = 2
+						}
+						focus_ch_thrift = { 
+							change_intrigue = 1
+							change_stewardship = 1
+						}
+						focus_ch_humility = { 
+							change_learning = 1
+							change_diplomacy = 1
+						}
+						focus_ch_etiquette = { 
+							change_intrigue = 1
+							change_diplomacy = 1
+						}
+						focus_ch_faith = { 
+							change_learning = 2
+						}
+						focus_ch_heritage = { 
+							change_learning = 2	
+						}						
+						focus_ed_martial = { 
+							change_martial = 1
+						}
+						focus_ed_stewardship = { 
+							change_stewardship = 1
+						}
+						focus_ed_diplomacy = { 
+							change_diplomacy = 1
+						}
+						focus_ed_intrigue = { 
+							change_intrigue = 1
+						}
+						focus_ed_learning = { 
+							change_learning = 1
+						}
+					}
+				}
+				25 = {		# Super tutor potentially gives bigger bonus
+					modifier = {
+						factor = 0
+						educator = {
+							NOT = { learning = 20 }
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_focus
+						focus_ch_pride = { 
+							change_martial = 2
+							change_stewardship = 1
+						}
+						focus_ch_struggle = { 
+							change_martial = 3
+						}
+						focus_ch_duty = { 
+							change_stewardship = 3
+						}
+						focus_ch_thrift = { 
+							change_intrigue = 1
+							change_stewardship = 2
+						}
+						focus_ch_humility = { 
+							change_learning = 1
+							change_diplomacy = 2
+						}
+						focus_ch_etiquette = { 
+							change_intrigue = 1
+							change_diplomacy = 2
+						}
+						focus_ch_faith = { 
+							change_learning = 3
+						}
+						focus_ch_heritage = { 
+							change_learning = 3
+						}						
+						focus_ed_martial = { 
+							change_martial = 2
+						}
+						focus_ed_stewardship = { 
+							change_stewardship = 2
+						}
+						focus_ed_diplomacy = { 
+							change_diplomacy = 2
+						}
+						focus_ed_intrigue = { 
+							change_intrigue = 2
+						}
+						focus_ed_learning = { 
+							change_learning = 2
+						}
+					}
+				}
+			}
+			break = yes
+		}
+	}
+}

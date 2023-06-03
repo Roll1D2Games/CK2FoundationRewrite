@@ -1,0 +1,160 @@
+namespace = FD_artifact_search
+
+character_event = {
+    id = FD_artifact_search.1
+    hide_window = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_game_rule = { name = FD_ARTIFACT_SEARCH value = minimal }
+                num_of_artifacts >= 1
+            }
+            character_event = { id = FD_artifact_search.2  days = 5 }
+        }
+        else_if = {
+            limit = {
+                has_game_rule = { name = FD_ARTIFACT_SEARCH value = full }
+                num_of_artifacts >= 1
+            }
+            character_event = { id = FD_artifact_search.3  days = 5 }
+        }
+        else = {
+            if = {
+                limit = {
+                    OR = {
+                        has_game_rule = { name = FD_ARTIFACT_SEARCH value = full }
+                        has_game_rule = { name = FD_ARTIFACT_SEARCH value = minimal }
+                    }
+                    num_of_artifacts < 1
+                }
+                character_event = { id = FD_artifact_search.4  days = 5 }
+            }
+        }
+    }
+}
+
+character_event = {
+    id = FD_artifact_search.2
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+        num_of_artifacts >= 1
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                OR = {
+                    any_artifact = { has_artifact_flag = rare }
+                    any_artifact = { has_artifact_flag = very_rare }
+                    any_artifact = { has_artifact_flag = invention }
+                    any_artifact = { has_artifact_flag = cursed }
+                    any_artifact = { has_artifact_flag = unique }
+                }
+            }
+            add_trait = FDRareArtifact
+        }
+        else_if = {
+            limit = {
+               any_artifact = { has_artifact_flag = easter_egg }
+            }
+            remove_trait = FDRareArtifact
+            add_trait = FDArtifactEasterEgg
+        }
+        else = {
+            remove_trait = FDRareArtifact
+            remove_trait = FDArtifactEasterEgg
+            add_trait = FDArtifact
+        }
+    }
+}
+
+character_event = {
+    id = FD_artifact_search.3
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+        num_of_artifacts >= 1
+        has_game_rule = { name = FD_ARTIFACT_SEARCH value = full }
+    }
+
+    immediate = {
+        add_trait = FDArtifact
+        if = {
+            limit = {
+                OR = {
+                    any_artifact = { has_artifact_flag = rare }
+                    any_artifact = { has_artifact_flag = very_rare }
+                    any_artifact = { has_artifact_flag = invention }
+                    any_artifact = { has_artifact_flag = cursed }
+                    any_artifact = { has_artifact_flag = unique }
+                }
+            }
+            add_trait = FDRareArtifact
+        }
+        else = {
+            remove_trait = FDRareArtifact
+        }
+        if = {
+            limit = {
+               any_artifact = { has_artifact_flag = easter_egg }
+            }
+            add_trait = FDArtifactEasterEgg
+        }
+        else = {
+            remove_trait = FDArtifactEasterEgg
+        }
+        if = {
+            limit = {
+               any_artifact = { has_artifact_flag = book }
+            }
+            add_trait = FDBookArtifact
+        }
+        else = {
+            remove_trait = FDBookArtifact
+        }
+        if = {
+            limit = {
+               any_artifact = { has_artifact_flag = chinese }
+            }
+            add_trait = FDChineseArtifact
+        }
+        else = {
+            remove_trait = FDChineseArtifact
+        }
+        if = {
+            limit = {
+                OR = {
+                    any_artifact = { has_artifact_flag = combat_weapon }
+                    any_artifact = { has_artifact_flag = armor_set }
+                    any_artifact = { has_artifact_flag = armor }
+                }
+            }
+            add_trait = FDArmamentArtifact
+        }
+        else = {
+            remove_trait = FDArmamentArtifact
+        }
+    }
+}
+
+character_event = {
+    id = FD_artifact_search.4
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+       remove_trait = FDArtifact
+       remove_trait = FDArtifactEasterEgg
+       remove_trait = FDBookArtifact
+       remove_trait = FDChineseArtifact
+       remove_trait = FDArmamentArtifact
+       remove_trait = FDRareArtifact
+    }
+}

@@ -1,0 +1,45 @@
+decisions = {
+	visit_orphanage = {
+		potential = {
+			ai = no
+			num_of_children <= 2
+			NOT = { has_character_flag = FCadopted_child }
+		}
+		allow = {
+			NOT = { has_character_flag = FCvisiting_orphanage }
+			num_of_children <= 2		#visual to show the player if they want to adopt they have to do it early
+		}
+		effect = {
+			character_event = { id = FCOrphanage.1 }
+			set_character_flag = FCvisiting_orphanage
+		}
+	}
+}
+
+targetted_decisions = {
+    ckf_rename_character = {
+		filter = all
+		ai = no
+		from_potential = {
+			ai = no
+		}
+		potential = {
+			ai = yes
+			OR = {
+				has_global_flag = ckf_rename_full
+				AND = {
+					has_global_flag = ckf_rename_diplo
+					is_within_diplo_range = FROM
+				}
+			}
+		}
+		allow = {
+	        always = yes
+		}
+		effect = {
+	        ROOT = {
+		        prompt_name = { player = from type = RENAME_CHARACTER_MESSAGE }
+	        }
+		}
+	}
+}

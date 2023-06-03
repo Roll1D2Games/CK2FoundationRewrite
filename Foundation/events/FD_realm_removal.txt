@@ -1,0 +1,155 @@
+namespace = FDrealmremove
+
+character_event = {	
+	id = FDrealmremove.1
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+        has_game_rule = { name = FD_RULER_REALM_REMOVAL_INDIA value = enabled }
+    }
+
+	immediate = {
+		create_character = {
+			random_traits = no
+			name = "Unknown"
+			dynasty = 400000
+			religion = FDPlaceholderReligion
+			culture = FDPlaceholder
+			female = no
+			age = 21
+			health = 15
+			fertility = -10
+			
+			attributes = {
+				martial = 0
+				diplomacy = 0
+				stewardship = 0
+				intrigue = 0
+				learning = 0
+			}
+			add_trait = FDPlaceholderChar
+		}
+		new_character = {
+			add_character_modifier = {
+				name = mother_minor_rest
+				hidden = yes
+				duration = -1
+			}
+			set_character_flag = ai_flag_refuse_conversion
+			set_character_flag = do_not_disturb
+			set_character_flag = society_join_block
+			set_character_flag = special_npc
+			set_character_flag = no_court_invites
+			save_global_event_target_as = FDIndiaPlaceholder
+			diplomatic_immunity = yes
+		}
+		any_playable_ruler = {
+			limit = {
+				capital_scope = {
+					region = world_india
+				}
+			}
+			any_realm_province = {
+				any_province_holding = {
+					destroy_settlement = THIS
+				}
+			}
+			character_event = { id = FDrealmremove.2 }
+		}
+	}
+
+	option = {
+		name = opttesta
+	}
+}
+
+character_event = {	
+	id = FDrealmremove.2
+	
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		abdicate_to = event_target:FDIndiaPlaceholder
+		event_target:FDIndiaPlaceholder = {
+			character_event = { id = FDrealmremove.3 }
+		}
+	}
+}
+
+character_event = {	
+	id = FDrealmremove.3
+	
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		any_realm_character = {
+			abdicate_to = event_target:FDIndiaPlaceholder
+		}
+		any_realm_province = {
+			any_province_holding = {
+				destroy_settlement = THIS
+			}
+		}
+		any_courtier = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+	}
+}
+
+#character_event = {	
+#	id = FDrealmremove.4
+#	
+#	hide_window = yes
+#
+#	trigger = {
+#		ai = yes
+#		AND = {
+#			trait = FDPlaceholderChar
+#			war = yes
+#		}
+#	}
+#
+#	immediate = {
+#		any_war = {
+#			end_war = whitepeace			#for peace treaty
+#		}
+#	}
+#}
+
+character_event = {	
+	id = FDrealmremove.5
+	
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		trait = FDPlaceholderChar
+	}
+
+	immediate = {
+		character_event = { id = FDrealmremove.1 }
+	}
+}
+
+character_event = {				#hide portraits of mandatory characters in hidden realms 
+	id = FDrealmremove.6
+	
+	hide_window = yes
+
+	trigger = {
+		top_liege = {
+			trait = FDPlaceholderChar
+		}
+	}
+
+	immediate = {
+		add_trait = FDPlaceholderCourtier
+	}
+}

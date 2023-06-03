@@ -1,0 +1,28 @@
+namespace = fd_rename
+
+character_event = {
+	id = fd_rename.001
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = fd_rename_set } # Redundacy check
+	}
+	immediate = {
+		set_global_flag = fd_rename_set
+		if = {
+			limit = {
+				has_game_rule = { name = FD_RENAME_CHARACTER value = full }
+			}
+			set_global_flag = fd_rename_full
+		}
+		else_if = {
+			limit = {
+				has_game_rule = { name = FD_RENAME_CHARACTER value = diplo_range }
+			}
+			set_global_flag = fd_rename_diplo
+		}
+		else = { # Fallback
+			set_global_flag = fd_rename_off
+		}
+	}
+}
