@@ -1,0 +1,13 @@
+spriteTypes = 
+{
+	##########
+	spriteType = {
+		name = "GFX_FD_houseirae_event_narrative_area"
+		texturefile = "gfx\\interface\\FD_houseirae_event_narrative_area.dds"
+	}
+	spriteType = {
+		name = "GFX_FD_houseirae_event_narrative_bg"
+		texturefile = "gfx\\interface\\FD_houseirae_event_narrative_bg.dds"
+		allwaystransparent = yes
+	}
+}

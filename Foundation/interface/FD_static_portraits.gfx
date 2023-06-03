@@ -1,0 +1,123 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_FDPlaceholderChar"
+		texturefile = "gfx/portraits/FDPlaceholderChar.dds"
+		noOfFrames = 1
+		norefcount = yes
+      can_be_lowres = yes
+  	}
+
+   spriteType = {
+		name = "GFX_FDPlaceholderCourtier"
+		texturefile = "gfx/portraits/FDPlaceholderChar.dds"
+		noOfFrames = 1
+		norefcount = yes
+      can_be_lowres = yes
+  	}
+
+   portraitType = {
+      name = "FDPlaceholderChar_1"
+		effectFile = "gfx/FX/portrait.lua"
+      weight = {
+         additive_modifier = {
+            value = 1000000
+            portrait_clothing = yes
+			   portrait_has_trait = FDPlaceholderChar
+	 		}
+      }
+
+      layer = {
+         "GFX_empty:c0"
+         "GFX_empty:c2"
+         "GFX_empty:c3"
+         "GFX_empty:c1"
+         "GFX_empty:c4"
+         "GFX_empty:p1:h:y"
+         "GFX_FDPlaceholderChar:c5"
+			"GFX_character_imprisoned:p6"
+			"GFX_lover_overlay:p37"
+			"GFX_player_overlay:p11"
+      }
+
+      allow_property_values = {
+         1 = {
+				0  = { always = yes }
+         }
+         19 = {
+				0  = { always = yes }
+         }
+			33 = {
+				0  = { always = yes }
+         }
+         34 = {
+				0  = { always = yes }
+         }
+         35 = {
+				0  = { always = yes }
+         }
+         36 = {
+				0  = { always = yes }
+         }
+			6 = {
+				0 = { always = yes }
+         }
+         5 = {
+				0 = { always = no }
+			   1 = { portrait_has_trait = dungeon_master }
+			}
+		}
+   }
+
+   portraitType = {
+      name = "FDPlaceholderChar_1"
+		effectFile = "gfx/FX/portrait.lua"
+      weight = {
+         additive_modifier = {
+            value = 1000000
+            portrait_clothing = yes
+			   portrait_has_trait = FDPlaceholderCourtier
+	 		}
+      }
+
+      layer = {
+         "GFX_empty:c0"
+         "GFX_empty:c2"
+         "GFX_empty:c3"
+         "GFX_empty:c1"
+         "GFX_empty:c4"
+         "GFX_empty:p1:h:y"
+         "GFX_FDPlaceholderChar:c5"
+			"GFX_character_imprisoned:p6"
+			"GFX_lover_overlay:p37"
+			"GFX_player_overlay:p11"
+      }
+
+      allow_property_values = {
+         1 = {
+				0  = { always = yes }
+         }
+         19 = {
+				0  = { always = yes }
+         }
+			33 = {
+				0  = { always = yes }
+         }
+         34 = {
+				0  = { always = yes }
+         }
+         35 = {
+				0  = { always = yes }
+         }
+         36 = {
+				0  = { always = yes }
+         }
+			6 = {
+				0 = { always = yes }
+         }
+         5 = {
+				0 = { always = no }
+			   1 = { portrait_has_trait = dungeon_master }
+			}
+		}
+   }
+}

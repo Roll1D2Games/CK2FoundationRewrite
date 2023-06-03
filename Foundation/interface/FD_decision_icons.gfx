@@ -1,0 +1,18 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_open_employment_menu"
+		texturefile = "gfx\\interface\\decision_open_employment_menu.dds"
+	}
+	spriteType = {
+		name = "GFX_close_employment_menu"
+		texturefile = "gfx\\interface\\decision_close_employment_menu.dds"
+	}
+	spriteType = {
+		name = "GFX_employ_tutor"
+		texturefile = "gfx\\interface\\decision_employ_tutor.dds"
+	}
+	spriteType = {
+		name = "GFX_visit_orphanage"
+		texturefile = "gfx\\interface\\decision_visit_orphanage.dds"
+	}
+}
