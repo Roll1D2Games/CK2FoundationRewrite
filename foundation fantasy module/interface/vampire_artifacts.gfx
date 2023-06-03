@@ -1,0 +1,134 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_blood_axe"
+		texturefile = "gfx/interface/inventory/artifacts/blood_axe.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_blood_axe_small"
+		texturefile = "gfx/interface/inventory/artifacts/blood_axe_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_blood_sword"
+		texturefile = "gfx/interface/inventory/artifacts/blood_sword.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_blood_sword_small"
+		texturefile = "gfx/interface/inventory/artifacts/blood_sword_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_blood_mace"
+		texturefile = "gfx/interface/inventory/artifacts/blood_mace.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_blood_mace_small"
+		texturefile = "gfx/interface/inventory/artifacts/blood_mace_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_eastern_blood_sword"
+		texturefile = "gfx/interface/inventory/artifacts/eastern_blood_sword.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_eastern_blood_sword_small"
+		texturefile = "gfx/interface/inventory/artifacts/eastern_blood_sword_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_vampiric_mantle"
+		texturefile = "gfx/interface/inventory/artifacts/vampiric_mantle.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_vampiric_mantle_small"
+		texturefile = "gfx/interface/inventory/artifacts/vampiric_mantle_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_blood_tablet"
+		texturefile = "gfx/interface/inventory/artifacts/blood_tablet.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_blood_tablet_small"
+		texturefile = "gfx/interface/inventory/artifacts/blood_tablet_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_book_of_blood"
+		texturefile = "gfx/interface/inventory/artifacts/book_of_blood.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_book_of_blood_small"
+		texturefile = "gfx/interface/inventory/artifacts/book_of_blood_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_vampiric_blood"
+		texturefile = "gfx/interface/inventory/artifacts/vampiric_blood.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_vampiric_blood_small"
+		texturefile = "gfx/interface/inventory/artifacts/vampiric_blood_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_unending_heart"
+		texturefile = "gfx/interface/inventory/artifacts/unending_heart.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_unending_heart_small"
+		texturefile = "gfx/interface/inventory/artifacts/unending_heart_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_vampire_skull"
+		texturefile = "gfx/interface/inventory/artifacts/vampire_skull.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_vampire_skull_small"
+		texturefile = "gfx/interface/inventory/artifacts/vampire_skull_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_sanguine_ruby"
+		texturefile = "gfx/interface/inventory/artifacts/sanguine_ruby.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_sanguine_ruby_small"
+		texturefile = "gfx/interface/inventory/artifacts/sanguine_ruby_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+}

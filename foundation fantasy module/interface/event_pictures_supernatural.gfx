@@ -1,0 +1,45 @@
+##################################
+#  Supernatural Event Pictures   #
+##################################
+
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_book_vampire"
+		texturefile = "gfx\\event_pictures\book_vampire.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_fighting_chance"
+		texturefile = "gfx\\event_pictures\fighting_chance.dds"
+		allwaystransparent = yes
+	}	
+	
+	### ANIMATED ###
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_milk_snatcher"  
+		texturefile = "gfx/event_pictures_animated/milk_snatcher.dds"        
+		noOfFrames = 17
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+
+##################################
+#    EASTER EGG Event Pictures   #
+##################################
+
+	spriteType = {
+		name = "GFX_diddlers"
+		texturefile = "gfx\\event_pictures\diddlers.dds"
+		allwaystransparent = yes
+	}	
+	
+	spriteType = {
+		name = "GFX_lament_config_evnt"
+		texturefile = "gfx\\event_pictures\lament_config_evnt.dds"
+		allwaystransparent = yes
+	}
+}

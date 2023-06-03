@@ -1,0 +1,134 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_hyper_cube"
+		texturefile = "gfx/interface/inventory/artifacts/GFX_hyper_cube.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_puzzle_box"
+		texturefile = "gfx/interface/inventory/artifacts/GFX_puzzle_box.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_tree_feller"
+		texturefile = "gfx/interface/inventory/artifacts/GFX_tree_feller.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_strange_glowing_ornament"
+		texturefile = "gfx/interface/inventory/artifacts/GFX_strange_glowing_ornament.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_eye_of_mountain_morbod"
+		texturefile = "gfx/interface/inventory/artifacts/GFX_eye_of_mountain_morbod.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_crystal_heart"
+		texturefile = "gfx/interface/inventory/artifacts/GFX_crystal_heart.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_space_pebble"
+		texturefile = "gfx/interface/inventory/artifacts/space_pebble.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_mind_pebble"
+		texturefile = "gfx/interface/inventory/artifacts/mind_pebble.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_reality_pebble"
+		texturefile = "gfx/interface/inventory/artifacts/reality_pebble.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_power_pebble"
+		texturefile = "gfx/interface/inventory/artifacts/power_pebble.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_time_pebble"
+		texturefile = "gfx/interface/inventory/artifacts/time_pebble.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_soul_pebble"
+		texturefile = "gfx/interface/inventory/artifacts/soul_pebble.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_space_pebble_small"
+		texturefile = "gfx/interface/inventory/artifacts/space_pebble_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_mind_pebble_small"
+		texturefile = "gfx/interface/inventory/artifacts/mind_pebble_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_reality_pebble_small"
+		texturefile = "gfx/interface/inventory/artifacts/reality_pebble_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_power_pebble_small"
+		texturefile = "gfx/interface/inventory/artifacts/power_pebble_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_time_pebble_small"
+		texturefile = "gfx/interface/inventory/artifacts/time_pebble_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_soul_pebble_small"
+		texturefile = "gfx/interface/inventory/artifacts/soul_pebble_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_generals_shield"
+		texturefile = "gfx/interface/inventory/artifacts/generals_shield.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_generals_shield_small"
+		texturefile = "gfx/interface/inventory/artifacts/generals_shield_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_lament_config"
+		texturefile = "gfx/interface/inventory/artifacts/lament_config.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_lament_config_small"
+		texturefile = "gfx/interface/inventory/artifacts/lament_config_small.dds"
+		noOfFrames = 1
+		norefcount = yes
+	}
+}

@@ -1,0 +1,133 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_vampire_diplo_icon"
+		texturefile = "gfx\\interface\\vampire_generic_diplo_icon.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_little_red_book"
+		texturefile = "gfx\\interface\\little_red_book.tga"
+	}
+	spriteType = {
+		name = "GFX_show_vampiric_powers"
+		texturefile = "gfx\\interface\\show_vampiric_powers.tga"
+	}
+	spriteType = {
+		name = "GFX_close_vampiric_powers"
+		texturefile = "gfx\\interface\\close_vampiric_powers.tga"
+	}
+	spriteType = {
+		name = "GFX_debug_max_blood"
+		texturefile = "gfx\\interface\\debug_max_blood.tga"
+	}
+	spriteType = {
+		name = "GFX_debug_experience"
+		texturefile = "gfx\\interface\\debug_experience.tga"
+	}
+	spriteType = {
+		name = "GFX_debug_add_random_artifact"
+		texturefile = "gfx\\interface\\debug_add_random_artifact.tga"
+	}
+	spriteType = {
+		name = "GFX_debug_add_powers"
+		texturefile = "gfx\\interface\\debug_add_powers.tga"
+	}
+	spriteType = {
+		name = "GFX_show_my_bloodline"
+		texturefile = "gfx\\interface\\show_my_bloodline.tga"
+	}
+	spriteType = {
+		name = "GFX_take_on_vampiric_form"
+		texturefile = "gfx\\interface\\take_on_vampiric_form.tga"
+	}
+	spriteType = {
+		name = "GFX_vampire_power_blood_artifice"
+		texturefile = "gfx\\interface\\vampire_power_blood_artifice.tga"
+	}
+	spriteType = {
+		name = "GFX_open_lodge_menu"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge.dds"
+	}
+	spriteType = {
+		name = "GFX_close_lodge_menu"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_close.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_vampire_thralls"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_fight_club"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_game_room"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_institution"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_office"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_store_house"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_greenhouse"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_lair_of_debauchery"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_hunters_lounge"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_torture_lair"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_guild_of_secrets"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_seduction_chamber"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_mystical_chamber"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_socialite_club"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_war_room"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_z_buy_upgrade_private_shrine"
+		texturefile = "gfx\\interface\\decision_upgrade_lodge_module.dds"
+	}
+	spriteType = {
+		name = "GFX_open_employment_menu"
+		texturefile = "gfx\\interface\\decision_open_employment_menu.dds"
+	}
+	spriteType = {
+		name = "GFX_close_employment_menu"
+		texturefile = "gfx\\interface\\decision_close_employment_menu.dds"
+	}
+	spriteType = {
+		name = "GFX_employ_tutor"
+		texturefile = "gfx\\interface\\decision_employ_tutor.dds"
+	}
+}

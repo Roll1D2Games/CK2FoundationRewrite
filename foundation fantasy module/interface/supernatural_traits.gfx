@@ -1,0 +1,198 @@
+spriteTypes = {
+
+	### VAMPIRE TRAITS ###
+	spriteType = {
+		name = "GFX_trait_vampire"
+		texturefile = "gfx/traits/vampire_trait.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_thrall"
+		texturefile = "gfx/traits/thrall.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_dying"
+		texturefile = "gfx/traits/vampire_dying_trait.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_verge_of_death"
+		texturefile = "gfx/traits/vampire_verge_of_death_trait.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {	
+		name = "GFX_trait_vampire_gen_1"
+		texturefile = "gfx/traits/vampire_gen_1.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {	
+		name = "GFX_trait_vampire_gen_2"
+		texturefile = "gfx/traits/vampire_gen_2.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {	
+		name = "GFX_trait_vampire_gen_3"
+		texturefile = "gfx/traits/vampire_gen_3.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {	
+		name = "GFX_trait_vampire_gen_4"
+		texturefile = "gfx/traits/vampire_gen_4.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {	
+		name = "GFX_trait_vampire_gen_5"
+		texturefile = "gfx/traits/vampire_gen_5.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+##### Blood Power (Horrible name, please change) #####
+
+	spriteType = {
+		name = "GFX_trait_vampire_blood_0"
+		texturefile = "gfx/traits/vampire_blood_0.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_1"
+		texturefile = "gfx/traits/vampire_blood_1.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_2"
+		texturefile = "gfx/traits/vampire_blood_2.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_3"
+		texturefile = "gfx/traits/vampire_blood_3.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_4"
+		texturefile = "gfx/traits/vampire_blood_4.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_5"
+		texturefile = "gfx/traits/vampire_blood_5.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_6"
+		texturefile = "gfx/traits/vampire_blood_6.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_7"
+		texturefile = "gfx/traits/vampire_blood_7.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_8"
+		texturefile = "gfx/traits/vampire_blood_8.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vampire_blood_9"
+		texturefile = "gfx/traits/vampire_blood_9.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {	
+		name = "GFX_trait_vampire_blood_10"
+		texturefile = "gfx/traits/vampire_blood_10.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	### WEREWOLF TRAITS ###
+	spriteType = {
+		name = "GFX_trait_werewolf"
+		texturefile = "gfx/traits/werewolf_trait.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	### SKINCHANGER TRAITS ###
+	
+	spriteType = {
+		name = "GFX_trait_skinchanger"
+		texturefile = "gfx/traits/skinchanger_trait.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	### MAGE TRAITS ###
+	
+	spriteType = {
+		name = "GFX_trait_mage_scholar"
+		texturefile = "gfx/traits/mage_1.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_apprentice_wizard"
+		texturefile = "gfx/traits/mage_2.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_experienced_mage"
+		texturefile = "gfx/traits/mage_3.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_expert_sorcerer"
+		texturefile = "gfx/traits/mage_4.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+}
